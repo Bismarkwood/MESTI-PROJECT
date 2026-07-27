@@ -1,103 +1,67 @@
-/* ─── Knowledge and Updates — 4 Cards, Premium Design ─── */
+/* ─── Resources, News and Opportunities ─── */
 .knowledge-updates {
   width: 100%;
   padding: 100px 48px;
-  background: #f8fbfa;
-  box-shadow: none !important;
+  background: #ffffff;
+}
+
+.knowledge-updates__inner {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Header */
 .knowledge-updates__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 56px;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.knowledge-updates__header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.knowledge-updates__badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 16px;
-  border-radius: 100px;
-  background: #e8f3ee;
-  border: 1px solid #c2ded1;
-  box-shadow: none !important;
-}
-
-.knowledge-updates__badge span {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #1c7a4d;
-  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .knowledge-updates__title {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: clamp(2.1rem, 3.5vw, 3rem);
-  font-weight: 700;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
   color: #0f2b1f;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin: 0;
+  line-height: 1.2;
+  margin: 0 0 10px;
 }
 
 .knowledge-updates__sub {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1rem;
   color: #5a6b63;
-  line-height: 1.65;
-  max-width: 380px;
+  line-height: 1.6;
   margin: 0;
-  padding-bottom: 6px;
 }
 
-/* ─── 4-Card Grid: 2 large left + 2 right stacked ─── */
+/* Grid: 4 columns */
 .knowledge-updates__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  width: 100%;
-  align-items: stretch;
+  gap: 18px;
 }
 
-/* ─── Individual Card ─── */
+/* Card */
 .ku-card {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border: 1px solid #d8e8e0;
-  border-radius: 24px;
+  background: #f6f8f7;
+  border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: none !important;
+  transition: background 0.2s, transform 0.25s ease;
 }
 
 .ku-card:hover {
-  border-color: #1c7a4d;
-  transform: translateY(-6px);
+  background: #eef2f0;
+  transform: translateY(-3px);
 }
 
-/* Image area */
-.ku-card__media {
+/* Image */
+.ku-card__img-wrap {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  position: relative;
+  height: 140px;
   overflow: hidden;
-  background: #e1ebe6;
-  flex-shrink: 0;
+  background: #e4ece7;
 }
 
 .ku-card__img {
@@ -105,45 +69,34 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s ease;
 }
 
 .ku-card:hover .ku-card__img {
-  transform: scale(1.05);
-}
-
-.ku-card__media-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 30, 18, 0.12);
-  transition: background 0.3s ease;
-}
-
-.ku-card:hover .ku-card__media-overlay {
-  background: rgba(10, 30, 18, 0.04);
+  transform: scale(1.04);
 }
 
 /* Body */
 .ku-card__body {
-  padding: 28px 28px 32px;
+  padding: 20px 20px 22px;
   display: flex;
   flex-direction: column;
+  gap: 6px;
   flex-grow: 1;
-  gap: 10px;
 }
 
 .ku-card__tag {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #1c7a4d;
 }
 
 .ku-card__heading {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-size: 1.05rem;
   font-weight: 700;
   color: #0f2b1f;
   line-height: 1.3;
@@ -152,50 +105,30 @@
 
 .ku-card__desc {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 0.82rem;
   color: #5a6b63;
-  line-height: 1.65;
+  line-height: 1.5;
   margin: 0;
   flex-grow: 1;
 }
 
-/* Footer with CTA arrow */
-.ku-card__footer {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid #e1ebe6;
-}
-
 .ku-card__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #1c7a4d;
-}
-
-.ku-card__arrow {
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.ku-card:hover .ku-card__arrow {
-  transform: translate(3px, -3px);
+  margin-top: 8px;
 }
 
 /* ─── Responsive ─── */
-@media (max-width: 1100px) {
-  .knowledge-updates__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 1024px) {
   .knowledge-updates {
     padding: 80px 32px;
+  }
+
+  .knowledge-updates__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
@@ -203,10 +136,25 @@
   .knowledge-updates {
     padding: 64px 20px;
   }
+
   .knowledge-updates__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
+
+  .ku-card__img-wrap {
+    height: 110px;
+  }
+
   .ku-card__body {
-    padding: 22px 22px 26px;
+    padding: 14px 14px 18px;
+  }
+
+  .ku-card__heading {
+    font-size: 0.92rem;
+  }
+
+  .ku-card__desc {
+    font-size: 0.76rem;
   }
 }

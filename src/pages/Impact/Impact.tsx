@@ -11,6 +11,7 @@ import './Impact.css'
 import cefPsPlaceholder from '../../assets/cef-ps-placeholder.svg'
 import processingEquipmentImg from '../../assets/processing-equipment.jpg'
 import plasticCollectionImg from '../../assets/plastic-collection.png'
+import smeFacilityImg from '../../assets/sme-facility.jpg'
 
 /* ─── DATA ─── */
 const progressMetrics = [
@@ -49,7 +50,7 @@ const impactStories = [
 ]
 
 const galleryImages = [
-  { title: 'Pilot SME production facility', category: 'Enterprise', img: cefPsPlaceholder },
+  { title: 'Pilot SME production facility', category: 'Enterprise', img: smeFacilityImg },
   { title: 'Ministerial or project-site visit', category: 'Governance', img: cefPsPlaceholder },
   { title: 'Stakeholder workshop', category: 'Capacity Building', img: cefPsPlaceholder },
   { title: 'Plastic collection activity', category: 'Recovery', img: plasticCollectionImg },
