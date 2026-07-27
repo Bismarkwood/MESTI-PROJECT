@@ -817,9 +817,9 @@
 }
 
 .impact-gallery__container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 40px;
 }
 
 .impact-gallery__grid {
