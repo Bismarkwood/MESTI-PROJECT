@@ -55,10 +55,10 @@ const galleryImages = [
 ]
 
 const reportingPrinciples = [
-  { title: 'Verified Data', desc: 'Figures should be published only after review and confirmation by the responsible programme team.' },
-  { title: 'Clear Reporting Periods', desc: 'Every metric should show the year or reporting period it covers.' },
-  { title: 'Target Versus Achievement', desc: 'Targets must be visually distinguished from completed and verified results.' },
-  { title: 'Programme Attribution', desc: 'Results should state whether they relate to CEF-PS or another CPF programme.' },
+  { title: 'Verified Data', icon: 'check' },
+  { title: 'Clear Periods', icon: 'calendar' },
+  { title: 'Target vs Result', icon: 'target' },
+  { title: 'Attribution', icon: 'tag' },
 ]
 
 function Impact() {
