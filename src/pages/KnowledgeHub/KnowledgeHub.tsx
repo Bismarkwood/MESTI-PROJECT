@@ -678,7 +678,7 @@ export default function KnowledgeHub() {
 
       {/* 6. KNOWLEDGE COLLECTIONS */}
       <section className="kh-collections">
-        <div className="kh-container">
+        <div className="kh-collections__inner">
           <div className="kh-section-header">
             <span className="kh-label">CURATED COLLECTIONS</span>
             <h2 className="kh-section-title">Explore Resources by Theme</h2>

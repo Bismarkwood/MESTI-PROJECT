@@ -1241,8 +1241,13 @@
    6. KNOWLEDGE COLLECTIONS
    ========================================================================== */
 .kh-collections {
-  padding: 80px 0;
-  background-color: #F6F8F4;
+  padding: 100px 40px;
+  background-color: #F8F9F8;
+}
+
+.kh-collections__inner {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .kh-collections__grid {
