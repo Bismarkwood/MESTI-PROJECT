@@ -301,7 +301,7 @@ export default function KnowledgeHub() {
 
       {/* 4. RESOURCE LIBRARY & FILTERS */}
       <section className="kh-library" id="resource-library">
-        <div className="kh-container">
+        <div className="kh-library__inner">
           <div className="kh-library__header">
             <div>
               <span className="kh-label">RESOURCE LIBRARY</span>
