@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import type { ResourceItem } from './knowledgeData';
 import {
   QUICK_CATEGORIES,
@@ -193,6 +195,8 @@ export default function KnowledgeHub() {
 
   return (
     <div className="kh-page">
+      <Navbar />
+
       {/* Toast Notification */}
       {toastMessage && (
         <div className="kh-toast" role="alert">
@@ -1143,6 +1147,7 @@ export default function KnowledgeHub() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
