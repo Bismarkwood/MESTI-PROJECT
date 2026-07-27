@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Leaf, Lightbulb, Users, Settings, ArrowRight, Info, X } from 'lucide-react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import SEO from '../../components/SEO'
@@ -126,7 +127,7 @@ function Impact() {
           </div>
 
           <div className="impact-progress__data-label">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/><path d="M8 5v3M8 10.5v.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+            <Info size={14} strokeWidth={1.5} />
             CEF-PS progress data · Reporting period: inception to June 2025
           </div>
         </div>
@@ -175,16 +176,16 @@ function Impact() {
             {impactAreas.map((area) => (
               <div key={area.num} className="impact-area-card impact-animate">
                 <div className="impact-area-card__icon">
-                  {area.icon === 'leaf' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 21c3-3 7-6 12-11C14 5 10 3 6 3c0 6 0 12 0 18z"/><path d="M6 21c1-3 3-6 6-9"/></svg>}
-                  {area.icon === 'lightbulb' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>}
-                  {area.icon === 'users' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
-                  {area.icon === 'settings' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68 1.65 1.65 0 0 0 10 3.17V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>}
+                  {area.icon === 'leaf' && <Leaf size={24} strokeWidth={1.5} />}
+                  {area.icon === 'lightbulb' && <Lightbulb size={24} strokeWidth={1.5} />}
+                  {area.icon === 'users' && <Users size={24} strokeWidth={1.5} />}
+                  {area.icon === 'settings' && <Settings size={24} strokeWidth={1.5} />}
                 </div>
                 <span className="impact-area-card__num">{area.num}</span>
                 <h3 className="impact-area-card__title">{area.title}</h3>
                 <p className="impact-area-card__desc">{area.desc}</p>
                 <span className="impact-area-card__link">
-                  Learn more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Learn more <ArrowRight size={14} strokeWidth={1.5} />
                 </span>
               </div>
             ))}
@@ -256,7 +257,7 @@ function Impact() {
                   <h3 className="impact-story-card__title">{story.title}</h3>
                   <p className="impact-story-card__desc">{story.desc}</p>
                   <span className="impact-story-card__link">
-                    Read the Story <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    Read the Story <ArrowRight size={14} strokeWidth={1.5} />
                   </span>
                 </div>
               </div>
@@ -301,7 +302,7 @@ function Impact() {
         <div className="impact-lightbox" onClick={() => setLightboxIndex(null)}>
           <div className="impact-lightbox__inner" onClick={e => e.stopPropagation()}>
             <button className="impact-lightbox__close" onClick={() => setLightboxIndex(null)} aria-label="Close lightbox">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              <X size={24} strokeWidth={2} />
             </button>
             <img src={galleryImages[lightboxIndex].img || cefPsPlaceholder} alt={galleryImages[lightboxIndex].title} className="impact-lightbox__img" />
             <div className="impact-lightbox__info">

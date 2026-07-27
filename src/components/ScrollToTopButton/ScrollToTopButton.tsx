@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { ArrowUp } from 'lucide-react'
 import './ScrollToTopButton.css'
 
 function ScrollToTopButton() {
@@ -22,9 +23,7 @@ function ScrollToTopButton() {
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      <ArrowUp size={18} strokeWidth={2} />
     </button>
   )
 }
