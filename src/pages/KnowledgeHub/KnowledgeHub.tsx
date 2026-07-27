@@ -261,39 +261,7 @@ export default function KnowledgeHub() {
             </div>
           </div>
 
-          <div className="kh-hero__visual">
-            <div className="kh-hero-art">
-              <div className="kh-hero-art__circle kh-hero-art__circle--1" />
-              <div className="kh-hero-art__circle kh-hero-art__circle--2" />
-              <div className="kh-hero-art__doc kh-hero-art__doc--main">
-                <div className="kh-doc-header">
-                  <span className="kh-doc-tag">MESTI · POLICY 2026</span>
-                  <span className="kh-doc-status">APPROVED</span>
-                </div>
-                <div className="kh-doc-title">National Circular Plastics Roadmap & EPR Framework</div>
-                <div className="kh-doc-lines">
-                  <div className="kh-doc-line kh-doc-line--80" />
-                  <div className="kh-doc-line kh-doc-line--60" />
-                  <div className="kh-doc-line kh-doc-line--90" />
-                </div>
-                <div className="kh-doc-footer">
-                  <span>PDF · 5.2 MB</span>
-                  <span className="kh-doc-icon">📥</span>
-                </div>
-              </div>
-              <div className="kh-hero-art__doc kh-hero-art__doc--floating-1">
-                <span>♻️ Polymer Flow Analysis</span>
-                <small>CEF-PS · UNIDO</small>
-              </div>
-              <div className="kh-hero-art__doc kh-hero-art__doc--floating-2">
-                <span>📊 16 Regions Assessed</span>
-                <small>Ghana Statistical Service</small>
-              </div>
-              <div className="kh-hero-art__badge">
-                <span>🇬🇭 CPF Ghana Digital Library</span>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 

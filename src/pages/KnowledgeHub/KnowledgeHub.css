@@ -209,10 +209,10 @@
 }
 
 .kh-hero__inner {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   max-width: 100%;
   padding: 0 40px;
 }
@@ -230,7 +230,7 @@
 .kh-hero__desc {
   font-size: 1.15rem;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 36px;
+  margin: 0 auto 36px;
   max-width: 580px;
 }
 
@@ -243,7 +243,9 @@
   border-radius: 100px;
   border: 1px solid #E7ECE8;
   box-shadow: 0 10px 30px rgba(12, 59, 46, 0.06);
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .kh-search-input-wrapper {
