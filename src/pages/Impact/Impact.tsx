@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
@@ -61,39 +61,8 @@ const reportingPrinciples = [
   { title: 'Programme Attribution', desc: 'Results should state whether they relate to CEF-PS or another CPF programme.' },
 ]
 
-/* ─── NAV SECTIONS ─── */
-const navSections = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'progress', label: 'Progress' },
-  { id: 'targets', label: 'Targets' },
-  { id: 'impact-areas', label: 'Impact Areas' },
-  { id: 'stories', label: 'Stories' },
-  { id: 'accountability', label: 'Accountability' },
-]
-
 function Impact() {
-  const [activeNav, setActiveNav] = useState('overview')
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
-  const observerRef = useRef<IntersectionObserver | null>(null)
-
-  // Intersection observer for scroll-activated nav
-  useEffect(() => {
-    const sections = navSections.map(s => document.getElementById(s.id)).filter(Boolean) as HTMLElement[]
-
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveNav(entry.target.id)
-          }
-        }
-      },
-      { rootMargin: '-100px 0px -60% 0px', threshold: 0.1 }
-    )
-
-    sections.forEach(sec => observerRef.current?.observe(sec))
-    return () => observerRef.current?.disconnect()
-  }, [])
 
   // Animate metric cards on scroll
   useEffect(() => {
@@ -128,22 +97,6 @@ function Impact() {
         path="/impact"
       />
       <Navbar />
-
-      {/* ─── STICKY SUB-NAV ─── */}
-      <nav className="impact-subnav" aria-label="Impact page navigation">
-        <div className="impact-subnav__inner">
-          {navSections.map(item => (
-            <button
-              key={item.id}
-              type="button"
-              className={`impact-subnav__btn ${activeNav === item.id ? 'impact-subnav__btn--active' : ''}`}
-              onClick={() => scrollToSection(item.id)}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      </nav>
 
       {/* ─── 1. IMPACT HERO ─── */}
       <section id="overview" className="impact-hero-override">

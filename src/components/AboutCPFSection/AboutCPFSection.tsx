@@ -1,4 +1,4 @@
-import aboutImg from '../../assets/About/About Hero section.webp'
+import aboutImg from '../../assets/homepage-about-bg.jpg'
 import './AboutCPFSection.css'
 
 function AboutCPFSection() {
