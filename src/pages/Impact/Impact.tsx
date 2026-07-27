@@ -9,6 +9,7 @@ import JoinCta from '../../components/JoinCta'
 import './Impact.css'
 
 import cefPsPlaceholder from '../../assets/cef-ps-placeholder.svg'
+import processingEquipmentImg from '../../assets/processing-equipment.jpg'
 
 /* ─── DATA ─── */
 const progressMetrics = [
@@ -47,11 +48,11 @@ const impactStories = [
 ]
 
 const galleryImages = [
-  { title: 'Pilot SME production facility', category: 'Enterprise' },
-  { title: 'Ministerial or project-site visit', category: 'Governance' },
-  { title: 'Stakeholder workshop', category: 'Capacity Building' },
-  { title: 'Plastic collection activity', category: 'Recovery' },
-  { title: 'Recycled products or processing equipment', category: 'Innovation' },
+  { title: 'Pilot SME production facility', category: 'Enterprise', img: cefPsPlaceholder },
+  { title: 'Ministerial or project-site visit', category: 'Governance', img: cefPsPlaceholder },
+  { title: 'Stakeholder workshop', category: 'Capacity Building', img: cefPsPlaceholder },
+  { title: 'Plastic collection activity', category: 'Recovery', img: cefPsPlaceholder },
+  { title: 'Recycled products or processing equipment', category: 'Innovation', img: processingEquipmentImg },
 ]
 
 function Impact() {
@@ -115,7 +116,6 @@ function Impact() {
           <div className="impact-progress__grid">
             {progressMetrics.map((m, i) => (
               <div key={i} className="impact-metric-card impact-animate">
-                <span className="impact-metric-card__status">Progress</span>
                 <div className="impact-metric-card__figure">{m.figure}</div>
                 <div className="impact-metric-card__label">{m.label}</div>
                 <p className="impact-metric-card__desc">{m.desc}</p>
@@ -283,7 +283,7 @@ function Impact() {
                 className={`impact-gallery__item ${i === 0 ? 'impact-gallery__item--large' : ''}`}
                 onClick={() => setLightboxIndex(i)}
               >
-                <img src={cefPsPlaceholder} alt={img.title} />
+                <img src={img.img || cefPsPlaceholder} alt={img.title} />
                 <div className="impact-gallery__caption">
                   <span className="impact-gallery__caption-cat">{img.category}</span>
                   <span className="impact-gallery__caption-title">{img.title}</span>
@@ -301,7 +301,7 @@ function Impact() {
             <button className="impact-lightbox__close" onClick={() => setLightboxIndex(null)} aria-label="Close lightbox">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </button>
-            <img src={cefPsPlaceholder} alt={galleryImages[lightboxIndex].title} className="impact-lightbox__img" />
+            <img src={galleryImages[lightboxIndex].img || cefPsPlaceholder} alt={galleryImages[lightboxIndex].title} className="impact-lightbox__img" />
             <div className="impact-lightbox__info">
               <span>{galleryImages[lightboxIndex].category}</span>
               <strong>{galleryImages[lightboxIndex].title}</strong>

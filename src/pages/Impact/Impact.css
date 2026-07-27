@@ -277,28 +277,15 @@
 }
 
 .impact-metric-card {
-  background: var(--impact-white);
-  border: 1px solid var(--impact-border);
+  background: #f4f5f7;
+  border: none;
   border-radius: var(--impact-radius);
   padding: 32px 24px;
-  transition: border-color 0.2s;
+  transition: background 0.2s;
 }
 
 .impact-metric-card:hover {
-  border-color: var(--impact-green-mid);
-}
-
-.impact-metric-card__status {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--impact-gold);
-  background: var(--impact-gold-light);
-  padding: 4px 10px;
-  border-radius: 100px;
-  margin-bottom: 16px;
+  background: #eceef1;
 }
 
 .impact-metric-card__figure {
