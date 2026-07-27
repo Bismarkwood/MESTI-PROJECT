@@ -1,175 +1,140 @@
-/* ─── Focus Areas Section (4 Large Cards in 2x2 Grid, Line Icons, Image Reveal on Hover, No Gradients/Shadows) ─── */
+/* ─── Focus Areas Section ─── */
 .focus-areas {
   width: 100%;
   padding: 100px 48px;
-  background: #ffffff;
-  color: #0f2b1f;
-  position: relative;
-  overflow: hidden;
-  box-shadow: none !important;
+  background: #f8faf9;
 }
 
 .focus-areas__inner {
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Header */
 .focus-areas__header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 64px;
-  max-width: 700px;
+  max-width: 600px;
+  margin-bottom: 56px;
 }
 
 .focus-areas__badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 16px;
-  border-radius: 100px;
-  background: #f0f7f4;
-  border: 1px solid #d8e8e0;
-  box-shadow: none !important;
-}
-
-.focus-areas__badge span {
+  display: inline-block;
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #1c7a4d;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: #1c7a4d;
+  background: #e8f5ef;
+  border: 1px solid #d0e8db;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
 }
 
 .focus-areas__title {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
   color: #0f2b1f;
   line-height: 1.15;
   letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+
+.focus-areas__subtitle {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.05rem;
+  color: #5a6b63;
+  line-height: 1.6;
   margin: 0;
 }
 
-/* 4 Large Cards Grid (2 cards per row on desktop) */
+/* Grid: 2x2 on desktop */
 .focus-areas__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  width: 100%;
+  gap: 20px;
 }
 
-/* Card Styling */
+/* Card */
 .focus-areas__card {
-  display: flex;
-  flex-direction: column;
   background: #ffffff;
-  border: 1px solid #d8e8e0;
-  border-radius: 28px;
-  padding: 40px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: none !important;
-  position: relative;
+  border: 1px solid #e4ece7;
+  border-radius: 20px;
   overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .focus-areas__card:hover {
   border-color: #1c7a4d;
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
-.focus-areas__card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 28px;
+/* Card Image */
+.focus-areas__card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #eef3f0;
 }
 
-.focus-areas__icon-box {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: #f0f7f4;
-  border: 1px solid #e1ebe6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1c7a4d;
-  transition: all 0.3s ease;
+.focus-areas__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.focus-areas__card:hover .focus-areas__icon-box {
-  background: #1c7a4d;
-  color: #ffffff;
-  border-color: #1c7a4d;
+.focus-areas__card:hover .focus-areas__card-image img {
+  transform: scale(1.04);
 }
 
-.focus-areas__num {
+.focus-areas__card-num {
+  position: absolute;
+  top: 14px;
+  right: 14px;
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #a4b5ac;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: rgba(15, 43, 31, 0.7);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* Card Body */
+.focus-areas__card-body {
+  padding: 28px 28px 32px;
 }
 
 .focus-areas__card-title {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: clamp(1.5rem, 2vw, 1.85rem);
+  font-size: 1.2rem;
   font-weight: 700;
   color: #0f2b1f;
-  line-height: 1.25;
-  margin: 0 0 12px;
+  line-height: 1.3;
+  margin: 0 0 10px;
 }
 
 .focus-areas__card-desc {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #5a6b63;
-  line-height: 1.65;
+  line-height: 1.6;
   margin: 0;
-  flex-grow: 1;
 }
 
-/* Small Image Reveal on Hover */
-.focus-areas__card-reveal {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  border-radius: 16px;
-  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), margin-top 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.focus-areas__card:hover .focus-areas__card-reveal {
-  max-height: 220px;
-  opacity: 1;
-  margin-top: 28px;
-}
-
-.focus-areas__reveal-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid #e1ebe6;
-  display: block;
-}
-
-/* ─── Responsive Breakpoints ─── */
+/* ─── Responsive ─── */
 @media (max-width: 1024px) {
   .focus-areas {
     padding: 80px 32px;
   }
+
   .focus-areas__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  /* On touch devices, reveal images by default so no hover is required */
-  .focus-areas__card-reveal {
-    max-height: 200px;
-    opacity: 1;
-    margin-top: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 }
 
@@ -177,11 +142,17 @@
   .focus-areas {
     padding: 64px 20px;
   }
-  .focus-areas__card {
-    padding: 28px 24px;
-    border-radius: 20px;
+
+  .focus-areas__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .focus-areas__reveal-img {
-    height: 160px;
+
+  .focus-areas__card-image {
+    height: 170px;
+  }
+
+  .focus-areas__card-body {
+    padding: 22px 22px 26px;
   }
 }
