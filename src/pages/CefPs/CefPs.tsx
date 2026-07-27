@@ -228,35 +228,6 @@ function CefPs() {
       />
       <Navbar />
 
-      {/* ─── STICKY PROJECT NAVIGATION ─── */}
-      <nav className="cefps-subnav" aria-label="Project Sections Navigation">
-        <div className="cefps-subnav__inner">
-          <div className="cefps-subnav__brand">
-            <span className="cefps-subnav__dot" />
-            <span className="cefps-subnav__title">CEF-PS · GEF 10401</span>
-          </div>
-          <div className="cefps-subnav__links">
-            {[
-              { id: 'overview', label: 'Overview' },
-              { id: 'components', label: 'Components' },
-              { id: 'targets', label: 'Targets' },
-              { id: 'pilots', label: 'Pilot Projects' },
-              { id: 'milestones', label: 'Milestones' },
-              { id: 'resources', label: 'Resources' },
-              { id: 'gallery', label: 'Gallery' },
-            ].map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`cefps-subnav__btn ${activeNav === item.id ? 'cefps-subnav__btn--active' : ''}`}
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
 
       {/* ─── 1. PROJECT HERO ─── */}
       <section className="cefps-hero" id="hero">
