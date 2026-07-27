@@ -750,80 +750,72 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
+  text-align: center;
 }
 
-.impact-accountability__layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 64px;
-  align-items: start;
+.impact-accountability__header {
+  max-width: 560px;
+  margin: 0 auto 48px;
 }
 
-.impact-accountability__image img {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  border-radius: var(--impact-radius);
-  background: var(--impact-white);
-}
-
-.impact-accountability__intro {
-  font-size: 1rem;
-  color: var(--impact-text);
-  line-height: 1.6;
-  margin: 0 0 12px;
-}
-
-.impact-accountability__body {
-  font-size: 0.9rem;
+.impact-accountability__subtitle {
+  font-size: 1.05rem;
   color: var(--impact-text-muted);
   line-height: 1.6;
-  margin: 0 0 32px;
+  margin: 0;
 }
 
-.impact-accountability__principles {
+.impact-accountability__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.impact-accountability-card {
+  background: var(--impact-white);
+  border: 1px solid var(--impact-border);
+  border-radius: 16px;
+  padding: 32px 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
+  align-items: center;
+  gap: 14px;
+  transition: border-color 0.2s;
 }
 
-.impact-principle {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
+.impact-accountability-card:hover {
+  border-color: var(--impact-green-mid);
 }
 
-.impact-principle__icon {
-  min-width: 28px;
-  height: 28px;
+.impact-accountability-card__icon {
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--impact-white);
-  border-radius: 8px;
-  color: var(--impact-green-mid);
-}
-
-.impact-principle__text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.impact-principle__text strong {
-  font-size: 0.88rem;
+  background: var(--impact-green-light);
+  border: 1px solid var(--impact-border);
+  border-radius: 12px;
   color: var(--impact-green-dark);
 }
 
-.impact-principle__text span {
-  font-size: 0.8rem;
-  color: var(--impact-text-muted);
-  line-height: 1.4;
+.impact-accountability-card__title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--impact-green-dark);
+  margin: 0;
+}
+
+.impact-accountability__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .impact-accountability__updated {
-  margin-top: 20px;
   font-size: 0.75rem;
   color: var(--impact-text-muted);
   font-style: italic;
@@ -1077,8 +1069,8 @@
     grid-template-columns: 1fr;
   }
 
-  .impact-accountability__layout {
-    grid-template-columns: 1fr;
+  .impact-accountability__grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .impact-gallery__grid {
@@ -1102,6 +1094,11 @@
 
   .impact-action__gallery {
     grid-template-columns: 1fr;
+  }
+
+  .impact-accountability__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
   .impact-stories__grid {
