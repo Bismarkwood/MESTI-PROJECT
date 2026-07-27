@@ -415,13 +415,7 @@ function Impact() {
       )}
 
       {/* ─── 9. FINAL CTA ─── */}
-      <CtaBanner
-        heading="Explore the Programmes Creating Change"
-        sub="Advancing Ghana's circular plastics economy."
-        desc="Learn more about the projects, enterprises and partnerships advancing Ghana's transition towards a circular plastics economy."
-        btnText="Explore Programmes"
-        btnHref="/cef-ps"
-      />
+      <JoinCta />
 
       <Footer />
     </div>
