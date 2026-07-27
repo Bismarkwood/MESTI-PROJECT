@@ -208,7 +208,7 @@ export default function KnowledgeHub() {
       <section className="kh-hero">
         <div className="kh-container kh-hero__inner">
           <div className="kh-hero__content">
-            <span className="kh-label">KNOWLEDGE HUB</span>
+            <span className="kh-label kh-label--light">KNOWLEDGE HUB</span>
             <h1 className="kh-hero__title">Knowledge for a Circular Plastics Future</h1>
             <p className="kh-hero__desc">
               Access policies, research, technical guidance, project reports, training materials and practical resources supporting Ghana’s transition towards a circular plastics economy.
