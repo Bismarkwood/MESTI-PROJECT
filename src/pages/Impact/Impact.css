@@ -638,9 +638,9 @@
 }
 
 .impact-stories__container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 40px;
 }
 
 .impact-stories__grid {
@@ -655,11 +655,14 @@
   border: 1px solid var(--impact-border);
   border-radius: var(--impact-radius);
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .impact-story-card:hover {
-  border-color: var(--impact-green-mid);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
 }
 
 .impact-story-card__image {
@@ -668,7 +671,12 @@
   overflow: hidden;
 }
 
+.impact-story-card:hover .impact-story-card__image img {
+  transform: scale(1.05);
+}
+
 .impact-story-card__image img {
+  transition: transform 0.5s ease;
   width: 100%;
   height: 100%;
   object-fit: cover;
