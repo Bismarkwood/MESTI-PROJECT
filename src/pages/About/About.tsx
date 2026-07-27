@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import SEO from "../../components/SEO"
-import CtaBanner from "../../components/CtaBanner"
+import JoinCta from "../../components/JoinCta"
 import WhatWeDoRole from "../../components/WhatWeDoRole"
 import GovernanceSection from "../../components/GovernanceSection"
 import aboutHeroImg from "../../assets/About/About Hero section.webp"
@@ -267,13 +267,7 @@ function About() {
       <GovernanceSection />
 
       {/* 8. Call to Action */}
-      <CtaBanner
-        heading="Let's Build a Circular Plastics Economy Together"
-        sub="Final Call to Action"
-        desc="Explore the programmes, policies, organisations and resources contributing to Ghana's circular-plastics transition."
-        btnText="Explore Programmes"
-        btnHref="/programmes"
-      />
+      <JoinCta />
 
       <Footer />
     </main>

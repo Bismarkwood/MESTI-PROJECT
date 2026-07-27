@@ -40,17 +40,4 @@ function CloudPlatforms() {
           <div className="cloud-about__card cloud-about__card--dark">
             <h3 className="cloud-about__card-title" style={{color: '#fff'}}>Cloud costs that reduce over time as your architecture is optimised, not grow unchecked as your operation scales.</h3>
             <div className="cloud-about__card-arrow">→</div>
-          </div>
-        </div>
-      </section>
-
-      <CloudServices />
-
-      <CtaBanner />
-      <JoinCta />
-      <Footer />
-    </main>
-  )
-}
-
 export default CloudPlatforms

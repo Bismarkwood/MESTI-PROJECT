@@ -336,7 +336,7 @@ function CefPs() {
 
           <div className="cefps-hero__right">
             <div className="cefps-hero__visual-frame">
-              <img src={sciledImg} alt="Ghana Circular Plastics Pilot Operations" className="cefps-hero__visual-img" />
+              <img src={cefPsPlaceholder} alt="Ghana Circular Plastics Pilot Operations" className="cefps-hero__visual-img" />
               <div className="cefps-hero__visual-badge">
                 <span className="cefps-visual-tag">Circularity in Action</span>
                 <strong className="cefps-visual-desc">11 SME Pilot Operations Across Ghana</strong>
@@ -384,7 +384,7 @@ function CefPs() {
         <div className="cefps-overview__container">
           <div className="cefps-overview__left">
             <div className="cefps-overview__img-wrap">
-              <img src={mappingImg} alt="Ghana Plastic Waste Interception" className="cefps-overview__img" />
+              <img src={cefPsPlaceholder} alt="Ghana Plastic Waste Interception" className="cefps-overview__img" />
               <div className="cefps-overview__img-caption">
                 <strong>National Capacity Building</strong>
                 <span>Supporting public-private coordination across municipal assemblies.</span>
@@ -753,7 +753,7 @@ function CefPs() {
               </div>
               <div className="cefps-res-card__visual">
                 <div className="cefps-update-photo-wrap">
-                  <img src={trafficImg} alt="CEF-PS Field Monitoring Visit" className="cefps-update-photo" />
+                  <img src={cefPsPlaceholder} alt="CEF-PS Field Monitoring Visit" className="cefps-update-photo" />
                   <div className="cefps-update-badge">
                     <strong>Latest Activity</strong>
                     <span>Ministerial &amp; Steering Committee Site Tour</span>
