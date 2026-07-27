@@ -629,12 +629,12 @@ export default function KnowledgeHub() {
 
       {/* 5. FEATURED RESOURCE */}
       <section className="kh-featured">
-        <div className="kh-container">
+        <div className="kh-featured__inner">
           <div className="kh-featured__card">
             <div className="kh-featured__cover-col">
               <div className="kh-featured-cover">
                 <div className="kh-featured-cover__header">
-                  <span className="kh-cover-tag kh-cover-tag--gold">FLAGSHIP PUBLICATION</span>
+                  <span className="kh-cover-tag kh-cover-tag--gold">★ FEATURED PUBLICATION</span>
                 </div>
                 <div className="kh-featured-cover__title">{FEATURED_RESOURCE.title}</div>
                 <div className="kh-featured-cover__sub">MESTI · CPF GHANA · 2026 ROADMAP</div>
