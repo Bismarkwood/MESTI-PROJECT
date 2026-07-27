@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import JoinCta from '../../components/JoinCta';
 import type { ResourceItem } from './knowledgeData';
 import {
   QUICK_CATEGORIES,
@@ -929,6 +930,12 @@ export default function KnowledgeHub() {
           </div>
         </div>
       </section>
+
+      {/* CTA BANNER */}
+      <JoinCta
+        heading="Building a Circular Plastics Economy Through Action"
+        description="Discover the enterprises, activities and resources contributing to the implementation of CEF-PS across Ghana."
+      />
 
       {/* 11. NEWSLETTER SECTION */}
       <section className="kh-newsletter">

@@ -54,13 +54,6 @@ const galleryImages = [
   { title: 'Recycled products or processing equipment', category: 'Innovation' },
 ]
 
-const reportingPrinciples = [
-  { title: 'Verified Data', icon: 'check' },
-  { title: 'Clear Periods', icon: 'calendar' },
-  { title: 'Target vs Result', icon: 'target' },
-  { title: 'Attribution', icon: 'tag' },
-]
-
 function Impact() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
@@ -275,40 +268,6 @@ function Impact() {
       </section>
 
       {/* ─── 7. MONITORING AND ACCOUNTABILITY ─── */}
-      <section className="impact-accountability" id="accountability">
-        <div className="impact-accountability__container">
-          <div className="impact-accountability__header">
-            <span className="impact-label impact-label--green">Evidence and Learning</span>
-            <h2 className="impact-section-title">Tracking Progress Responsibly</h2>
-            <p className="impact-accountability__subtitle">
-              Every figure we report is verified, time-stamped and clearly attributed to a specific programme.
-            </p>
-          </div>
-
-          <div className="impact-accountability__grid">
-            {reportingPrinciples.map((p, i) => (
-              <div key={i} className="impact-accountability-card impact-animate">
-                <div className="impact-accountability-card__icon">
-                  {p.icon === 'check' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                  {p.icon === 'calendar' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>}
-                  {p.icon === 'target' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>}
-                  {p.icon === 'tag' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>}
-                </div>
-                <h4 className="impact-accountability-card__title">{p.title}</h4>
-              </div>
-            ))}
-          </div>
-
-          <div className="impact-accountability__footer">
-            <Link to="/knowledge-hub" className="impact-btn impact-btn--primary">
-              View Reports
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </Link>
-            <span className="impact-accountability__updated">Last updated: June 2025</span>
-          </div>
-        </div>
-      </section>
-
       {/* ─── 8. IMPACT GALLERY ─── */}
       <section className="impact-gallery">
         <div className="impact-gallery__container">

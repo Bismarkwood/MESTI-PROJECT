@@ -1,7 +1,15 @@
 import bgImage from '../../assets/cta-banner-bg.jpg'
 import './JoinCta.css'
 
-function JoinCta() {
+interface JoinCtaProps {
+  heading?: string;
+  description?: string;
+}
+
+function JoinCta({ 
+  heading = "Be Part of Ghana’s Circular-Plastics Transition",
+  description = "Businesses, researchers, development partners, public institutions and communities all have a role to play."
+}: JoinCtaProps) {
   return (
     <section className="banner-cta" id="get-involved">
       {/* Background Image filling full width */}
@@ -26,11 +34,11 @@ function JoinCta() {
       {/* Content */}
       <div className="banner-cta__content">
         <h2 className="banner-cta__heading">
-          Be Part of Ghana’s Circular-Plastics Transition
+          {heading}
         </h2>
         
         <p className="banner-cta__desc">
-          Businesses, researchers, development partners, public institutions and communities all have a role to play.
+          {description}
         </p>
         
         <div className="banner-cta__buttons">
