@@ -49,9 +49,7 @@ function InsightsSection() {
       {/* Header */}
       <div className="knowledge-updates__header">
         <div className="knowledge-updates__header-left">
-          <div className="knowledge-updates__badge">
-            <span>Knowledge and Updates</span>
-          </div>
+
           <h2 className="knowledge-updates__title">
             Resources, News and Opportunities
           </h2>
