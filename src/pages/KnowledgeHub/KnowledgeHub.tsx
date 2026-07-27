@@ -267,7 +267,7 @@ export default function KnowledgeHub() {
 
       {/* 3. QUICK RESOURCE CATEGORIES */}
       <section className="kh-categories">
-        <div className="kh-container">
+        <div className="kh-categories__inner">
           <div className="kh-section-header kh-section-header--center">
             <h2 className="kh-section-title">Explore by Resource Type</h2>
           </div>
