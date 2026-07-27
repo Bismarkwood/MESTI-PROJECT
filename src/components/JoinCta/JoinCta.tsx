@@ -1,4 +1,4 @@
-import bgImage from '../../assets/CTA Banner/CTA.webp'
+import bgImage from '../../assets/cta-banner-bg.jpg'
 import './JoinCta.css'
 
 function JoinCta() {
