@@ -206,7 +206,7 @@ export default function KnowledgeHub() {
 
       {/* 2. KNOWLEDGE HUB HERO */}
       <section className="kh-hero">
-        <div className="kh-container kh-hero__inner">
+        <div className="kh-hero__inner">
           <div className="kh-hero__content">
             <span className="kh-label kh-label--light">KNOWLEDGE HUB</span>
             <h1 className="kh-hero__title">Knowledge for a Circular Plastics Future</h1>

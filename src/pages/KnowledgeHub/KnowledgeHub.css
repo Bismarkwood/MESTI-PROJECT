@@ -186,14 +186,14 @@
    2. HERO SECTION
    ========================================================================== */
 .kh-hero {
-  background-color: #17241F;
-  background-image: linear-gradient(to right, rgba(12, 59, 46, 0.9), rgba(23, 36, 31, 0.8)), url('../../assets/cta-banner-bg.jpg');
+  background-color: #000000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), url('../../assets/cta-banner-bg.jpg');
   background-size: cover;
   background-position: center;
   padding: 100px 0 120px;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid #0C3B2E;
+  border-bottom: 1px solid #111;
 }
 
 .kh-hero::before {
@@ -213,6 +213,8 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 60px;
   align-items: center;
+  max-width: 100%;
+  padding: 0 40px;
 }
 
 .kh-hero__title {
