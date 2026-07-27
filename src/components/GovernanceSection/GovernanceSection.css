@@ -1,0 +1,309 @@
+﻿/* ───────────────────────────────────────────────────────────────
+   GovernanceSection — full-viewport split with large hero image
+   behind dark overlay, floating partners card on the right
+──────────────────────────────────────────────────────────────── */
+
+.gov {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* ── Background image ── */
+.gov__bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.gov__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transform: scale(1.04);
+  transition: transform 8s ease-out;
+}
+
+.gov:hover .gov__bg-img {
+  transform: scale(1.0);
+}
+
+/* Deep dark overlay */
+.gov__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(4, 14, 8, 0.93) 0%,
+    rgba(4, 14, 8, 0.78) 50%,
+    rgba(4, 14, 8, 0.45) 100%
+  );
+}
+
+/* Subtle green tint layer */
+.gov__bg-tint {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 60%,
+    rgba(28, 122, 77, 0.22) 0%,
+    transparent 65%
+  );
+}
+
+/* ── Inner layout ── */
+.gov__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 120px 80px;
+}
+
+/* ── Left text content ── */
+.gov__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 580px;
+}
+
+/* Badge */
+.gov__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 18px;
+  border-radius: 100px;
+  background: rgba(28, 122, 77, 0.2);
+  border: 1px solid rgba(93, 212, 154, 0.35);
+  width: fit-content;
+}
+
+.gov__badge span {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5dd49a;
+}
+
+/* Heading */
+.gov__heading {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.gov__heading em {
+  font-style: normal;
+  color: #5dd49a;
+}
+
+/* Body paragraph */
+.gov__body {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+/* Note paragraph */
+.gov__note {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  padding-left: 14px;
+  border-left: 2px solid rgba(93, 212, 154, 0.35);
+}
+
+/* CTA button */
+.gov__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 16px 32px;
+  border-radius: 100px;
+  background: #1c7a4d;
+  color: #ffffff;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease,
+              transform 0.25s ease, box-shadow 0.25s ease;
+  margin-top: 8px;
+}
+
+.gov__btn:hover {
+  background: transparent;
+  border-color: #5dd49a;
+  color: #5dd49a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(28, 122, 77, 0.3);
+}
+
+.gov__btn-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.25s ease;
+}
+
+.gov__btn:hover .gov__btn-arrow {
+  transform: translateX(5px);
+}
+
+/* ── Right partners card ── */
+.gov__logos-panel {
+  width: 360px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+}
+
+.gov__logos-header {
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gov__logos-label {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5dd49a;
+}
+
+.gov__logos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 20px 20px 16px;
+}
+
+.gov__logo-item {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.gov__logo-item:hover {
+  background: rgba(255, 255, 255, 0.13);
+  transform: scale(1.05);
+}
+
+.gov__logo-item img {
+  width: 100%;
+  max-width: 68px;
+  max-height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.gov__logo-item:hover img {
+  opacity: 1;
+}
+
+.gov__logos-footer {
+  padding: 14px 24px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gov__logos-footer span {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.38);
+  font-style: italic;
+}
+
+/* ── Bottom accent bar ── */
+.gov__accent-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1c7a4d 0%, #5dd49a 50%, transparent 100%);
+  z-index: 3;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .gov__inner {
+    gap: 48px;
+    padding: 100px 48px;
+  }
+
+  .gov__logos-panel {
+    width: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .gov__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 40px 100px;
+    gap: 56px;
+  }
+
+  .gov__content {
+    max-width: 100%;
+  }
+
+  .gov__logos-panel {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .gov__bg-overlay {
+    background: rgba(4, 14, 8, 0.87);
+  }
+}
+
+@media (max-width: 600px) {
+  .gov__inner {
+    padding: 72px 24px 80px;
+  }
+
+  .gov__logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .gov__btn {
+    padding: 14px 26px;
+    font-size: 0.9rem;
+  }
+}

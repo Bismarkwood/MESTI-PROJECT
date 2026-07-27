@@ -1,0 +1,697 @@
+/* Default state */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, border-color 0.35s ease;
+}
+
+/* Scrolled state */
+.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+  padding: 16px 48px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Light variant — for pages with white backgrounds */
+.navbar--light {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.navbar--light .navbar__link {
+  color: rgba(15, 43, 31, 0.7);
+}
+
+.navbar--light .navbar__link:hover {
+  color: #0f2b1f;
+}
+
+/* When dropdown is open and navbar hasn't scrolled — give it a visible background */
+.navbar--dropdown-open:not(.navbar--scrolled):not(.navbar--light) {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.navbar--dropdown-open:not(.navbar--scrolled):not(.navbar--light) .navbar__link {
+  color: rgba(15, 43, 31, 0.7);
+}
+
+.navbar--dropdown-open:not(.navbar--scrolled):not(.navbar--light) .navbar__link:hover {
+  color: #0f2b1f;
+}
+
+.navbar--dropdown-open:not(.navbar--scrolled):not(.navbar--light) .navbar__logo-img {
+  filter: none !important;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.navbar__logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  transition: filter 0.35s ease;
+}
+
+.navbar__logo-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  transition: color 0.35s ease;
+}
+
+/* When scrolled or light navbar, make label text dark */
+.navbar--scrolled .navbar__logo-label,
+.navbar--light:not(.navbar--mobile-open) .navbar__logo-label {
+  color: #0f2b1f;
+}
+
+/* On hero (not scrolled) make logo white, but only when mobile menu is closed */
+.navbar:not(.navbar--scrolled):not(.navbar--mobile-open) .navbar__logo-img {
+  filter: brightness(0) invert(1);
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ─── Inline nav links ─── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar__link {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #1E8A00;
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 100%;
+}
+
+.navbar__link:hover {
+  color: #ffffff;
+}
+
+.navbar--scrolled .navbar__link {
+  color: rgba(15, 43, 31, 0.7);
+}
+
+.navbar--scrolled .navbar__link:hover {
+  color: #0f2b1f;
+}
+
+.navbar--scrolled .navbar__link::after {
+  background: #1E8A00;
+}
+
+.navbar__menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.navbar__menu-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: background 0.35s ease;
+}
+
+.navbar--scrolled .navbar__menu-line {
+  background: #0f2b1f;
+}
+
+.navbar__cta {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a6b4a, #2ea872);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navbar__cta:hover {
+  background: linear-gradient(135deg, #2ea872, #3fc98a);
+  transform: scale(1.08);
+}
+
+/* ─── 13-inch laptop (1280-1366px) ─── */
+@media (max-width: 1366px) {
+  .navbar {
+    padding: 20px 32px;
+  }
+
+  .navbar--scrolled {
+    padding: 14px 32px;
+  }
+
+  .navbar__links {
+    gap: 28px;
+  }
+
+  .navbar__link {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .navbar--scrolled {
+    padding: 14px 20px;
+  }
+
+  .navbar__logo-img {
+    height: 28px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__cta {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbar__cta-desktop {
+    display: none;
+  }
+}
+
+/* ─── Menu open state for navbar ─── */
+.navbar--menu-open .navbar__menu-line,
+.navbar--menu-open.navbar--scrolled .navbar__menu-line {
+  background: #ffffff;
+}
+
+.navbar--menu-open .navbar__logo-img,
+.navbar--mobile-open .navbar__logo-img {
+  filter: brightness(0) invert(1) !important;
+}
+.navbar--menu-open .navbar__logo-label,
+.navbar--mobile-open .navbar__logo-label {
+  color: #ffffff !important;
+}
+
+/* Hamburger → X animation */
+.navbar__menu-btn--open .navbar__menu-line:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.navbar__menu-btn--open .navbar__menu-line:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* ─── Full-page menu overlay ─── */
+.nav-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: #0c1210;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1),
+              visibility 0s linear 0.4s;
+}
+
+.nav-menu--open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1),
+              visibility 0s linear 0s;
+}
+
+.nav-menu__content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 48px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ─── Navigation links ─── */
+.nav-menu__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+.nav-menu--open .nav-menu__link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-menu__link-text {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu__link:hover .nav-menu__link-text {
+  color: #2ea872;
+}
+
+.nav-menu__link-plus {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu__link:hover .nav-menu__link-plus {
+  color: #2ea872;
+  transform: rotate(45deg);
+}
+
+/* ─── Contact info (right side) ─── */
+.nav-menu__info {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 20px;
+}
+
+.nav-menu__info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-menu__info-heading {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-subtitle);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.nav-menu__info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-menu__info-label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.nav-menu__info-value {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-body);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-menu__socials {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-menu__social {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-menu__social:hover {
+  color: #ffffff;
+  border-color: #2ea872;
+}
+
+/* ─── Mobile menu ─── */
+@media (max-width: 768px) {
+  .nav-menu__content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 100px 24px 32px;
+  }
+
+  .nav-menu__link-text {
+    font-size: 28px;
+  }
+
+  .nav-menu__link {
+    padding: 16px 0;
+  }
+}
+
+/* ─── Dropdown ─── */
+.navbar__link-dropdown-wrap {
+  position: relative;
+}
+
+.navbar__link--has-dropdown {
+  cursor: pointer;
+}
+
+.navbar__link-chevron {
+  font-size: 10px;
+  margin-left: 4px;
+  opacity: 0.6;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.navbar__link-dropdown-wrap:hover .navbar__link-chevron {
+  transform: rotate(180deg);
+}
+
+.navbar__dropdown {
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 0;
+  width: 260px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+  z-index: 999;
+}
+
+.navbar__dropdown--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s;
+}
+
+.navbar__dropdown-label {
+  display: none;
+}
+
+.navbar__dropdown-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+}
+
+.navbar__dropdown-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  outline: none;
+}
+
+.navbar__dropdown-card:hover {
+  transform: translateY(-2px);
+}
+
+.navbar__dropdown-card:focus-visible {
+  outline: 2px solid rgba(30, 138, 0, 0.35);
+  outline-offset: 6px;
+  border-radius: 14px;
+}
+
+.navbar__dropdown-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #666666;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar__dropdown-card:hover .navbar__dropdown-card-icon {
+  background: #e8e8e8;
+  color: #333333;
+}
+
+.navbar__dropdown-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__dropdown-card-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.navbar__dropdown-card:hover .navbar__dropdown-card-title {
+  color: #0f2b1f;
+}
+
+.navbar__dropdown-card-desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .navbar__dropdown {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar__dropdown {
+    display: none;
+  }
+}
+
+/* ─── Hamburger Button ─── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbar__hamburger-line {
+  width: 22px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+
+.navbar--scrolled .navbar__hamburger-line,
+.navbar--light .navbar__hamburger-line {
+  background: #0f2b1f;
+}
+
+.navbar--mobile-open .navbar__hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.navbar--mobile-open .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar--mobile-open .navbar__hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* ─── Mobile Menu Overlay ─── */
+.navbar__mobile-menu {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  backdrop-filter: none;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px;
+  gap: 4px;
+  animation: mobileMenuFade 0.3s ease;
+  z-index: 999;
+}
+
+@keyframes mobileMenuFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar__mobile-link {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f2b1f;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8ece9;
+  transition: color 0.2s ease;
+}
+
+.navbar__mobile-link:hover {
+  color: #1E8A00;
+}
+
+.navbar__mobile-cta {
+  display: block;
+  margin-top: 16px;
+  padding: 14px 28px;
+  background: #1E8A00;
+  border-radius: 999px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbar__mobile-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 138, 0, 0.3);
+}
+
+.navbar__mobile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.navbar__mobile-section-label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #9ca8a1;
+  padding: 12px 0 4px;
+}
+
+.navbar__mobile-link--sub {
+  font-size: 16px;
+  padding-left: 12px;
+  border-bottom: 1px solid #f0f2f1;
+}
+
+.navbar--mobile-open {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  padding: 14px 20px !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #e8ece9 !important;
+}
+
+.navbar--mobile-open .navbar__hamburger-line {
+  background: #0f2b1f !important;
+}
+
+@media (max-width: 768px) {
+  .navbar__hamburger {
+    display: flex;
+  }
+}

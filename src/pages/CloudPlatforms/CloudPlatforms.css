@@ -1,0 +1,409 @@
+/* ─── Hero ─── */
+.cloud-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cloud-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: cloudHeroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes cloudHeroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.cloud-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.cloud-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  padding-top: 28vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cloud-hero__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(40px, 7vw, 90px);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin: 0;
+  opacity: 0;
+  animation: cloudFadeUp 0.8s ease 0.3s forwards;
+}
+
+.cloud-hero__divider {
+  width: 100%;
+  max-width: 600px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 24px 0;
+  transform: scaleX(0);
+  animation: cloudDivGrow 0.6s ease 0.8s forwards;
+}
+
+.cloud-hero__sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-subtitle);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 560px;
+  opacity: 0;
+  animation: cloudFadeUp 0.8s ease 1s forwards;
+}
+
+.cloud-hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  opacity: 0;
+  animation: cloudFadeUp 0.6s ease 1.3s forwards;
+}
+
+.cloud-hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.cloud-hero__scroll-dot {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 1px;
+  height: 12px;
+  background: #ffffff;
+  animation: cloudScrollBounce 1.8s ease-in-out infinite;
+}
+
+.cloud-hero__scroll-text {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+@keyframes cloudFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cloudDivGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes cloudScrollBounce {
+  0% { top: -6px; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 42px; opacity: 0; }
+}
+
+/* ─── Overview Section ─── */
+.cloud-overview {
+  width: 100%;
+  background: #ffffff;
+  padding: 120px 48px 100px;
+}
+
+.cloud-overview__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.cloud-overview__heading {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  color: #0f2b1f;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin: 0;
+  max-width: 520px;
+  flex-shrink: 0;
+}
+
+.cloud-overview__sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: #5a6b63;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 380px;
+  padding-top: 8px;
+}
+
+/* Cards grid */
+.cloud-overview__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cloud-overview__card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cloud-overview__card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.cloud-overview__card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+}
+
+.cloud-overview__card-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.cloud-overview__card-tag {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #2ea872;
+  padding: 4px 10px;
+  border: 1px solid rgba(46, 168, 114, 0.3);
+  border-radius: 2px;
+}
+
+.cloud-overview__card-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-subtitle);
+  font-weight: 600;
+  color: #0f2b1f;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.cloud-overview__card-desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: #5a6b63;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── Tablet ─── */
+@media (max-width: 1024px) {
+  .cloud-overview {
+    padding: 80px 32px 60px;
+  }
+
+  .cloud-overview__header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cloud-overview__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .cloud-hero__title {
+    font-size: 36px;
+  }
+
+  .cloud-overview {
+    padding: 60px 20px 48px;
+  }
+}
+
+/* ─── Cloud About Section ─── */
+.cloud-about {
+  width: 100%;
+  padding: 80px 48px;
+  background: #0a0a0a;
+}
+
+.cloud-about__top {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 40px;
+  margin-bottom: 48px;
+  align-items: flex-start;
+}
+
+.cloud-about__tag {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cloud-about__heading {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.cloud-about__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.cloud-about__card {
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cloud-about__card--green {
+  background: #7aff5c;
+}
+
+.cloud-about__card--green .cloud-about__card-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0a0a0a;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.cloud-about__card--green .cloud-about__card-arrow {
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.3);
+  margin-top: auto;
+}
+
+.cloud-about__card-btn {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #0a0a0a;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: 16px;
+  transition: transform 0.2s ease;
+}
+
+.cloud-about__card-btn:hover {
+  transform: translateY(-1px);
+}
+
+.cloud-about__card--image {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  justify-content: flex-end;
+}
+
+.cloud-about__card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cloud-about__card-stat-num {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.cloud-about__card-stat-label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cloud-about__card--dark {
+  background: linear-gradient(135deg, #1E8A00 0%, #0f5500 100%);
+}
+
+.cloud-about__card--dark .cloud-about__card-stat-num {
+  font-size: 42px;
+}
+
+.cloud-about__card--dark .cloud-about__card-arrow {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cloud-about__top {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-about__cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cloud-about {
+    padding: 48px 20px;
+  }
+
+  .cloud-about__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-about__card {
+    min-height: 240px;
+  }
+}

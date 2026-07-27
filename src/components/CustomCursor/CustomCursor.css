@@ -1,0 +1,59 @@
+/* Hide default cursor on desktop */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Cursor dot (follows mouse exactly) */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #1E8A00;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-dot--hover {
+  width: 12px;
+  height: 12px;
+}
+
+/* Cursor ring (follows with delay) */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #1E8A00;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+.cursor-ring--hover {
+  width: 56px;
+  height: 56px;
+  background: rgba(30, 138, 0, 0.08);
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* Hide when cursor leaves viewport */
+.cursor-dot,
+.cursor-ring {
+  opacity: 1;
+}

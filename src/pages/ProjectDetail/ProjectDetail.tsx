@@ -1,0 +1,342 @@
+import { useParams, Link } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import forestTraceImg from '../../assets/cef-ps-placeholder.svg'
+import './ProjectDetail.css'
+import './ProjectCards.css'
+
+const projectsData: Record<string, {
+  name: string
+  subtitle: string
+  description: string
+  year: string
+  services: string
+  image: string
+  externalUrl?: string
+  client?: string
+  industry?: string
+  tools?: string
+  challenge?: string
+  intelligence?: string
+  whyItMatters?: string
+}> = {
+  'national-flood-intelligence-platform': {
+    name: 'BDG Flood Platform',
+    subtitle: 'National Flood Intelligence System',
+    description: 'A real-time flood monitoring and early warning system built for Ghana\'s National Disaster Management Organisation. Combines satellite data, rainfall intelligence, and spatial modelling to predict and communicate flood risk across all 16 regions.',
+    year: '2023',
+    services: 'Geospatial Intelligence, Data Platform, AI',
+    image: forestTraceImg,
+  },
+  'agricultural-yield-prediction-system': {
+    name: 'National Forest Monitoring System',
+    subtitle: 'Giving Ghana a live, satellite-powered view of its forests',
+    description: 'In partnership with the Forestry Commission and key stakeholders across Ghana\'s forestry and climate sector, we co-developed and deployed a national platform for tracking forest change, giving decision-makers timely, reliable intelligence on the ground.',
+    year: '2023',
+    services: 'Geospatial Platform Development, Satellite Data Processing, Emissions Analytics, Training & Capacity Building',
+    image: forestTraceImg,
+    client: 'Forestry Commission of Ghana',
+    industry: 'Environmental Protection / Climate & Forestry',
+    tools: 'AWS, Sentinel Satellite Data, GIS, Cloud-Based Geospatial Analysis',
+    challenge: 'Protecting a nation\'s forests means keeping watch over vast, often remote areas, and without a live, scalable way to monitor them, real change on the ground can go unnoticed until it\'s too late. Ghana\'s forestry and climate-change stakeholders needed a system that could turn satellite data into timely, trustworthy intelligence, at national scale. They also needed more than just a platform, they needed their own teams equipped to use it, interpret it, and apply it to real forest-management decisions. BigData Ghana Limited led the co-development, training, and deployment of the National Forest Monitoring System (NFMS), built on AWS to give Ghana a scalable, cloud-based view of its forest landscape.',
+    intelligence: 'We approached this as a partnership, not just a platform delivery. The Forestry Commission and other stakeholders needed a system built for Ghana\'s specific monitoring needs, and the skills in-house to keep using it effectively long after launch. Our process focused on: Built to Scale, using AWS\'s cloud infrastructure so the system can process any area of interest, nationwide. Real-Time Ground Truth, processing near-real-time Sentinel satellite data to catch change as it happens. Knowledge That Stays, training relevant users to run geospatial analyses and apply results themselves, not just hand over a tool.',
+    whyItMatters: 'Reliable National Monitoring: Track forest loss, gain, and degradation across any area of interest, at scale. Climate-Ready Reporting: Support Ghana\'s REDD+ and greenhouse gas emissions reporting with solid evidence. Local Capacity: Equip forestry and climate teams to run analyses and act on findings themselves. Key services include Cloud Platform Development, Satellite Data Processing with near-real-time Sentinel imagery, Emissions and REDD+ Analytics, and Training and Capacity Building for stakeholders.',
+  },
+  'real-time-logistics-optimisation': {
+    name: 'BigConnect AI',
+    subtitle: 'AI-Powered Virtual Receptionist',
+    description: 'Businesses lose valuable customers when calls go unanswered after working hours, during busy periods, or when staff are unavailable. In sectors like banking, healthcare, government, and SMEs, every missed call can mean a lost lead, delayed support request, or poor customer experience.',
+    year: '2025',
+    services: 'AI, Cloud Platform, Voice Intelligence',
+    image: forestTraceImg,
+    externalUrl: 'https://bigconnectai.bigdataghana.com/',
+    challenge: 'Businesses lose valuable customers when calls go unanswered after working hours, during busy periods, or when staff are unavailable. In sectors like banking, healthcare, government, and SMEs, every missed call can mean a lost lead, delayed support request, or poor customer experience.',
+    intelligence: 'BigConnect AI acts as an intelligent virtual receptionist that answers calls 24/7. Built on secure AWS infrastructure, it holds natural bilingual conversations in English and French, collects caller details, provides relevant business information, and understands the caller\'s intent. Powered by Amazon Bedrock Nova Pro, BigConnect AI maintains conversation context throughout the call and automatically generates clear, actionable summaries for follow-up.',
+    whyItMatters: 'BigConnect AI helps organizations deliver enterprise-level customer service at a much lower cost than traditional call center operations. Purpose-built for West African markets, it supports businesses that need reliable, bilingual, always-available communication. It is ideal for banking, healthcare, government services, insurance, hospitality, education, and SMEs that want to improve response time, capture more leads, and reduce customer service pressure.',
+  },
+  'spatial-data-infrastructure-for-mlnr': {
+    name: 'MLNR Spatial Platform',
+    subtitle: 'Spatial Data Infrastructure',
+    description: 'A national-scale spatial data infrastructure built for the Ministry of Lands and Natural Resources. Digitises land records, maps boundaries, and provides geospatial decision support for land administration.',
+    year: '2022',
+    services: 'Geospatial Intelligence, Cloud Platform',
+    image: forestTraceImg,
+  },
+  'climate-risk-assessment-tool': {
+    name: 'Indomie Scratch-Card Promotion Analysis',
+    subtitle: 'Turning promotion data into a clear picture of where demand is strongest',
+    description: 'For Indomie\'s scratch-card promotion, we turned raw participation data into a clear regional story, showing exactly where demand was strongest and where new opportunity was waiting.',
+    year: '2024',
+    services: 'Data Cleaning, Regional Analysis, Trend Analysis, Data Visualisation & Reporting',
+    image: forestTraceImg,
+    client: 'Indomie',
+    industry: 'Fast-Moving Consumer Goods (FMCG)',
+    tools: 'Data Analytics Tools, Data Visualisation Software',
+    challenge: 'A nationwide promotion generates a flood of participation data, but on its own, that data doesn\'t tell you much. Without cleaning, organising, and analysing it properly, it\'s hard to know which regions responded strongly, where interest is lagging, or what the numbers mean for future campaigns. Indomie needed to go beyond raw scratch-card numbers and understand the real story behind consumer participation across Ghana\'s regions. BigData Ghana Limited took on the analysis, cleaning and organising the promotional data to surface clear regional patterns Indomie could act on.',
+    intelligence: 'We treated this as a "data into decisions" problem. The scratch-card numbers were already there, what mattered was cleaning them up, organising them properly, and telling a clear regional story that management could actually use. Our process focused on: Getting the Data Right, cleaning and validating participation records so the findings could be trusted. Seeing the Regional Story, breaking demand down by region to reveal where interest was strongest. Insights Made Actionable, presenting findings in a way that directly supports marketing and distribution decisions.',
+    whyItMatters: 'Understand Regional Demand: See clearly where consumer participation and product interest were strongest. Spot Opportunity: Identify regions with room to grow through marketing or distribution. Inform Future Campaigns: Use real participation data to plan smarter promotions going forward. Key services include Data Cleaning and Validation, Regional Demand Analysis, Trend and Pattern Identification, and Insight Visualisation and Reporting.',
+  },
+  'sendline-sms': {
+    name: 'SendLine SMS',
+    subtitle: 'Bulk SMS and Communication Platform',
+    description: 'Businesses need to reach customers quickly, but communication is often scattered, slow, or unreliable. Sending alerts, promotions, reminders, and verification codes manually can lead to delays, missed messages, poor tracking, and weak customer engagement.',
+    year: '2025',
+    services: 'Cloud Platform, API, Communication',
+    image: forestTraceImg,
+    externalUrl: 'https://sendlinesms.com/',
+    challenge: 'Businesses need to reach customers quickly, but communication is often scattered, slow, or unreliable. Sending alerts, promotions, reminders, and verification codes manually can lead to delays, missed messages, poor tracking, and weak customer engagement.',
+    intelligence: 'SendLineSMS provides a powerful and user-friendly messaging platform for fast, secure, and scalable SMS communication. Businesses can send bulk messages, schedule campaigns, create reusable message templates, and track delivery in real time. The platform also supports OTP integration for secure user authentication and offers a robust REST API that connects easily with websites, mobile apps, CRMs, ERPs, and other business systems.',
+    whyItMatters: 'SendLineSMS helps businesses communicate faster, improve customer engagement, and support secure digital transactions. With high uptime reliability, local pricing support, delivery tracking, and easy integration, it gives organizations a dependable communication channel at scale. It is ideal for SMEs, banks, schools, churches, hospitals, fintechs, e-commerce platforms, government agencies, NGOs, and service-based businesses that need instant and reliable SMS communication.',
+  },
+  'maize-intelligence': {
+    name: 'Maize Intelligence',
+    subtitle: 'Know your yield before harvest day',
+    description: 'Enter a few details about your farm and crop and we will give you a production estimate you can actually plan around. Supports multiple crop types. No guesswork, no surprises.',
+    year: '2025',
+    services: 'AI, Data Analytics, Agriculture',
+    image: forestTraceImg,
+    challenge: 'Harvest uncertainty is expensive. Farmers over-store or under-prepare. Agribusinesses miss procurement windows. Institutions report late or inaccurately. Our app gives you reliable yield projections weeks before harvest, so none of that happens.',
+    intelligence: 'Yield estimates based on farm size, crop type, planting data, and field observations. Sample measurement inputs for higher accuracy. Supports multiple crop types in one place. Clean, simple interface that needs no training. Outputs you can share, export, and report on.',
+    whyItMatters: 'Plan how much storage you will need before the harvest rush. Secure buyers and negotiate prices early. Set realistic budgets for the season ahead. Arrange transport and logistics without the last-minute scramble. Submit accurate production reports on time. Built for smallholder farmers, agribusinesses coordinating procurement, researchers tracking production data, and agricultural institutions managing reporting and policy decisions. Estimate. Plan. Grow.',
+  },
+  'vehicle-traffic-enforcement': {
+    name: 'MTTD Traffic Enforcement App',
+    subtitle: 'A smarter, fairer way to keep Ghana\'s roads safe and accountable',
+    description: 'For the Ghana Police Service\'s Motor Traffic and Transport Department, we built a digital platform that replaces paperwork and guesswork with speed, transparency, and trust.',
+    year: '2024',
+    services: 'Mobile App Development, Case & Evidence Management, Reporting & Analytics, Digital Payments',
+    image: forestTraceImg,
+    client: 'Ghana Police Service - Motor Traffic and Transport Department (MTTD)',
+    industry: 'Public Safety / Government',
+    tools: 'Cloud Infrastructure, GIS Mapping, Mobile Technology, Data Analytics',
+    challenge: 'Traffic enforcement in Ghana has long relied on paper records and manual checks, a system that slows officers down and makes it easy for details to fall through the cracks. Verifying a vehicle or driver can take too long, repeat offenders are hard to track, and evidence like photos or witness notes often isn\'t captured or stored reliably. The result is an enforcement system that struggles to keep pace with the roads it\'s meant to protect, and a public that isn\'t always confident the process is fair or consistent. BigData Ghana Limited partnered with MTTD to build a platform that puts every officer, vehicle, and case on one connected system, fast, transparent, and built for accountability.',
+    intelligence: 'We approached this as a trust problem as much as a technology one. Officers needed a tool that made their job faster, not more complicated, and the public needed confidence that enforcement was consistent and fair. Our process focused on: Built for the Field, designing an app officers can actually use standing at the roadside, even with limited connectivity. Nothing Lost, Nothing Hidden, making sure every case comes with a clear, reliable trail of evidence. Clarity for Leadership, giving supervisors an easy way to see what\'s happening across the whole system, in real time.',
+    whyItMatters: 'Faster, Fairer Enforcement: Give officers the tools to verify vehicles and drivers in seconds, not minutes. Reliable Evidence: Make sure every photo, location, and detail is captured and safely stored, every time. Public Trust: Build a system that\'s consistent, transparent, and easy for citizens to trust. Key services include a Mobile Enforcement App for roadside use, Digital Case and Evidence Management, Smart Reporting and Insights, and Digital Payments and Reconciliation.',
+  },
+  'gis-rs-solution-elections': {
+    name: 'GIS Elections Platform',
+    subtitle: 'Putting every polling station, route, and voter on one clear map',
+    description: 'For electoral authorities managing the scale and complexity of a national election, we built a platform that turns scattered data into one clear, reliable picture, before, during, and after election day.',
+    year: '2024',
+    services: 'GIS Platform Development, Satellite Analysis, Field Data Tools, Election Monitoring',
+    image: forestTraceImg,
+    client: 'Electoral Management Authority',
+    industry: 'Public Sector / Elections & Governance',
+    tools: 'GIS, Satellite Imagery, Mobile Data Collection, Real-Time Dashboards',
+    challenge: 'Running an election means keeping track of thousands of moving pieces, polling stations, voters, routes, personnel, and materials, spread across the entire country. Without a connected view of all this, it\'s easy for gaps to slip through: some communities end up underserved, materials arrive late, and problems on election day are hard to spot until it\'s too late. Electoral authorities needed a way to see the whole picture clearly, plan ahead with confidence, and respond quickly when something goes wrong. BigData Ghana Limited built a GIS and satellite-powered platform to bring every part of the election onto one map, so planning is sharper, logistics run smoother, and nothing falls through the cracks.',
+    intelligence: 'We treated this as a visibility problem first. Electoral teams needed to see the whole country clearly, not just on a map, but in a way that made planning, logistics, and response genuinely easier. Our process focused on: One Clear Picture, bringing polling stations, boundaries, and voter data together in a single, easy-to-read view. Reaching Every Community, using the map to spot hard-to-reach areas early, so no one gets left out. Eyes on Election Day, giving command centres real-time visibility so issues can be caught and handled quickly.',
+    whyItMatters: 'Clearer Planning: Give electoral teams a full, accurate picture of polling stations and voter distribution. Smoother Logistics: Make sure materials and personnel reach every location, even the hardest to access. Faster Response: Spot and react to problems on election day before they become bigger issues. Key services include an Interactive Mapping Platform, Satellite-Powered Insights, Field Data Tools for real-time reporting, and Live Election Monitoring dashboards.',
+  },
+  'route-advisor': {
+    name: 'Route Advisor',
+    subtitle: 'Getting viral-load specimens to the lab, faster and on time',
+    description: 'For healthcare facilities and testing laboratories across Ghana, we built a smarter way to move viral-load specimens, so results reach patients faster, not days later.',
+    year: '2024',
+    services: 'GIS Routing, Route Optimisation, Collection & Delivery Tracking, Monitoring & Reporting',
+    image: forestTraceImg,
+    client: 'BigData Ghana Limited',
+    industry: 'Healthcare / Diagnostics Logistics',
+    tools: 'GIS, Routing & Optimisation Algorithms, Mobile Tracking',
+    challenge: 'Getting a specimen from a healthcare facility to the right testing lab sounds simple, but across Ghana\'s network of facilities, it often isn\'t. Couriers may not know exactly when specimens are ready, which routes make sense, or how to prioritise multiple pickups within a tight time window, and every delay pushes back diagnosis for a patient waiting on results. Healthcare facilities and courier teams needed a better way to stay coordinated and move specimens quickly, without relying on manual back-and-forth. BigData Ghana Limited built Route Advisor to connect facilities and couriers on one platform, so specimens move efficiently, and nothing sits waiting longer than it should.',
+    intelligence: 'We treated this as a coordination problem first. The real challenge wasn\'t just plotting a route, it was making sure facilities, couriers, and coordinators were all working from the same, real-time information. Our process focused on: Ready-to-Go Notifications, making sure couriers know the moment a specimen is ready for pickup. Smarter Routes, Not Just Shorter Ones, optimising for delivery deadlines, not just distance. Nothing Left Behind, giving coordinators visibility to spot delayed or pending collections before they become a problem.',
+    whyItMatters: 'Faster Specimen Delivery: Get viral-load specimens to testing sites within the required time, every time. Better Coordination: Connect healthcare facilities and couriers so nothing falls through the cracks. Full Visibility: Give coordinators a clear view of collections, deliveries, and delays as they happen. Key services include GIS-Based Routing, Smart Route Optimisation, Collection and Delivery Tracking, and a Central Monitoring Dashboard.',
+  },
+  'foresttrace-ai': {
+    name: 'ForestTrace AI',
+    subtitle: 'Satellite-verified proof of where cocoa and gold really come from',
+    description: 'For exporters, cooperatives, and mining operators across Ghana\'s cocoa and gold sectors, we built a platform that turns satellite data into trusted, verifiable proof of origin.',
+    year: '2025',
+    services: 'Platform Design, Satellite Monitoring, Compliance Reporting, Cloud Infrastructure',
+    image: forestTraceImg,
+    client: 'BigData Ghana Limited',
+    industry: 'Agriculture & Mining / Sustainability',
+    tools: 'AWS, Satellite Imaging, Mapping Technology, AI',
+    challenge: 'Across cocoa and gold supply chains, it\'s hard to know for certain where a product really came from. Farms and mining sites often go unmapped, environmental conditions go unmonitored, and there\'s rarely solid proof to back up a claim of "responsibly sourced." For cocoa exporters and their buyers in Europe, that uncertainty is becoming a real business risk as new environmental regulations demand proof, not promises. Gold faces a similar trust gap, especially among smaller-scale mining operations where provenance is hard to establish. BigData Ghana Limited built ForestTrace AI to close that gap, giving every farm, mine, and shipment a verifiable story, backed by evidence instead of paperwork.',
+    intelligence: 'We treated this as a trust problem first, a technology problem second. Farmers and small mining operators needed a way to prove their story without extra hassle, while buyers and regulators needed that proof handed to them in a way they could act on immediately. Our process focused on: Simplicity at the Ground Level, making it effortless for farmers and field teams to register a location, with no special skills required. Smart Monitoring, using satellite data to quietly flag deforestation or risk, so nothing slips through unnoticed. A Clear Story, Start to Finish, following each product\'s journey from origin to buyer, so trust is built in at every step.',
+    whyItMatters: 'Trusted Origins: Give producers a credible way to prove where their product actually comes from. Compliance Made Simple: Help exporters meet strict international sourcing rules without turning it into a technical burden. Buyer Confidence: Make it easy for international buyers and regulators to trust what they\'re sourcing. Key services provided include Platform Design and Build, Satellite Monitoring, AI-Powered Insights turning raw satellite and land data into clear risk signals automatically, and Compliance Reporting turning complex data into clear, shareable proof of responsible sourcing.',
+  },
+}
+
+function ProjectDetail() {
+  const { slug } = useParams<{ slug: string }>()
+  const project = slug ? projectsData[slug] : null
+  const mainRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const main = mainRef.current
+    if (!main) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('project-detail--visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    const elements = main.querySelectorAll('.project-detail__section, .project-detail__image, .project-detail__image-split, .project-detail__related')
+    elements.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [project])
+
+  if (!project) {
+    return (
+      <main>
+        <Navbar />
+        <div style={{ padding: '200px 48px 100px', textAlign: 'center' }}>
+          <h1>Project not found</h1>
+        </div>
+        <Footer />
+      </main>
+    )
+  }
+
+  return (
+    <main className="project-detail" ref={mainRef}>
+      <Navbar light />
+
+      {/* Hero */}
+      <section className="project-detail__hero">
+        <div className="project-detail__title-wrap">
+          <h1 className="project-detail__name">{project.name}</h1>
+          <h2 className="project-detail__subtitle">{project.subtitle}</h2>
+        </div>
+        <p className="project-detail__desc">{project.description}</p>
+      </section>
+
+      {/* Meta row */}
+      <div className="project-detail__meta">
+        <div className="project-detail__meta-item">
+          <span className="project-detail__meta-label">Year</span>
+          <span className="project-detail__meta-value">{project.year}</span>
+        </div>
+        <div className="project-detail__meta-item">
+          <span className="project-detail__meta-label">Services</span>
+          <span className="project-detail__meta-value">{project.services}</span>
+        </div>
+        {project.externalUrl && (
+          <div className="project-detail__meta-item">
+            <span className="project-detail__meta-label">Website</span>
+            <a href={project.externalUrl} target="_blank" rel="noopener noreferrer" className="project-detail__meta-link">
+              Visit {project.name} ↗
+            </a>
+          </div>
+        )}
+      </div>
+
+      {/* Full width image */}
+      <section className="project-detail__image">
+        <img src={project.image} alt={project.subtitle} />
+      </section>
+
+      {/* Challenge section */}
+      <section className="project-detail__section">
+        <span className="project-detail__section-num">(01)</span>
+        <h3 className="project-detail__section-label">CHALLENGE</h3>
+        <p className="project-detail__section-text">
+          {project.challenge || project.description}
+        </p>
+      </section>
+
+      {/* Second full width image */}
+      <section className="project-detail__image">
+        <img src={project.image} alt={project.subtitle} />
+      </section>
+
+      {/* Intelligence applied section */}
+      <section className="project-detail__section">
+        <span className="project-detail__section-num">(02)</span>
+        <h3 className="project-detail__section-label">Intelligence applied</h3>
+        <p className="project-detail__section-text">
+          {project.intelligence || 'Spatial flood modelling over the specific development corridor.'}
+        </p>
+      </section>
+
+      {/* Split image section */}
+      <section className="project-detail__image-split">
+        <div className="project-detail__image-half">
+          <img src={project.image} alt="" />
+        </div>
+        <div className="project-detail__image-half">
+          <img src={project.image} alt="" />
+        </div>
+      </section>
+
+      {/* Why it matters section */}
+      <section className="project-detail__section">
+        <span className="project-detail__section-num">(03)</span>
+        <h3 className="project-detail__section-label">Why it matters</h3>
+        <p className="project-detail__section-text">
+          {project.whyItMatters || 'Site and development risk can be priced out before a decision is finalised.'}
+        </p>
+      </section>
+
+      {/* Project Overview (if available) */}
+      {(project.client || project.industry || project.tools) && (
+        <section className="project-detail__overview">
+          <h3 className="project-detail__overview-title">Project Overview</h3>
+          <div className="project-detail__overview-grid">
+            {project.client && (
+              <div className="project-detail__overview-item">
+                <span className="project-detail__overview-label">Client</span>
+                <span className="project-detail__overview-value">{project.client}</span>
+              </div>
+            )}
+            {project.industry && (
+              <div className="project-detail__overview-item">
+                <span className="project-detail__overview-label">Industry</span>
+                <span className="project-detail__overview-value">{project.industry}</span>
+              </div>
+            )}
+            <div className="project-detail__overview-item">
+              <span className="project-detail__overview-label">Services</span>
+              <span className="project-detail__overview-value">{project.services}</span>
+            </div>
+            {project.tools && (
+              <div className="project-detail__overview-item">
+                <span className="project-detail__overview-label">Tools Used</span>
+                <span className="project-detail__overview-value">{project.tools}</span>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Related Projects */}
+      <section className="project-detail__related">
+        <div className="project-detail__related-header">
+          <h3 className="project-detail__related-title">Related Projects</h3>
+          <Link to="/projects" className="project-detail__related-link">All Projects →</Link>
+        </div>
+        <div className="proof-projects__grid">
+          {[
+            { title: 'ForestTrace AI Ghana', image: forestTraceImg, slug: 'foresttrace-ai' },
+            { title: 'MTTD Traffic Enforcement', image: forestTraceImg, slug: 'vehicle-traffic-enforcement' },
+            { title: 'GIS Elections Platform', image: forestTraceImg, slug: 'gis-rs-solution-elections' },
+          ]
+            .filter(item => item.slug !== slug)
+            .map((item, i) => (
+              <Link to={`/projects/${item.slug}`} className="proof-projects__card proof-projects__card--clickable" key={i}>
+                <div className="proof-projects__card-img">
+                  <img src={item.image} alt={item.title} className="proof-projects__card-image" />
+                </div>
+                <div className="proof-projects__card-info">
+                  <span className="proof-projects__card-tag">{item.title}</span>
+                </div>
+              </Link>
+            ))}
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  )
+}
+
+export default ProjectDetail

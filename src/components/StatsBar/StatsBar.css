@@ -1,0 +1,167 @@
+.stats-bar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 32px 48px;
+}
+
+.stats-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.stats-bar__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f2b1f;
+  white-space: nowrap;
+}
+
+.stats-bar__divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.stats-bar__logos {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  width: max-content;
+  animation: partnerScroll 20s linear infinite;
+}
+
+.stats-bar__logos img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.stats-bar__logos img[alt="UNIDO"],
+.stats-bar__logos img[alt="EPA"] {
+  height: 48px;
+}
+
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .stats-bar {
+    padding: 28px 32px;
+  }
+
+  .stats-bar__logos {
+    gap: 24px;
+  }
+
+  .stats-bar__logos img {
+    height: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .stats-bar {
+    padding: 20px 16px;
+  }
+
+  .stats-bar__inner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .stats-bar__title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .stats-bar__divider {
+    display: none;
+  }
+
+  .stats-bar__logos {
+    gap: 40px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 4px;
+    animation: partnerScroll 12s linear infinite;
+    width: max-content;
+  }
+
+  .stats-bar__logos img {
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .stats-bar__logos img[alt="UNIDO"],
+  .stats-bar__logos img[alt="EPA"] {
+    height: 30px;
+  }
+}
+
+/* ─── Cloud Stats Bar (Certification Section) ─── */
+.stats-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stats-bar__aws-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.stats-bar__label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #5a6b63;
+  white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .stats-bar__aws-logo {
+    height: 32px;
+  }
+
+  .stats-bar__label {
+    font-size: 11px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .stats-bar__item {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .stats-bar__aws-logo {
+    height: 28px;
+  }
+
+  .stats-bar__label {
+    font-size: 10px;
+    white-space: normal;
+  }
+}
+
+@keyframes partnerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}

@@ -1,0 +1,105 @@
+.hero-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 56px;
+  text-decoration: none;
+  color: #ffffff;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.hero-cta-text {
+  height: 56px;
+  padding: 0 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1E8A00;
+  border-radius: 999px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-cta);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.hero-cta-circle {
+  width: 56px;
+  height: 56px;
+  margin-left: 2px;
+  border-radius: 50%;
+  background: #1E8A00;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Remove pseudo-element */
+.hero-cta::after {
+  display: none;
+  content: none;
+}
+
+.hero-cta-arrow {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 1;
+  color: #ffffff;
+  transform: rotate(-45deg);
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Hover — circle separates, arrow rotates */
+.hero-cta:hover .hero-cta-circle {
+  transform: translateX(18px);
+}
+
+.hero-cta:hover .hero-cta-arrow {
+  transform: rotate(0deg) translateX(3px);
+}
+
+/* Active press */
+.hero-cta:active .hero-cta-circle {
+  transform: translateX(14px) scale(0.96);
+}
+
+/* Secondary variant (glassmorphism outline) */
+.hero-cta--secondary .hero-cta-text,
+.hero-cta--secondary .hero-cta-circle {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+}
+
+.hero-cta--secondary:hover .hero-cta-text,
+.hero-cta--secondary:hover .hero-cta-circle {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-cta {
+    height: 48px;
+  }
+
+  .hero-cta-text {
+    height: 48px;
+    padding: 0 26px;
+    font-size: 14px;
+  }
+
+  .hero-cta-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero-cta-arrow {
+    font-size: 20px;
+  }
+}

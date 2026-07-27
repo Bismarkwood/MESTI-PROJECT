@@ -1,0 +1,262 @@
+/* ─── Career Detail Hero ─── */
+.career-detail__hero {
+  width: 100%;
+  padding: 140px 48px 60px;
+  background: #0a0a0a;
+}
+
+.career-detail__tag {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1E8A00;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.career-detail__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin: 0 0 24px;
+}
+
+.career-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.career-detail__meta-item {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Content ─── */
+.career-detail__content {
+  width: 100%;
+  padding: 80px 48px;
+}
+
+.career-detail__split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.career-detail__left {
+  border: 1px solid #e8ece9;
+  border-radius: 16px;
+  padding: 48px 40px;
+}
+
+.career-detail__section {
+  margin-bottom: 40px;
+}
+
+.career-detail__section:last-child {
+  margin-bottom: 0;
+}
+
+.career-detail__section h2 {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f2b1f;
+  margin: 0 0 16px;
+}
+
+.career-detail__section p {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #5a6b63;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.career-detail__section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.career-detail__section li {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #5a6b63;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.career-detail__section li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1E8A00;
+}
+
+/* ─── Form Card ─── */
+.career-detail__right {
+  position: sticky;
+  top: 100px;
+}
+
+.career-detail__form-card {
+  border: 1px solid #e8ece9;
+  border-radius: 16px;
+  padding: 40px 32px;
+  background: #f5f5f5;
+}
+
+.career-detail__form-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f2b1f;
+  margin: 0 0 8px;
+}
+
+.career-detail__form-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a6b63;
+  margin: 0 0 32px;
+}
+
+.career-detail__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.career-detail__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.career-detail__form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.career-detail__form-field label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f2b1f;
+}
+
+.career-detail__form-field label span {
+  color: #1E8A00;
+}
+
+.career-detail__form-field input,
+.career-detail__form-field textarea {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #e8ece9;
+  border-radius: 10px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  color: #0f2b1f;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.career-detail__form-field input:focus,
+.career-detail__form-field textarea:focus {
+  border-color: #1E8A00;
+}
+
+.career-detail__form-field input::placeholder,
+.career-detail__form-field textarea::placeholder {
+  color: #9ca8a1;
+}
+
+.career-detail__form-field textarea {
+  height: auto;
+  padding: 14px;
+  resize: vertical;
+}
+
+.career-detail__form-btn {
+  width: 100%;
+  height: 52px;
+  background: #0f2b1f;
+  color: #ffffff;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.career-detail__form-btn:hover {
+  background: #1E8A00;
+  transform: translateY(-1px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .career-detail__split {
+    grid-template-columns: 1fr;
+  }
+
+  .career-detail__right {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-detail__hero {
+    padding: 120px 20px 40px;
+  }
+
+  .career-detail__title {
+    font-size: 36px;
+  }
+
+  .career-detail__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .career-detail__content {
+    padding: 48px 20px;
+  }
+
+  .career-detail__left {
+    padding: 32px 20px;
+  }
+
+  .career-detail__form-card {
+    padding: 32px 20px;
+  }
+
+  .career-detail__form-row {
+    grid-template-columns: 1fr;
+  }
+}

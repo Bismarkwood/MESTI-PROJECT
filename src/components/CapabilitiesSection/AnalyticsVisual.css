@@ -1,0 +1,179 @@
+.analytics-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.analytics-visual__svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* AI Core pulse */
+.analytics-visual__core {
+  animation: corePulse 3.5s ease-in-out infinite;
+  transform-origin: 250px 200px;
+}
+
+@keyframes corePulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Neural ring spin */
+.analytics-visual__neural-ring {
+  animation: neuralSpin 8s linear infinite;
+  transform-origin: 250px 200px;
+}
+
+@keyframes neuralSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Node blink */
+.analytics-visual__node--1 { animation: nodeBlink 2.5s ease-in-out infinite; }
+.analytics-visual__node--2 { animation: nodeBlink 2.5s ease-in-out infinite 0.8s; }
+.analytics-visual__node--3 { animation: nodeBlink 2.5s ease-in-out infinite 1.6s; }
+
+@keyframes nodeBlink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Chart draw */
+.analytics-visual__chart-line {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: chartDraw 3s ease-in-out infinite;
+}
+
+@keyframes chartDraw {
+  0% { stroke-dashoffset: 120; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -120; }
+}
+
+/* Prediction line */
+.analytics-visual__predict-line {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: predictDraw 3s ease-in-out infinite 0.8s;
+}
+
+@keyframes predictDraw {
+  0% { stroke-dashoffset: 50; opacity: 0; }
+  40% { stroke-dashoffset: 0; opacity: 0.7; }
+  70% { stroke-dashoffset: 0; opacity: 0.7; }
+  100% { stroke-dashoffset: -50; opacity: 0; }
+}
+
+/* Anomaly pulse */
+.analytics-visual__anomaly {
+  animation: anomalyPulse 3s ease-in-out infinite 1.2s;
+}
+
+@keyframes anomalyPulse {
+  0%, 70%, 100% { opacity: 0; transform: scale(0.5); }
+  40%, 60% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Decision marker */
+.analytics-visual__decision {
+  animation: decisionAppear 3.5s ease-in-out infinite 1.5s;
+}
+
+@keyframes decisionAppear {
+  0%, 60%, 100% { opacity: 0; transform: scale(0.6); }
+  35%, 55% { opacity: 1; transform: scale(1); }
+}
+
+/* Data particle flow */
+.analytics-visual__particle--in1 {
+  animation: particleIn1 2.8s ease-in-out infinite;
+}
+.analytics-visual__particle--in2 {
+  animation: particleIn2 3.2s ease-in-out infinite 0.5s;
+}
+.analytics-visual__particle--in3 {
+  animation: particleIn3 3s ease-in-out infinite 1s;
+}
+.analytics-visual__particle--out1 {
+  animation: particleOut1 3s ease-in-out infinite 1.5s;
+}
+.analytics-visual__particle--out2 {
+  animation: particleOut2 3.2s ease-in-out infinite 1.8s;
+}
+
+@keyframes particleIn1 {
+  0% { opacity: 0; cx: 60; cy: 150; }
+  20% { opacity: 1; }
+  80% { opacity: 1; cx: 220; cy: 195; }
+  100% { opacity: 0; cx: 250; cy: 200; }
+}
+
+@keyframes particleIn2 {
+  0% { opacity: 0; cx: 80; cy: 280; }
+  20% { opacity: 1; }
+  80% { opacity: 1; cx: 230; cy: 210; }
+  100% { opacity: 0; cx: 250; cy: 200; }
+}
+
+@keyframes particleIn3 {
+  0% { opacity: 0; cx: 100; cy: 100; }
+  20% { opacity: 1; }
+  80% { opacity: 1; cx: 235; cy: 190; }
+  100% { opacity: 0; cx: 250; cy: 200; }
+}
+
+@keyframes particleOut1 {
+  0% { opacity: 0; cx: 250; cy: 200; }
+  20% { opacity: 1; cx: 280; cy: 185; }
+  80% { opacity: 1; cx: 390; cy: 130; }
+  100% { opacity: 0; cx: 420; cy: 110; }
+}
+
+@keyframes particleOut2 {
+  0% { opacity: 0; cx: 250; cy: 200; }
+  20% { opacity: 1; cx: 280; cy: 210; }
+  80% { opacity: 1; cx: 380; cy: 260; }
+  100% { opacity: 0; cx: 420; cy: 280; }
+}
+
+/* Dashboard card */
+.analytics-visual__card {
+  animation: cardFade 3.5s ease-in-out infinite 1s;
+}
+
+@keyframes cardFade {
+  0%, 20%, 100% { opacity: 0; transform: translateY(4px); }
+  40%, 80% { opacity: 0.8; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analytics-visual__core,
+  .analytics-visual__neural-ring,
+  .analytics-visual__node--1,
+  .analytics-visual__node--2,
+  .analytics-visual__node--3,
+  .analytics-visual__chart-line,
+  .analytics-visual__predict-line,
+  .analytics-visual__anomaly,
+  .analytics-visual__decision,
+  .analytics-visual__particle--in1,
+  .analytics-visual__particle--in2,
+  .analytics-visual__particle--in3,
+  .analytics-visual__particle--out1,
+  .analytics-visual__particle--out2,
+  .analytics-visual__card {
+    animation: none;
+    opacity: 0.8;
+  }
+  .analytics-visual__chart-line,
+  .analytics-visual__predict-line {
+    stroke-dashoffset: 0;
+  }
+}

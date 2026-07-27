@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --text: #3d5a4e;
+  --text-heading: #0f2b1f;
+  --bg: #ffffff;
+  --accent: #1a6b4a;
+  --accent-light: #2ea872;
+  --font: 'Manrope', system-ui, sans-serif;
+
+  /* Type scale */
+  --fs-display: clamp(40px, 5vw, 80px);
+  --fs-h1: clamp(32px, 4.5vw, 64px);
+  --fs-h2: clamp(20px, 2vw, 28px);
+  --fs-subtitle: clamp(15px, 1.2vw, 18px);
+  --fs-body: clamp(14px, 1.1vw, 16px);
+  --fs-small: 13px;
+  --fs-cta: 16px;
+}
+
+/* Hide scrollbar */
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Performance: GPU-accelerate common animations */
+img, video {
+  content-visibility: auto;
+}
+
+/* Lazy decode images */
+img[loading="lazy"] {
+  decoding: async;
+}
+
+body {
+  margin: 0;
+}
+
+/* ─── 13-inch laptop viewport adjustments ─── */
+@media (max-width: 1366px) {
+  :root {
+    --fs-display: clamp(36px, 4.5vw, 64px);
+    --fs-h1: clamp(28px, 4vw, 52px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile global fixes */
+@media (max-width: 768px) {
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  section {
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,141 @@
+.cloud-hero-webgl {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud-hero-webgl__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: cloudBgZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes cloudBgZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.cloud-hero-webgl__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+/* Hero text overlay */
+.cloud-hero-webgl__content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding-top: 28vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cloud-hero-webgl__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+  animation: cloudTextIn 0.8s ease 0.3s forwards;
+}
+
+.cloud-hero-webgl__divider {
+  width: 100%;
+  max-width: 500px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 24px 0;
+  transform: scaleX(0);
+  animation: cloudDivGrow 0.6s ease 0.8s forwards;
+}
+
+.cloud-hero-webgl__sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-subtitle);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 520px;
+  opacity: 0;
+  animation: cloudTextIn 0.8s ease 1s forwards;
+}
+
+.cloud-hero-webgl__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  opacity: 0;
+  animation: cloudTextIn 0.6s ease 1.3s forwards;
+}
+
+.cloud-hero-webgl__scroll-line {
+  width: 1px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.cloud-hero-webgl__scroll-dot {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 1px;
+  height: 12px;
+  background: #ffffff;
+  animation: cloudScrollBounce 1.8s ease-in-out infinite;
+}
+
+.cloud-hero-webgl__scroll-text {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+@keyframes cloudTextIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cloudDivGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes cloudScrollBounce {
+  0% { top: -6px; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 38px; opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .cloud-hero-webgl__title {
+    font-size: 32px;
+    white-space: normal;
+  }
+
+  .cloud-hero-webgl__content {
+    padding: 0 20px;
+    padding-top: 30vh;
+  }
+}

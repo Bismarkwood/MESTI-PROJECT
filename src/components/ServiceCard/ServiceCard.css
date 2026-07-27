@@ -1,0 +1,217 @@
+.service-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Reversed: image right, content left */
+.service-card--reversed {
+  direction: rtl;
+}
+
+.service-card--reversed > * {
+  direction: ltr;
+}
+
+/* ─── Left: Image ─── */
+.service-card__image-side {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card__img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+}
+
+/* ─── Right: Dark content side ─── */
+.service-card__right {
+  background: #0c1218;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 48px;
+}
+
+/* ─── Orbit system — centered on the split line ─── */
+.service-card__orbit-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Concentric rings */
+.service-card__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card__ring--1 {
+  inset: 70px;
+}
+
+.service-card__ring--2 {
+  inset: 20px;
+}
+
+.service-card__ring--3 {
+  inset: -30px;
+}
+
+/* The main visible ring */
+.service-card__ring--main {
+  inset: 70px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Number in center */
+.service-card__number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 72px;
+  font-weight: 200;
+  color: #ffffff;
+  letter-spacing: -2px;
+  z-index: 6;
+}
+
+/* Orbit image dots */
+.service-card__orbit-dot {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.service-card__orbit-dot--1 {
+  width: 48px;
+  height: 48px;
+  top: 30px;
+  left: 58%;
+}
+
+.service-card__orbit-dot--2 {
+  width: 72px;
+  height: 72px;
+  top: 42%;
+  right: 30px;
+}
+
+.service-card__orbit-dot--3 {
+  width: 56px;
+  height: 56px;
+  bottom: 60px;
+  left: 58%;
+}
+
+.service-card__orbit-dot--4 {
+  width: 44px;
+  height: 44px;
+  bottom: 160px;
+  left: 20%;
+}
+
+.service-card__orbit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.service-card__orbit-img-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2ea872, #1a6b4a);
+}
+
+/* ─── Content text ─── */
+.service-card__content {
+  position: relative;
+  z-index: 6;
+  margin-left: auto;
+  max-width: 320px;
+}
+
+.service-card__label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.service-card__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.service-card__desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── Tablet ─── */
+@media (max-width: 1024px) {
+  .service-card {
+    grid-template-columns: 1fr;
+    height: 100vh;
+  }
+
+  .service-card__image-side {
+    height: 50vh;
+  }
+
+  .service-card__right {
+    padding: 48px 32px;
+    min-height: 50vh;
+  }
+
+  .service-card__orbit-wrap {
+    display: none;
+  }
+
+  .service-card__content {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .service-card__right {
+    padding: 32px 20px;
+  }
+}

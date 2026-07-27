@@ -1,0 +1,187 @@
+/* ─── Hero: 3-row marquee background ─── */
+.proof-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+/* 3-row marquee background */
+.proof-hero__marquee-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 8px;
+}
+
+.proof-hero__row {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.proof-hero__row-track {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: max-content;
+}
+
+.proof-hero__row-track img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Row 1 scrolls up */
+.proof-hero__row--1 .proof-hero__row-track {
+  animation: proofRowUp 45s linear infinite;
+}
+
+/* Row 2 scrolls down */
+.proof-hero__row--2 .proof-hero__row-track {
+  animation: proofRowDown 50s linear infinite;
+}
+
+/* Row 3 scrolls up */
+.proof-hero__row--3 .proof-hero__row-track {
+  animation: proofRowUp 40s linear infinite;
+}
+
+@keyframes proofRowUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes proofRowDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* Solid background fallback (when no marquee images) */
+.proof-hero__solid-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0f2b1f 0%, #0a1a14 50%, #060d0a 100%);
+}
+
+/* Dark gradient overlay */
+.proof-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2;
+}
+
+/* Content on top */
+.proof-hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1100px;
+  padding: 0 24px;
+}
+
+.proof-hero__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(40px, 7vw, 90px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+
+.proof-hero__sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-subtitle);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.proof-hero__cta-wrap {
+  margin-top: 28px;
+}
+
+.proof-hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.proof-hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-hero__scroll-dot {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 1px;
+  height: 12px;
+  background: #ffffff;
+  animation: proofScrollBounce 1.8s ease-in-out infinite;
+}
+
+.proof-hero__scroll-text {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+@keyframes proofScrollBounce {
+  0% { top: -6px; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 42px; opacity: 0; }
+}
+
+@media (max-width: 1024px) {
+  .proof-hero__title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .proof-hero {
+    height: 55vh;
+    min-height: 450px;
+  }
+
+  .proof-hero__title {
+    font-size: 36px;
+  }
+
+  .proof-hero__grid {
+    flex-direction: column;
+  }
+
+  .proof-hero__content {
+    padding: 0 20px;
+  }
+
+  .proof-hero__sub {
+    font-size: 14px;
+  }
+}

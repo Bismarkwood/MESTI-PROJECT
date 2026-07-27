@@ -1,0 +1,23 @@
+{
+  "name": "bigdata-assistant-server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "BigData Ghana assistant backend: Bedrock text brain + Amazon Polly text-to-speech.",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1089.0",
+    "@aws-sdk/client-polly": "^3.1089.0",
+    "dotenv": "^16.4.5",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/ws": "^8.5.12",
+    "tsx": "^4.19.2",
+    "typescript": "~6.0.2"
+  }
+}

@@ -1,0 +1,155 @@
+/* ─── Banner Component / Call to Action (Full Screen Width, Background Image + Black Overlay, Gold Button, No Gradients/Shadows) ─── */
+.banner-cta {
+  width: 100%;
+  min-height: 540px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 48px;
+  background: #072215;
+  box-shadow: none !important;
+  margin: 0;
+}
+
+/* Background Image filling full screen width & height */
+.banner-cta__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: 0;
+}
+
+/* Solid Black / Dark-Green Overlay (NO Gradients) */
+.banner-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 18, 12, 0.55);
+  z-index: 1;
+}
+
+/* Subtle SVG Circular-Plastics Pattern */
+.banner-cta__pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.banner-cta__pattern svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Centered Content */
+.banner-cta__content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.banner-cta__heading {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(2.35rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.banner-cta__desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1.15rem, 1.4vw, 1.3rem);
+  font-weight: 400;
+  color: #d1e8dd;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 660px;
+}
+
+/* Buttons */
+.banner-cta__buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.banner-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 38px;
+  border-radius: 100px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+/* Gold Primary Button */
+.banner-cta__btn--primary {
+  background: #d4a017;
+  color: #0b2218;
+  border: 2px solid #d4a017;
+}
+
+.banner-cta__btn--primary:hover {
+  background: #e5af22;
+  border-color: #e5af22;
+  transform: translateY(-3px);
+}
+
+/* Secondary Button */
+.banner-cta__btn--secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.banner-cta__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* ─── Responsive Breakpoints ─── */
+@media (max-width: 1024px) {
+  .banner-cta {
+    padding: 100px 32px;
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner-cta {
+    padding: 80px 20px;
+    min-height: 440px;
+  }
+  .banner-cta__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .banner-cta__btn {
+    width: 100%;
+  }
+}

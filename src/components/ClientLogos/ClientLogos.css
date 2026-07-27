@@ -1,0 +1,93 @@
+/* ─── Client Logos Section ─── */
+.client-logos {
+  width: 100%;
+  padding: 40px 48px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.client-logos__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9ca8a1;
+  text-align: center;
+  margin: 0 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.client-logos__title::before,
+.client-logos__title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e8ece9;
+}
+
+.client-logos__track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.client-logos__track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  animation: clientScroll 30s linear infinite;
+}
+
+@keyframes clientScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.client-logos__item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  width: 180px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px 24px;
+}
+
+.client-logos__item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .client-logos {
+    padding: 24px 16px;
+  }
+
+  .client-logos__title {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+
+  .client-logos__track {
+    gap: 12px;
+  }
+
+  .client-logos__item {
+    height: 44px;
+    width: 100px;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+}

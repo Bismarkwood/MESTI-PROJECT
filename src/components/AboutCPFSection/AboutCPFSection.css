@@ -1,0 +1,195 @@
+/* ─── About CPF / Introduction Section (Clean, Concise, White BG, No Gradients/Shadows) ─── */
+.about-cpf {
+  width: 100%;
+  padding: 100px 48px;
+  background: #ffffff;
+  color: #0f2b1f;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
+.about-cpf__inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+}
+
+/* ─── Content Side (Left) ─── */
+.about-cpf__content {
+  position: relative;
+  padding-top: 10px;
+}
+
+.about-cpf__number {
+  position: absolute;
+  top: -35px;
+  left: -10px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(6.5rem, 10vw, 9.5rem);
+  font-weight: 800;
+  color: #f0f6f3;
+  line-height: 0.8;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-cpf__text-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-cpf__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1c7a4d;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about-cpf__eyebrow-line {
+  width: 4px;
+  height: 18px;
+  background: #1c7a4d;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.about-cpf__heading {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  color: #0f2b1f;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+  max-width: 520px;
+}
+
+.about-cpf__lead {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+  font-weight: 500;
+  color: #2b3d34;
+  line-height: 1.65;
+  margin: 0 0 16px;
+  max-width: 540px;
+}
+
+.about-cpf__desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 400;
+  color: #5a6b63;
+  line-height: 1.65;
+  margin: 0 0 32px;
+  max-width: 540px;
+}
+
+/* Action Button */
+.about-cpf__btn-wrap {
+  margin-top: 4px;
+}
+
+.about-cpf__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  background: #1c7a4d;
+  color: #ffffff;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: fit-content;
+  box-shadow: none !important;
+}
+
+.about-cpf__btn:hover {
+  background: #155e3b;
+  transform: translateY(-2px);
+}
+
+.about-cpf__btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.about-cpf__btn:hover .about-cpf__btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── Media Side (Right) — Nice Image Container ─── */
+.about-cpf__media {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-cpf__image-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #d8e8e0;
+  background: #f0f7f4;
+  box-shadow: none !important;
+  position: relative;
+}
+
+.about-cpf__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-cpf__image-container:hover .about-cpf__image {
+  transform: scale(1.03);
+}
+
+/* ─── Responsive Breakpoints ─── */
+@media (max-width: 1024px) {
+  .about-cpf {
+    padding: 80px 32px;
+  }
+  .about-cpf__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .about-cpf__image-container {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-cpf {
+    padding: 64px 20px;
+  }
+  .about-cpf__heading {
+    font-size: 2.25rem;
+  }
+  .about-cpf__number {
+    font-size: 5.5rem;
+    top: -20px;
+  }
+  .about-cpf__image-container {
+    aspect-ratio: 16 / 10;
+    border-radius: 16px;
+  }
+}

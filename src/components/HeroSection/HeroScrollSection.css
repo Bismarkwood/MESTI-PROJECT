@@ -1,0 +1,412 @@
+.hero-scroll {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #0a0f0d;
+}
+
+/* ─── Background image layers ─── */
+.hero-scroll__bg-layers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-scroll__bg-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.9s cubic-bezier(0.76, 0, 0.24, 1),
+              transform 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: opacity, transform;
+}
+
+.hero-scroll__bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-scroll__bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-scroll__bg-layer.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-scroll__bg-layer.exiting {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.hero-scroll__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* ─── Center circle ─── */
+.hero-scroll__circle-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-scroll__circle-ring {
+  display: none;
+}
+
+/* SVG progress ring */
+.hero-scroll__progress-ring {
+  position: absolute;
+  width: calc(clamp(260px, 26vw, 420px) + 80px);
+  height: calc(clamp(260px, 26vw, 420px) + 80px);
+  transform: rotate(-90deg);
+  z-index: 1;
+}
+
+.hero-scroll__progress-stroke {
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.hero-scroll__circle {
+  position: relative;
+  width: clamp(180px, 18vw, 300px);
+  height: clamp(180px, 18vw, 300px);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(26, 107, 74, 0.1);
+  z-index: 2;
+}
+
+.hero-scroll__circle-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.1);
+  filter: blur(4px);
+  transition: opacity 0.8s cubic-bezier(0.76, 0, 0.24, 1),
+              transform 1s cubic-bezier(0.76, 0, 0.24, 1),
+              filter 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+video.hero-scroll__circle-img {
+  border-radius: 50%;
+}
+
+.hero-scroll__circle-img.active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0px);
+}
+
+/* ─── Content ─── */
+.hero-scroll__content {
+  position: absolute;
+  bottom: 220px;
+  left: 48px;
+  right: 48px;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-scroll__left {
+  max-width: 820px;
+}
+
+.hero-scroll__label {
+  display: inline-block;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(46, 168, 114, 0.9);
+  margin-bottom: 16px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-scroll__label.transitioning {
+  animation: fadeUp 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.hero-scroll__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-scroll__title.transitioning {
+  animation: fadeUp 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.hero-scroll__right {
+  max-width: 420px;
+}
+
+.hero-scroll__desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 12px 0 0;
+  max-width: 680px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-scroll__desc.transitioning {
+  animation: fadeUp 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Slide indicators — removed, using circle stroke instead ─── */
+.hero-scroll__indicators {
+  display: none;
+}
+
+.hero-scroll__dot {
+  display: none;
+}
+
+/* ─── 13-inch laptop (1280-1366px) ─── */
+@media (max-width: 1366px) {
+  .hero-scroll__content {
+    bottom: 180px;
+    left: 32px;
+    right: 32px;
+  }
+
+  .hero-scroll__title {
+    font-size: clamp(40px, 5vw, 64px);
+  }
+
+  .hero-scroll__desc {
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  .hero-scroll__left {
+    max-width: 700px;
+  }
+}
+
+/* ─── Tablet ─── */
+@media (max-width: 1024px) {
+  .hero-scroll__content {
+    bottom: 60px;
+    left: 32px;
+    right: 32px;
+    gap: 40px;
+  }
+
+  .hero-scroll__circle {
+    width: clamp(140px, 22vw, 240px);
+    height: clamp(140px, 22vw, 240px);
+  }
+
+  .hero-scroll__progress-ring {
+    width: calc(clamp(200px, 30vw, 340px) + 60px);
+    height: calc(clamp(200px, 30vw, 340px) + 60px);
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .hero-scroll__circle-wrap {
+    top: 38%;
+  }
+
+  .hero-scroll__circle {
+    width: clamp(120px, 35vw, 200px);
+    height: clamp(120px, 35vw, 200px);
+  }
+
+  .hero-scroll__progress-ring {
+    width: calc(clamp(160px, 45vw, 260px) + 48px);
+    height: calc(clamp(160px, 45vw, 260px) + 48px);
+  }
+
+  .hero-scroll__content {
+    bottom: 160px;
+    left: 20px;
+    right: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hero-scroll__title {
+    white-space: normal;
+    font-size: clamp(32px, 9vw, 48px);
+  }
+
+  .hero-scroll__right {
+    max-width: 100%;
+  }
+
+  .hero-scroll__title {
+    font-size: clamp(32px, 9vw, 52px);
+  }
+}
+
+/* CTA wrapper */
+.hero-scroll__cta-wrap {
+  margin-top: 28px;
+}
+
+/* Floating Bar with Black Glass transparent bg */
+.hero-scroll__floating-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 48px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.hero-scroll__floating-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.hero-scroll__floating-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-scroll__floating-logos {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-scroll__floating-logos img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.hero-scroll__floating-logos img:hover {
+  transform: scale(1.05);
+}
+
+.hero-scroll__floating-logos img[alt="UNIDO"],
+.hero-scroll__floating-logos img[alt="EPA"] {
+  height: 52px;
+}
+
+.hero-scroll__floating-text-logo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Responsive updates */
+@media (max-width: 1024px) {
+  .hero-scroll__floating-bar {
+    padding: 20px 32px;
+    gap: 24px;
+  }
+  .hero-scroll__floating-logos {
+    gap: 24px;
+  }
+  .hero-scroll__floating-logos img {
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-scroll__floating-bar {
+    flex-direction: row;
+    gap: 0;
+    padding: 16px 0;
+    overflow: hidden;
+  }
+  .hero-scroll__floating-title {
+    display: none;
+  }
+  .hero-scroll__floating-divider {
+    display: none;
+  }
+  .hero-scroll__floating-logos {
+    flex-wrap: nowrap;
+    gap: 40px;
+    animation: floatingLogoScroll 15s linear infinite;
+    width: max-content;
+  }
+  .hero-scroll__floating-logos img {
+    height: 22px;
+  }
+  .hero-scroll__floating-logos img[alt="UNIDO"],
+  .hero-scroll__floating-logos img[alt="EPA"] {
+    height: 30px;
+  }
+  .hero-scroll__floating-text-logo {
+    font-size: 11px;
+  }
+}
+
+@keyframes floatingLogoScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

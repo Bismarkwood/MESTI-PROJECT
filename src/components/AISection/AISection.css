@@ -1,0 +1,113 @@
+.ai-hero {
+  position: relative;
+  min-height: 75vh;
+  overflow: hidden;
+  background: #020d13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Diagonal stripe lines top */
+.ai-hero::before {
+  display: none;
+}
+
+/* Diagonal stripe lines bottom */
+.ai-hero::after {
+  display: none;
+}
+
+.ai-hero-stripes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 36px;
+  z-index: 5;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(200, 220, 210, 0.25) 3px,
+    rgba(200, 220, 210, 0.25) 4.5px
+  );
+}
+
+.ai-hero-stripes--top {
+  top: 0;
+}
+
+.ai-hero-stripes--bottom {
+  bottom: 0;
+}
+
+.particle-wave-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle-wave-bg canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.ai-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(circle at center, rgba(26, 107, 74, 0.1), transparent 35%),
+    linear-gradient(to bottom, rgba(2, 13, 19, 0.1), rgba(2, 13, 19, 0.85));
+}
+
+.ai-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.ai-hero-label {
+  display: block;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(46, 168, 114, 0.9);
+  margin-bottom: 16px;
+  animation: aiFadeIn 0.6s ease forwards;
+}
+
+.ai-hero-content h2 {
+  color: #ffffff;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: var(--fs-h1);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin: 0;
+  animation: aiFadeIn 0.7s ease forwards;
+}
+
+@keyframes aiFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ai-hero {
+    min-height: 70vh;
+  }
+
+  .ai-hero-content h2 {
+    font-size: clamp(26px, 7vw, 44px);
+  }
+}

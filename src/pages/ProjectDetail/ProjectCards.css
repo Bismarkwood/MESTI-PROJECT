@@ -1,0 +1,137 @@
+.proof-projects {
+  width: 100%;
+  background: #ffffff;
+  padding: 80px 48px 100px;
+}
+
+/* ─── Header ─── */
+.proof-projects__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 60px;
+}
+
+.proof-projects__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 500;
+  color: #2B1A18;
+  letter-spacing: -1.5px;
+  margin: 0;
+  text-align: center;
+}
+
+/* ─── Content ─── */
+.proof-projects__content {
+  min-height: 200px;
+}
+
+/* ─── Grid ─── */
+.proof-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ─── Card ─── */
+.proof-projects__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.proof-projects__card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 12;
+  overflow: hidden;
+}
+
+.proof-projects__card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f2b1f 0%, #1E8A00 100%);
+}
+
+.proof-projects__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #f5f5f5;
+  padding: 8px;
+}
+
+/* Card info */
+.proof-projects__card-info {
+  position: relative;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 2;
+  background: #ffffff;
+}
+
+.proof-projects__card-tag {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f2b1f;
+}
+
+/* ─── 13-inch laptop ─── */
+@media (max-width: 1366px) {
+  .proof-projects {
+    padding: 60px 32px 80px;
+  }
+
+  .proof-projects__grid {
+    gap: 20px;
+  }
+}
+
+/* ─── Tablet ─── */
+@media (max-width: 1024px) {
+  .proof-projects {
+    padding: 60px 32px 80px;
+  }
+
+  .proof-projects__header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .proof-projects__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .proof-projects {
+    padding: 48px 20px 60px;
+  }
+
+  .proof-projects__title {
+    font-size: 36px;
+  }
+
+  .proof-projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Clickable project cards */
+.proof-projects__card--clickable {
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.proof-projects__card--clickable:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}

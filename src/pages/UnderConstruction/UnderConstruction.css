@@ -1,0 +1,53 @@
+.under-construction__content {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 48px 80px;
+}
+
+.under-construction__badge {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1E8A00;
+  margin-bottom: 20px;
+}
+
+.under-construction__title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 700;
+  color: #0f2b1f;
+  letter-spacing: -2px;
+  margin: 0 0 16px;
+}
+
+.under-construction__sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5a6b63;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+
+.under-construction__btn {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #1E8A00;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.under-construction__btn:hover {
+  transform: translateY(-2px);
+}

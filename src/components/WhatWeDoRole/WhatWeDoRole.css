@@ -1,0 +1,265 @@
+﻿/* ───────────────────────────────────────────────────────────────
+   WhatWeDoRole — header + 4 cards in a single row
+──────────────────────────────────────────────────────────────── */
+
+.wwd-role {
+  width: 100%;
+  background: #0a1f14;
+  padding: 96px 48px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ── Top header ── */
+.wwd-role__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wwd-role__header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Badge */
+.wwd-role__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(28, 122, 77, 0.18);
+  border: 1px solid rgba(28, 122, 77, 0.45);
+  width: fit-content;
+}
+
+.wwd-role__badge span {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5dd49a;
+}
+
+/* Heading */
+.wwd-role__heading {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Subtext — right side, bottom-aligned */
+.wwd-role__sub {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #8fb5a0;
+  margin: 0;
+  max-width: 380px;
+  flex-shrink: 0;
+  padding-bottom: 6px;
+}
+
+/* ── Cards row ── */
+.wwd-role__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Individual card ── */
+.wwd-role__card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: default;
+
+  /* entry animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    flex 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wwd-role__card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger */
+.wwd-role__card:nth-child(1) { transition-delay: 0.05s; }
+.wwd-role__card:nth-child(2) { transition-delay: 0.12s; }
+.wwd-role__card:nth-child(3) { transition-delay: 0.19s; }
+.wwd-role__card:nth-child(4) { transition-delay: 0.26s; }
+
+/* Hover: card lifts + grows slightly */
+.wwd-role__card:hover {
+  transform: translateY(-6px) scale(1.015);
+  z-index: 2;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Image */
+.wwd-role__card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wwd-role__card:hover .wwd-role__card-img {
+  transform: scale(1.07);
+}
+
+/* Gradient overlay — stronger at bottom */
+.wwd-role__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(4, 14, 8, 0.96) 0%,
+    rgba(4, 14, 8, 0.65) 40%,
+    rgba(4, 14, 8, 0.15) 75%,
+    transparent 100%
+  );
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.wwd-role__card:hover .wwd-role__card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(4, 14, 8, 0.97) 0%,
+    rgba(4, 14, 8, 0.72) 50%,
+    rgba(4, 14, 8, 0.25) 80%,
+    transparent 100%
+  );
+}
+
+/* Card text */
+.wwd-role__card-body {
+  position: relative;
+  z-index: 2;
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wwd-role__card-num {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5dd49a;
+}
+
+.wwd-role__card-verb {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Description hidden by default, slides up on hover */
+.wwd-role__card-desc {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition:
+    max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.wwd-role__card:hover .wwd-role__card-desc {
+  max-height: 120px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .wwd-role {
+    padding: 80px 32px 64px;
+  }
+
+  .wwd-role__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .wwd-role__sub {
+    max-width: 100%;
+  }
+
+  .wwd-role__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .wwd-role__card {
+    height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wwd-role {
+    padding: 64px 20px 56px;
+    gap: 40px;
+  }
+
+  .wwd-role__row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .wwd-role__card {
+    height: 340px;
+    border-radius: 16px;
+  }
+
+  /* Always show desc on mobile (no hover) */
+  .wwd-role__card-desc {
+    max-height: 120px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
