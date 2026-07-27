@@ -760,7 +760,7 @@ export default function KnowledgeHub() {
 
       {/* 8. LATEST RESEARCH AND INSIGHTS */}
       <section className="kh-insights">
-        <div className="kh-container">
+        <div className="kh-insights__inner">
           <div className="kh-section-header">
             <span className="kh-label">RESEARCH AND INSIGHTS</span>
             <h2 className="kh-section-title">Latest Knowledge from the Plastics Sector</h2>
@@ -880,39 +880,6 @@ export default function KnowledgeHub() {
       </section>
 
       {/* 10. RESOURCE SUBMISSION SECTION */}
-      <section className="kh-submission">
-        <div className="kh-container">
-          <div className="kh-submission__box">
-            <div className="kh-submission__icon">📤</div>
-            <div className="kh-submission__content">
-              <h2>Contribute to the Knowledge Hub</h2>
-              <p>
-                Organisations, researchers and programme partners may submit relevant publications, research and learning materials for review and possible publication on the CPF Ghana Knowledge Hub.
-              </p>
-              <small className="kh-submission__notice">
-                ⚠️ All submitted resources are subject to review and technical approval by MESTI before publication.
-              </small>
-            </div>
-            <div className="kh-submission__actions">
-              <button
-                type="button"
-                className="kh-btn kh-btn--primary"
-                onClick={() => showToast('Opening Resource Submission Portal...')}
-              >
-                Submit a Resource
-              </button>
-              <a
-                href="#guidelines"
-                onClick={(e) => { e.preventDefault(); showToast('Downloading Submission Guidelines PDF...'); }}
-                className="kh-submission__link"
-              >
-                View Submission Guidelines →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA BANNER */}
       <JoinCta
         heading="Building a Circular Plastics Economy Through Action"
