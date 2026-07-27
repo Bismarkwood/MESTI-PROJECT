@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import CtaBanner from '../../components/CtaBanner'
 import JoinCta from '../../components/JoinCta'
 import SEO from '../../components/SEO'
 import GeoHeroSection from '../../components/GeoHero'
