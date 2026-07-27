@@ -242,24 +242,6 @@ export default function KnowledgeHub() {
               </button>
             </form>
 
-            <div className="kh-popular-searches">
-              <span className="kh-popular-label">Popular searches:</span>
-              <div className="kh-popular-tags">
-                {['Plastic Management Policy', 'CEF-PS', 'Technical Guidelines', 'Recycling', 'Training Materials'].map(tag => (
-                  <button
-                    key={tag}
-                    type="button"
-                    className="kh-popular-tag"
-                    onClick={() => {
-                      setSearchQuery(tag);
-                      setActiveSearch(tag);
-                    }}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
 
 
