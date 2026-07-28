@@ -760,56 +760,79 @@ export default function KnowledgeHub() {
 
       {/* 8. LATEST RESEARCH AND INSIGHTS */}
       <section className="kh-insights">
-        <div className="kh-insights__inner">
-          <div className="kh-section-header">
-            <span className="kh-label">RESEARCH AND INSIGHTS</span>
-            <h2 className="kh-section-title">Latest Knowledge from the Plastics Sector</h2>
+        {/* Section banner header */}
+        <div className="kh-insights__banner">
+          <div className="kh-insights__banner-inner">
+            <span className="kh-insights__eyebrow">Research &amp; Insights</span>
+            <h2 className="kh-insights__heading">Latest Knowledge from the Plastics Sector</h2>
+            <p className="kh-insights__sub">
+              Peer-reviewed research, sector briefings, and frontline perspectives shaping circular plastics policy in Ghana.
+            </p>
           </div>
+        </div>
 
-          <div className="kh-insights__editorial">
-            {/* Featured Article (Left) */}
+        {/* Article grid */}
+        <div className="kh-insights__body">
+          <div className="kh-insights__layout">
+
+            {/* Featured Article */}
             {LATEST_ARTICLES.filter(a => a.featured).map(art => (
-              <article key={art.id} className="kh-art-card kh-art-card--featured">
-                <div className="kh-art-card__img-wrap">
+              <article key={art.id} className="kh-ins-feat">
+                <div className="kh-ins-feat__img-wrap">
                   <img src={art.image} alt={art.title} />
-                  <span className="kh-art-card__topic">{art.topic}</span>
+                  <div className="kh-ins-feat__overlay" />
+                  <span className="kh-ins-feat__badge">{art.topic}</span>
                 </div>
-                <div className="kh-art-card__body">
-                  <div className="kh-art-card__meta">
-                    <span>✍️ {art.author}</span>
-                    <span>📅 {art.date}</span>
-                    <span>⏱️ {art.readingTime}</span>
+                <div className="kh-ins-feat__body">
+                  <div className="kh-ins-feat__meta">
+                    <span className="kh-ins-feat__author">{art.author}</span>
+                    <span className="kh-ins-feat__dot" />
+                    <span>{art.date}</span>
+                    <span className="kh-ins-feat__dot" />
+                    <span>{art.readingTime}</span>
                   </div>
-                  <h3 className="kh-art-card__title">{art.title}</h3>
-                  <p className="kh-art-card__desc">{art.description}</p>
-                  <a href="#read" onClick={(e) => { e.preventDefault(); showToast(`Opening article: ${art.title}`); }} className="kh-art-card__link">
-                    Read insight →
+                  <h3 className="kh-ins-feat__title">{art.title}</h3>
+                  <p className="kh-ins-feat__desc">{art.description}</p>
+                  <a
+                    href="#read"
+                    onClick={(e) => { e.preventDefault(); showToast(`Opening article: ${art.title}`); }}
+                    className="kh-ins-feat__cta"
+                  >
+                    Read Full Insight <span>→</span>
                   </a>
                 </div>
               </article>
             ))}
 
-            {/* Smaller Stacked Articles (Right) */}
-            <div className="kh-insights__stack">
-              {LATEST_ARTICLES.filter(a => !a.featured).map(art => (
-                <article key={art.id} className="kh-art-card kh-art-card--sm">
-                  <div className="kh-art-card__img-wrap kh-art-card__img-wrap--sm">
+            {/* Sidebar stack */}
+            <aside className="kh-ins-stack">
+              <p className="kh-ins-stack__label">More from the Sector</p>
+              {LATEST_ARTICLES.filter(a => !a.featured).map((art, i) => (
+                <article key={art.id} className="kh-ins-row">
+                  <div className="kh-ins-row__img-wrap">
                     <img src={art.image} alt={art.title} />
                   </div>
-                  <div className="kh-art-card__body">
-                    <span className="kh-art-card__topic kh-art-card__topic--sm">{art.topic}</span>
-                    <h4 className="kh-art-card__title">{art.title}</h4>
-                    <p className="kh-art-card__desc">{art.description}</p>
-                    <div className="kh-art-card__meta">
-                      <span>{art.date}</span> · <span>{art.readingTime}</span>
+                  <div className="kh-ins-row__body">
+                    <span className="kh-ins-row__badge">{art.topic}</span>
+                    <h4 className="kh-ins-row__title">{art.title}</h4>
+                    <p className="kh-ins-row__desc">{art.description}</p>
+                    <div className="kh-ins-row__foot">
+                      <span>{art.date}</span>
+                      <span className="kh-ins-feat__dot" />
+                      <span>{art.readingTime}</span>
                     </div>
-                    <a href="#read" onClick={(e) => { e.preventDefault(); showToast(`Opening article: ${art.title}`); }} className="kh-art-card__link">
-                      Read insight →
+                    <a
+                      href="#read"
+                      onClick={(e) => { e.preventDefault(); showToast(`Opening: ${art.title}`); }}
+                      className="kh-ins-row__link"
+                    >
+                      Read →
                     </a>
                   </div>
                 </article>
               ))}
-            </div>
+            </aside>
+
           </div>
         </div>
       </section>
