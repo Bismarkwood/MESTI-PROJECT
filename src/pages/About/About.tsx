@@ -6,9 +6,7 @@ import JoinCta from "../../components/JoinCta"
 import WhatWeDoRole from "../../components/WhatWeDoRole"
 import GovernanceSection from "../../components/GovernanceSection"
 import aboutHeroImg from "../../assets/about-hero.png"
-import whyBdgImg from "../../assets/about-us-group.jpg"
 import missionImg from "../../assets/Mission & Vision/Mission & Vision.webp"
-import lifeImg1 from "../../assets/who-we-are-2.jpg"
 import howImg1 from "../../assets/Life at Big Data Ghana/1765533172285.webp"
 import howImg2 from "../../assets/Life at Big Data Ghana/1756482542508.webp"
 import "./About.css"
@@ -115,10 +113,10 @@ function About() {
           </div>
           <div className="about-story__images">
             <div className="about-story__image">
-              <img src={whyBdgImg} alt="CEF-PS Ghana coordination" />
+              <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800" alt="Plastic waste collection and recycling activity in Ghana" />
             </div>
             <div className="about-story__image">
-              <img src={lifeImg1} alt="Stakeholders at work" />
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" alt="Stakeholders at work" />
             </div>
           </div>
         </div>
