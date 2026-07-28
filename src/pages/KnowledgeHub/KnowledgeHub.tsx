@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import JoinCta from '../../components/JoinCta';
@@ -15,6 +15,8 @@ import {
 import './KnowledgeHub.css';
 
 export default function KnowledgeHub() {
+  const navigate = useNavigate();
+  
   // Search & Filter State
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSearch, setActiveSearch] = useState('');
@@ -33,7 +35,6 @@ export default function KnowledgeHub() {
 
   // Interaction State
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
-  const [activeModalResource, setActiveModalResource] = useState<ResourceItem | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Newsletter & Submission Form State
@@ -531,11 +532,10 @@ export default function KnowledgeHub() {
                 <>
                   <div className={`kh-resource-grid kh-resource-grid--${viewMode}`}>
                     {filteredResources.slice(0, visibleCount).map(res => (
-                      <article key={res.id} className="kh-res-card">
+                      <article key={res.id} className="kh-res-card" onClick={() => navigate(`/knowledge-hub/${res.slug}`)}>
                         <div
                           className="kh-res-card__cover"
                           style={{ backgroundColor: res.accentColor || '#146B4A' }}
-                          onClick={() => setActiveModalResource(res)}
                         >
                           <div className="kh-cover-inner">
                             <span className="kh-cover-tag">{res.type}</span>
@@ -545,7 +545,10 @@ export default function KnowledgeHub() {
                           <button
                             type="button"
                             className={`kh-bookmark-btn ${bookmarkedIds.includes(res.id) ? 'active' : ''}`}
-                            onClick={(e) => toggleBookmark(res.id, e)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleBookmark(res.id, e);
+                            }}
                             aria-label="Save resource"
                             title={bookmarkedIds.includes(res.id) ? "Remove bookmark" : "Save bookmark"}
                           >
@@ -556,47 +559,13 @@ export default function KnowledgeHub() {
                         <div className="kh-res-card__body">
                           <div className="kh-res-card__badges">
                             <span className="kh-badge kh-badge--type">{res.type}</span>
-                            <span className="kh-badge kh-badge--prog">{res.programme}</span>
                           </div>
-
-                          <h3 className="kh-res-card__title" onClick={() => setActiveModalResource(res)}>
+                          <h3 className="kh-res-card__title">
                             {res.title}
                           </h3>
-                          <p className="kh-res-card__desc">{res.description}</p>
-
                           <div className="kh-res-card__meta">
                             <span>🏛️ {res.publisher}</span>
                             <span>📅 {res.date}</span>
-                            <span>⏱️ {res.readingTime}</span>
-                          </div>
-
-                          <div className="kh-res-card__footer">
-                            <span className="kh-format-badge">{res.format}</span>
-                            <div className="kh-card-actions">
-                              <button
-                                type="button"
-                                className="kh-action-icon-btn"
-                                onClick={(e) => handleShare(res.slug, e)}
-                                title="Share link"
-                              >
-                                🔗
-                              </button>
-                              <button
-                                type="button"
-                                className="kh-action-icon-btn"
-                                onClick={(e) => handleDownload(res, e)}
-                                title="Download resource"
-                              >
-                                📥
-                              </button>
-                              <button
-                                type="button"
-                                className="kh-btn kh-btn--primary kh-btn--sm"
-                                onClick={() => setActiveModalResource(res)}
-                              >
-                                View Resource
-                              </button>
-                            </div>
                           </div>
                         </div>
                       </article>
@@ -909,192 +878,7 @@ export default function KnowledgeHub() {
         description="Discover the enterprises, activities and resources contributing to the implementation of CEF-PS across Ghana."
       />
 
-      {/* 11. NEWSLETTER SECTION */}
-      <section className="kh-newsletter">
-        <div className="kh-container kh-newsletter__inner">
-          <div className="kh-newsletter__text">
-            <h2>Receive New Resources and Insights</h2>
-            <p>
-              Subscribe for updates when new policies, reports, research, training materials and sector resources are published.
-            </p>
-            <span className="kh-newsletter__privacy">
-              🔒 By subscribing, you agree to receive CEF-PS Ghana updates. Your information will be handled in accordance with the website’s privacy policy.
-            </span>
-          </div>
-
-          <form className="kh-newsletter__form" onSubmit={handleNewsletterSubmit}>
-            {newsletterSubmitted ? (
-              <div className="kh-newsletter-success">
-                <span>✅ Thank you! You are now subscribed to CEF-PS Ghana updates.</span>
-              </div>
-            ) : (
-              <>
-                <div className="kh-form-row">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Email address *"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    className="kh-input"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Organisation (optional)"
-                    value={newsletterOrg}
-                    onChange={(e) => setNewsletterOrg(e.target.value)}
-                    className="kh-input"
-                  />
-                </div>
-                <div className="kh-form-row">
-                  <select
-                    value={newsletterTopic}
-                    onChange={(e) => setNewsletterTopic(e.target.value)}
-                    className="kh-select"
-                  >
-                    <option value="All Updates">Area of interest: All Updates</option>
-                    <option value="Policy and Governance">Policy and Governance</option>
-                    <option value="Research and Data">Research and Data</option>
-                    <option value="Circular Business">Circular Business</option>
-                    <option value="Recycling and Recovery">Recycling and Recovery</option>
-                    <option value="Training and Events">Training and Events</option>
-                  </select>
-                  <button type="submit" className="kh-btn kh-btn--primary">
-                    Subscribe
-                  </button>
-                </div>
-              </>
-            )}
-          </form>
-        </div>
-      </section>
-
-      {/* RESOURCE DETAIL MODAL / DRAWER (INTERACTION 3 & DETAIL PAGE REQUIREMENTS) */}
-      {activeModalResource && (
-        <div className="kh-modal-overlay" onClick={() => setActiveModalResource(null)}>
-          <div className="kh-modal" onClick={(e) => e.stopPropagation()} role="dialog" aria-labelledby="modal-title">
-            <button
-              type="button"
-              className="kh-modal-close"
-              onClick={() => setActiveModalResource(null)}
-              aria-label="Close modal"
-            >
-              ✕
-            </button>
-
-            <div className="kh-modal__header">
-              <div className="kh-modal__badges">
-                <span className="kh-badge kh-badge--type">{activeModalResource.type}</span>
-                <span className="kh-badge kh-badge--prog">{activeModalResource.programme}</span>
-                {activeModalResource.featured && <span className="kh-badge kh-badge--gold">Featured</span>}
-              </div>
-              <h2 id="modal-title" className="kh-modal__title">{activeModalResource.title}</h2>
-              <div className="kh-modal__meta">
-                <span>🏛️ <strong>Publisher:</strong> {activeModalResource.publisher}</span>
-                {activeModalResource.author && <span>✍️ <strong>Author:</strong> {activeModalResource.author}</span>}
-                <span>📅 <strong>Published:</strong> {activeModalResource.date}</span>
-                {activeModalResource.lastUpdated && <span>🔄 <strong>Updated:</strong> {activeModalResource.lastUpdated}</span>}
-              </div>
-            </div>
-
-            <div className="kh-modal__body">
-              <div className="kh-modal__col-main">
-                <h4>Executive Summary</h4>
-                <p className="kh-modal__summary">{activeModalResource.summary}</p>
-                
-                <h4>Description</h4>
-                <p>{activeModalResource.description}</p>
-
-                <h4>Key Topics & Keywords</h4>
-                <div className="kh-modal__keywords">
-                  <span className="kh-keyword-tag">{activeModalResource.topic}</span>
-                  {activeModalResource.keywords.map(k => (
-                    <span key={k} className="kh-keyword-tag">{k}</span>
-                  ))}
-                </div>
-
-                <div className="kh-modal__citation">
-                  <h5>📑 Recommended Citation</h5>
-                  <code>
-                    {activeModalResource.author || activeModalResource.publisher} ({activeModalResource.date}). {activeModalResource.title}. Ministry of Environment, Science, Technology and Innovation (MEST) / CEF-PS Ghana Knowledge Hub.
-                  </code>
-                </div>
-
-                <div className="kh-modal__disclaimer">
-                  <small>
-                    ⚠️ <strong>Disclaimer:</strong> This resource is published for information purposes. Please refer to the responsible institution ({activeModalResource.publisher}) for the most current official version.
-                  </small>
-                </div>
-              </div>
-
-              <div className="kh-modal__col-side">
-                <div className="kh-modal-preview-card" style={{ backgroundColor: activeModalResource.accentColor || '#146B4A' }}>
-                  <div className="kh-preview-cover">
-                    <span>{activeModalResource.type}</span>
-                    <strong>{activeModalResource.title}</strong>
-                    <small>{activeModalResource.publisher}</small>
-                  </div>
-                </div>
-
-                <div className="kh-modal-specs">
-                  <div><span>Format:</span> <strong>{activeModalResource.fileType}</strong></div>
-                  <div><span>File Size:</span> <strong>{activeModalResource.fileSize}</strong></div>
-                  <div><span>Language:</span> <strong>{activeModalResource.language}</strong></div>
-                  {activeModalResource.pages && <div><span>Pages:</span> <strong>{activeModalResource.pages} pages</strong></div>}
-                  <div><span>Reading Time:</span> <strong>{activeModalResource.readingTime}</strong></div>
-                </div>
-
-                <div className="kh-modal-actions">
-                  <button
-                    type="button"
-                    className="kh-btn kh-btn--primary kh-btn--full"
-                    onClick={() => handleDownload(activeModalResource)}
-                  >
-                    📥 Download Resource ({activeModalResource.fileSize})
-                  </button>
-                  <button
-                    type="button"
-                    className="kh-btn kh-btn--outline kh-btn--full"
-                    onClick={() => handleShare(activeModalResource.slug)}
-                  >
-                    🔗 Share Link
-                  </button>
-                  <button
-                    type="button"
-                    className={`kh-btn kh-btn--outline kh-btn--full ${bookmarkedIds.includes(activeModalResource.id) ? 'active' : ''}`}
-                    onClick={() => toggleBookmark(activeModalResource.id)}
-                  >
-                    {bookmarkedIds.includes(activeModalResource.id) ? '★ Saved to Bookmarks' : '☆ Save to Bookmarks'}
-                  </button>
-                </div>
-
-                <div className="kh-modal-contact">
-                  <small>📧 For document enquiries or technical revisions, contact <a href="mailto:info@cpfghana.org">info@cpfghana.org</a>.</small>
-                </div>
-              </div>
-            </div>
-
-            {/* Related Resources (Interaction 7) */}
-            <div className="kh-modal__related">
-              <h4>Related Resources</h4>
-              <div className="kh-related-grid">
-                {MOCK_RESOURCES.filter(r => r.id !== activeModalResource.id && (r.topic === activeModalResource.topic || r.type === activeModalResource.type)).slice(0, 3).map(rel => (
-                  <div
-                    key={rel.id}
-                    className="kh-related-item"
-                    onClick={() => setActiveModalResource(rel)}
-                  >
-                    <span className="kh-related-type">{rel.type}</span>
-                    <h5>{rel.title}</h5>
-                    <small>{rel.publisher} · {rel.date}</small>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      <Footer />
+<Footer />
     </div>
   );
 }
