@@ -5,11 +5,11 @@ import mestLogo from '../../assets/NavBar Logo/Mest Logo.png'
 import './Footer.css'
 
 const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Pilot Projects', href: '/cef-ps' },
+  { label: 'Impact', href: '/impact' },
+  { label: 'Knowledge Hub', href: '/knowledge-hub' },
   { label: 'About', href: '/about' },
-  { label: 'Programmes', href: '#programmes' },
-  { label: 'Resources', href: '#resources' },
-  { label: 'News', href: '#news' },
-  { label: 'Opportunities', href: '#opportunities' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy Policy', href: '/privacy' },
 ]
