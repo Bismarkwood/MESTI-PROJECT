@@ -161,18 +161,12 @@ function CefPs() {
   const [, setActiveNav] = useState('hero')
   const [selectedPilot, setSelectedPilot] = useState<PilotSolution | null>(null)
   const [selectedComponent, setSelectedComponent] = useState<ComponentInfo | null>(null)
-  const [activeStep, setActiveStep] = useState<number>(0)
+
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [contactModalOpen, setContactModalOpen] = useState(false)
   const pilotScrollRef = useRef<HTMLDivElement>(null)
 
-  // Circular steps for Overview section
-  const circularSteps = [
-    { label: 'Reduce', icon: 'M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2', desc: 'Minimizing unnecessary single-use plastic generation and designing out waste at the source.' },
-    { label: 'Recover', icon: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z', desc: 'Intercepting plastic waste through community buy-back centers and municipal sorting infrastructure.' },
-    { label: 'Recycle', icon: 'M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z', desc: 'Transforming recovered resins into valuable raw materials and durable secondary products.' },
-    { label: 'Reuse', icon: 'M17 1l4 4-4 4', desc: 'Closing the loop by circulating quality recycled materials back into manufacturing and packaging.' },
-  ]
+
 
   // Track active section for sticky navigation
   useEffect(() => {
@@ -294,15 +288,6 @@ function CefPs() {
               </div>
             </div>
 
-            <div className="cefps-hero__logos">
-              <span className="cefps-hero__logos-title">National Executing &amp; Implementing Partners:</span>
-              <div className="cefps-hero__logos-row">
-                <div className="cefps-partner-badge cefps-partner-badge--gef">GEF · Fund</div>
-                <img src={unidoLogo} alt="UNIDO" className="cefps-partner-img" />
-                <img src={MESTLogo} alt="MEST Ghana" className="cefps-partner-img" />
-                <img src={epaLogo} alt="EPA Ghana" className="cefps-partner-img" />
-              </div>
-            </div>
           </div>
 
           <div className="cefps-hero__right">
@@ -381,32 +366,7 @@ function CefPs() {
               </p>
             </div>
 
-            {/* Interactive Circular Diagram */}
-            <div className="cefps-circular-diagram">
-              <div className="cefps-circular-diagram__title">The Circular Economy Loop:</div>
-              <div className="cefps-circular-diagram__steps">
-                {circularSteps.map((step, idx) => (
-                  <div key={step.label} className="cefps-diagram-step-wrap">
-                    <button
-                      type="button"
-                      className={`cefps-diagram-step ${activeStep === idx ? 'cefps-diagram-step--active' : ''}`}
-                      onClick={() => setActiveStep(idx)}
-                      onMouseEnter={() => setActiveStep(idx)}
-                    >
-                      <span className="cefps-diagram-step-num">0{idx + 1}</span>
-                      <strong className="cefps-diagram-step-label">{step.label}</strong>
-                    </button>
-                    {idx < circularSteps.length - 1 && (
-                      <div className="cefps-diagram-arrow">→</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <div className="cefps-circular-diagram__desc">
-                <span className="cefps-desc-badge">{circularSteps[activeStep].label} in action:</span>
-                <p>{circularSteps[activeStep].desc}</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

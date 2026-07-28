@@ -1,4 +1,4 @@
-﻿/* ───────────────────────────────────────────────────────────────
+/* ───────────────────────────────────────────────────────────────
    WhatWeDoRole — header + 4 cards in a single row
 ──────────────────────────────────────────────────────────────── */
 
@@ -86,10 +86,12 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 520px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background: #112d20;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   cursor: default;
 
   /* entry animation */
@@ -121,44 +123,26 @@
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Image */
-.wwd-role__card-img {
+/* Icon at the top */
+.wwd-role__card-icon {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  top: 40px;
+  left: 40px;
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.4s ease, background 0.4s ease;
 }
 
-.wwd-role__card:hover .wwd-role__card-img {
-  transform: scale(1.07);
-}
-
-/* Gradient overlay — stronger at bottom */
-.wwd-role__card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(4, 14, 8, 0.96) 0%,
-    rgba(4, 14, 8, 0.65) 40%,
-    rgba(4, 14, 8, 0.15) 75%,
-    transparent 100%
-  );
-  z-index: 1;
-  transition: background 0.4s ease;
-}
-
-.wwd-role__card:hover .wwd-role__card-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(4, 14, 8, 0.97) 0%,
-    rgba(4, 14, 8, 0.72) 50%,
-    rgba(4, 14, 8, 0.25) 80%,
-    transparent 100%
-  );
+.wwd-role__card:hover .wwd-role__card-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Card text */

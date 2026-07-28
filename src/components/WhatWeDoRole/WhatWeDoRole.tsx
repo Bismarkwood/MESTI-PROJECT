@@ -1,10 +1,7 @@
 import { useEffect, useRef } from "react"
 import "./WhatWeDoRole.css"
 
-import coordinateImg from "../../assets/What we help/Location decisions.webp"
-import supportImg    from "../../assets/What we help/Investment Decisions.webp"
-import informImg     from "../../assets/What we help/Risk Descision.webp"
-import trackImg      from "../../assets/What we help/Operational decisions.webp"
+import { Network, ThumbsUp, Info, LineChart } from 'lucide-react'
 
 const roles = [
   {
@@ -12,28 +9,28 @@ const roles = [
     verb: "Coordinate",
     description:
       "Bring public institutions, businesses, development partners and communities together around shared priorities.",
-    image: coordinateImg,
+    icon: Network,
   },
   {
     number: "02",
     verb: "Support",
     description:
       "Promote programmes, technologies, enterprises and partnerships that provide practical circular-plastics solutions.",
-    image: supportImg,
+    icon: ThumbsUp,
   },
   {
     number: "03",
     verb: "Inform",
     description:
       "Improve access to policies, research, technical guidance and plastic-sector information.",
-    image: informImg,
+    icon: Info,
   },
   {
     number: "04",
     verb: "Track",
     description:
       "Support monitoring, learning and transparent reporting on programmes and national progress.",
-    image: trackImg,
+    icon: LineChart,
   },
 ]
 
@@ -78,14 +75,9 @@ function WhatWeDoRole() {
       <div className="wwd-role__row" ref={rowRef}>
         {roles.map((role, i) => (
           <div className="wwd-role__card" key={i}>
-            {/* Full-bleed image */}
-            <img
-              src={role.image}
-              alt={role.verb}
-              className="wwd-role__card-img"
-              loading="lazy"
-            />
-            <div className="wwd-role__card-overlay" />
+            <div className="wwd-role__card-icon">
+              <role.icon size={48} strokeWidth={1.5} color="var(--cefps-green-mid)" />
+            </div>
 
             {/* Content */}
             <div className="wwd-role__card-body">
