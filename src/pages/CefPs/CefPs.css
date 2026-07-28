@@ -1035,13 +1035,13 @@
 
 /* ─── 6. PILOT PROJECTS AND SOLUTIONS ─── */
 .cefps-pilots {
-  padding: 100px 48px;
-  background: #ffffff;
+  padding: 100px 0;
+  background: var(--cefps-green-dark);
   overflow: hidden;
 }
 
 .cefps-pilots__container {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -1052,6 +1052,23 @@
   gap: 32px;
   margin-bottom: 48px;
   flex-wrap: wrap;
+  padding: 0 48px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cefps-pilots .cefps-section-title {
+  color: #ffffff;
+}
+
+.cefps-pilots .cefps-section-sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cefps-pilots .cefps-section-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--cefps-gold);
 }
 
 .cefps-pilots__header-text {
@@ -1091,6 +1108,8 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 32px;
+  padding-left: max(48px, calc((100% - 1400px) / 2 + 48px));
+  padding-right: max(48px, calc((100% - 1400px) / 2 + 48px));
   scrollbar-width: none;
 }
 
@@ -1151,7 +1170,6 @@
   color: var(--cefps-text-dark);
   margin: 0;
   line-height: 1.4;
-}
 }
 
 .cefps-pilots__bottom-cta {

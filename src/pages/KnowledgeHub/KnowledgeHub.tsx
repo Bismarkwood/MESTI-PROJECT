@@ -538,9 +538,7 @@ export default function KnowledgeHub() {
                           style={{ backgroundColor: res.accentColor || '#146B4A' }}
                         >
                           <div className="kh-cover-inner">
-                            <span className="kh-cover-tag">{res.type}</span>
                             <div className="kh-cover-title">{res.title}</div>
-                            <div className="kh-cover-publisher">{res.publisher} · {res.date}</div>
                           </div>
                           <button
                             type="button"
@@ -557,15 +555,12 @@ export default function KnowledgeHub() {
                         </div>
 
                         <div className="kh-res-card__body">
-                          <div className="kh-res-card__badges">
-                            <span className="kh-badge kh-badge--type">{res.type}</span>
-                          </div>
                           <h3 className="kh-res-card__title">
                             {res.title}
                           </h3>
                           <div className="kh-res-card__meta">
-                            <span>🏛️ {res.publisher}</span>
-                            <span>📅 {res.date}</span>
+                            <span className="kh-badge kh-badge--type">{res.type}</span>
+                            <span>{res.publisher}</span>
                           </div>
                         </div>
                       </article>
