@@ -6,7 +6,6 @@ import JoinCta from "../../components/JoinCta"
 import WhatWeDoRole from "../../components/WhatWeDoRole"
 import GovernanceSection from "../../components/GovernanceSection"
 import aboutHeroImg from "../../assets/about-hero.png"
-import missionImg from "../../assets/Mission & Vision/Mission & Vision.webp"
 import howImg1 from "../../assets/Life at Big Data Ghana/1765533172285.webp"
 import howImg2 from "../../assets/Life at Big Data Ghana/1756482542508.webp"
 import "./About.css"
@@ -197,7 +196,7 @@ function About() {
         </div>
         <div className="about-mission__images">
           <div className="about-mission__img-wrap">
-            <img src={missionImg} alt="CEF-PS Ghana Mission" />
+            <img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?auto=format&fit=crop&q=80&w=1200" alt="Sustainable recycling and circular economy in action" />
           </div>
         </div>
       </section>
