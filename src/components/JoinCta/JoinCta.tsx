@@ -43,7 +43,7 @@ function JoinCta({
         
         <div className="banner-cta__buttons">
           <a href="/contact" className="banner-cta__btn banner-cta__btn--primary">
-            Contact CPF Ghana
+            Contact CEF-PS Ghana
           </a>
         </div>
       </div>

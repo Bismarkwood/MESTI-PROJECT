@@ -4,7 +4,7 @@ export interface ResourceItem {
   slug: string;
   type: 'Policy' | 'Strategy' | 'Report' | 'Guideline' | 'Manual' | 'Toolkit' | 'Case Study' | 'Dataset' | 'Infographic' | 'Video' | 'Presentation';
   topic: string;
-  programme: 'CPF Ghana' | 'CEF-PS' | 'National Plastic Action Partnership' | 'MESTI Initiatives' | 'Partner Programmes';
+  programme: 'CEF-PS Ghana' | 'CEF-PS' | 'National Plastic Action Partnership' | 'MEST Initiatives' | 'Partner Programmes';
   publisher: string;
   author?: string;
   date: string; // e.g. "2026", "2025"
@@ -80,8 +80,8 @@ export const MOCK_RESOURCES: ResourceItem[] = [
     slug: 'national-circular-plastics-management-policy-2026',
     type: 'Policy',
     topic: 'Plastic Policy and Governance',
-    programme: 'CPF Ghana',
-    publisher: 'MESTI',
+    programme: 'CEF-PS Ghana',
+    publisher: 'MEST',
     author: 'Ministry of Environment, Science, Technology and Innovation',
     date: '2026',
     lastUpdated: 'January 2026',
@@ -91,9 +91,9 @@ export const MOCK_RESOURCES: ResourceItem[] = [
     pages: 64,
     readingTime: '30 mins',
     description: 'A comprehensive national framework outlining Ghana’s priorities and strategic direction for sustainable plastic management and circular economy transition.',
-    summary: 'This landmark policy establishes the formal governance, regulatory standards, and fiscal mechanisms required to transform Ghana from a linear plastics economy into a zero-leakage, high-recovery circular model by 2035. It mandates extended producer responsibility (EPR), incentives for domestic recycling infrastructure, and integrated community waste collection frameworks.',
+    summary: 'This landmark policy establishes the formal governance, regulatory standards, and fiscal mechanisms required to transform Ghana from a linear plastics economy into a zero-leakage, high-recovery circular model by 2035. It mandates extended producer responsibility (EPR), incentives for doMESTc recycling infrastructure, and integrated community waste collection frameworks.',
     language: 'English',
-    keywords: ['National Policy', 'EPR', 'Circular Economy', 'MESTI Governance', 'Plastic Waste'],
+    keywords: ['National Policy', 'EPR', 'Circular Economy', 'MEST Governance', 'Plastic Waste'],
     featured: true,
     accentColor: '#0C3B2E' // Deep green
   },
@@ -148,7 +148,7 @@ export const MOCK_RESOURCES: ResourceItem[] = [
     type: 'Strategy',
     topic: 'Marine Plastic Pollution',
     programme: 'National Plastic Action Partnership',
-    publisher: 'MESTI & NPAP Ghana',
+    publisher: 'MEST & NPAP Ghana',
     author: 'Coastal Zone Protection Taskforce',
     date: '2025',
     lastUpdated: 'October 2025',
@@ -191,8 +191,8 @@ export const MOCK_RESOURCES: ResourceItem[] = [
     slug: 'ghana-circular-plastics-indicator-dataset',
     type: 'Dataset',
     topic: 'Data and Research',
-    programme: 'CPF Ghana',
-    publisher: 'MESTI & Ghana Statistical Service',
+    programme: 'CEF-PS Ghana',
+    publisher: 'MEST & Ghana Statistical Service',
     author: 'National Data Observatory Team',
     date: '2026',
     lastUpdated: 'January 2026',
@@ -235,8 +235,8 @@ export const MOCK_RESOURCES: ResourceItem[] = [
     slug: 'sop-municipal-plastic-buy-back-centres',
     type: 'Manual',
     topic: 'Standards and Compliance',
-    programme: 'MESTI Initiatives',
-    publisher: 'MESTI',
+    programme: 'MEST Initiatives',
+    publisher: 'MEST',
     author: 'Directorate of Science, Technology and Innovation',
     date: '2025',
     lastUpdated: 'September 2025',
@@ -259,8 +259,8 @@ export const FEATURED_RESOURCE: ResourceItem = {
   slug: 'ghanas-circular-plastics-transition-framework-progress-opportunities',
   type: 'Report',
   topic: 'Plastic Policy and Governance',
-  programme: 'CPF Ghana',
-  publisher: 'CPF Ghana / MESTI',
+  programme: 'CEF-PS Ghana',
+  publisher: 'CEF-PS Ghana / MEST',
   author: 'National Circular Economy Secretariat & Lead Technical Advisers',
   date: '2026',
   lastUpdated: 'January 2026',
@@ -270,9 +270,9 @@ export const FEATURED_RESOURCE: ResourceItem = {
   pages: 144,
   readingTime: '25 mins',
   description: 'A flagship publication presenting the policy direction, programmes, partnerships, emerging solutions and opportunities shaping Ghana’s transition towards a circular plastics economy.',
-  summary: 'This comprehensive national report synthesizes four years of cross-sectoral collaboration under MESTI. It highlights key legislative breakthroughs, maps over $45M in ongoing catalytic green investments, and details priority intervention zones for polymer chemical recycling, eco-design innovations, and municipal infrastructure expansion through 2030.',
+  summary: 'This comprehensive national report synthesizes four years of cross-sectoral collaboration under MEST. It highlights key legislative breakthroughs, maps over $45M in ongoing catalytic green investments, and details priority intervention zones for polymer chemical recycling, eco-design innovations, and municipal infrastructure expansion through 2030.',
   language: 'English',
-  keywords: ['Flagship Report', 'Circular Framework', 'Green Investment', 'MESTI 2026', 'National Roadmap'],
+  keywords: ['Flagship Report', 'Circular Framework', 'Green Investment', 'MEST 2026', 'National Roadmap'],
   featured: true,
   accentColor: '#E5B73B'
 };
@@ -353,7 +353,7 @@ export const LATEST_ARTICLES = [
     topic: 'VALUE CHAIN ANALYSIS',
     title: 'Understanding Ghana’s Plastic Value Chain',
     description: 'An overview of how plastics move through production, consumption, collection, recovery and recycling systems across urban and peri-urban centers.',
-    author: 'CPF Ghana Research Team',
+    author: 'CEF-PS Ghana Research Team',
     date: 'January 18, 2026',
     readingTime: '8 min read',
     image: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=900&q=80',
@@ -363,8 +363,8 @@ export const LATEST_ARTICLES = [
     id: 'art-02',
     topic: 'ENTERPRISE SPOTLIGHT',
     title: 'The Role of Circular Enterprises',
-    description: 'How businesses and local innovators can contribute to plastic recovery, employment and sustainable domestic production in Ghana.',
-    author: 'MESTI Innovation Directorate',
+    description: 'How businesses and local innovators can contribute to plastic recovery, employment and sustainable doMESTc production in Ghana.',
+    author: 'MEST Innovation Directorate',
     date: 'December 12, 2025',
     readingTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80',

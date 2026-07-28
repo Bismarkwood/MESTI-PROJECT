@@ -11,8 +11,8 @@ import SEO from '../../components/SEO'
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'CPF Ghana',
-  url: 'https://cpfghana.org',
+  name: 'CEF-PS Ghana',
+  url: 'https://cefpsghana.org',
   description: 'Coordinated national platform under MEST supporting Ghana’s transition towards a circular plastics economy.',
   foundingDate: '2026',
   areaServed: 'Ghana',
@@ -24,8 +24,8 @@ function Homepage() {
   return (
     <main>
       <SEO
-        title="CPF Ghana | Circular Plastics Economy Platform"
-        description="CPF Ghana brings together government, businesses, innovators, development partners, researchers and communities to accelerate Ghana’s transition towards a circular plastics economy."
+        title="CEF-PS Ghana | Circular Plastics Economy Platform"
+        description="CEF-PS Ghana brings together government, businesses, innovators, development partners, researchers and communities to accelerate Ghana’s transition towards a circular plastics economy."
         path="/"
         structuredData={structuredData}
       />
@@ -35,7 +35,7 @@ function Homepage() {
       {/* 2. Hero */}
       <HeroScrollSection />
       
-      {/* 3. About CPF */}
+      {/* 3. About CEF-PS */}
       <AboutCPFSection />
       
       {/* 4. Focus Areas */}

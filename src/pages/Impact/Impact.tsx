@@ -89,8 +89,8 @@ function Impact() {
   return (
     <div className="impact-page">
       <SEO
-        title="CPF Ghana Impact · Progress, Targets and Stories of Change"
-        description="Verified progress, programme targets and real stories from CPF Ghana's circular plastics programmes. CEF-PS data clearly labelled as programme-level."
+        title="CEF-PS Ghana Impact · Progress, Targets and Stories of Change"
+        description="Verified progress, programme targets and real stories from CEF-PS Ghana's circular plastics programmes. CEF-PS data clearly labelled as programme-level."
         path="/impact"
       />
       <Navbar />
@@ -100,7 +100,7 @@ function Impact() {
         <HeroScrollSection
           badge="Impact and Progress"
           title="Turning Circular-Plastics Ambition into Measurable Action"
-          desc="CPF Ghana brings together programmes, partnerships and practical solutions that strengthen plastic recovery, support circular enterprises, build stakeholder capacity and protect Ghana's environment."
+          desc="CEF-PS Ghana brings together programmes, partnerships and practical solutions that strengthen plastic recovery, support circular enterprises, build stakeholder capacity and protect Ghana's environment."
           primaryCta={{ text: 'Explore Our Progress', href: '#progress', onClick: () => scrollToSection('progress') }}
           secondaryCta={{ text: 'View Programmes', href: '/cef-ps' }}
           hideFloatingBar

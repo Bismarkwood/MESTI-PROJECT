@@ -10,7 +10,7 @@ import cefPsPlaceholder from '../../assets/cef-ps-placeholder.svg'
 
 // Partner Logos
 import unidoLogo from '../../assets/UNIDO.webp'
-import mestiLogo from '../../assets/Mesti.png'
+import MESTLogo from '../../assets/Mesti.png'
 import epaLogo from '../../assets/EPA.webp'
 
 // Data types for interactive modals
@@ -68,7 +68,7 @@ const pilotSolutionsData: PilotSolution[] = [
     location: 'Accra Industrial Area',
     status: 'Technical Testing',
     description: 'Processing recovered plastic into material for textile and manufacturing applications.',
-    detailedDescription: 'This pilot focuses on high-grade bottle-to-fiber recycling. Cleaned and flaked PET bottles are processed into recycled polyester (rPET) yarn and strapping. The recovered fiber supplies domestic textile manufacturers and industrial packaging sectors, fostering a true closed-loop material economy in Ghana.',
+    detailedDescription: 'This pilot focuses on high-grade bottle-to-fiber recycling. Cleaned and flaked PET bottles are processed into recycled polyester (rPET) yarn and strapping. The recovered fiber supplies doMESTc textile manufacturers and industrial packaging sectors, fostering a true closed-loop material economy in Ghana.',
     impactTarget: 'Replacing imported virgin polyester with 100% locally recovered post-consumer rPET fiber.',
     image: cefPsPlaceholder,
   },
@@ -107,7 +107,7 @@ const componentsData: ComponentInfo[] = [
     keyActivities: [
       'Drafting standard operating procedures (SOPs) for secondary resource markets.',
       'Harmonizing national standards for recycled resin and plastic products.',
-      'Institutional strengthening for MESTI, EPA, and municipal authorities.',
+      'Institutional strengthening for MEST, EPA, and municipal authorities.',
       'Establishing legal mechanisms for Extended Producer Responsibility (EPR) integration.',
     ],
   },
@@ -150,7 +150,7 @@ const componentsData: ComponentInfo[] = [
 ]
 
 const galleryImages = [
-  { src: cefPsPlaceholder, title: 'Project Steering Committee Session', category: 'Governance · 2024', desc: 'Strategic oversight meeting with representatives from MESTI, EPA, UNIDO, and GEF discussing pilot disbursement milestones.' },
+  { src: cefPsPlaceholder, title: 'Project Steering Committee Session', category: 'Governance · 2024', desc: 'Strategic oversight meeting with representatives from MEST, EPA, UNIDO, and GEF discussing pilot disbursement milestones.' },
   { src: cefPsPlaceholder, title: 'Ministerial Monitoring & Evaluation Tour', category: 'Field Visit · 2024', desc: 'High-level delegation inspecting newly installed plastic extrusion and lumber processing machinery at participating SME facilities in Tema.' },
   { src: cefPsPlaceholder, title: 'Stakeholder Circularity Workshop', category: 'Capacity Building · 2025', desc: 'Technical training session for municipal waste coordinators and private recycler aggregators on standard operating procedures.' },
   { src: cefPsPlaceholder, title: 'SME Fund Disbursement Ceremony', category: 'Enterprise Support · 2025', desc: 'Official handover of catalytic grant funding and technical transfer packages to the 11 selected circular economy enterprises.' },
@@ -285,7 +285,7 @@ function CefPs() {
                 </div>
                 <div className="cefps-detail-item cefps-detail-item--full">
                   <span className="cefps-detail-label">Executed by</span>
-                  <strong className="cefps-detail-val">MESTI and EPA Ghana</strong>
+                  <strong className="cefps-detail-val">MEST and EPA Ghana</strong>
                 </div>
               </div>
               <div className="cefps-hero__details-footer">
@@ -299,7 +299,7 @@ function CefPs() {
               <div className="cefps-hero__logos-row">
                 <div className="cefps-partner-badge cefps-partner-badge--gef">GEF · Fund</div>
                 <img src={unidoLogo} alt="UNIDO" className="cefps-partner-img" />
-                <img src={mestiLogo} alt="MESTI Ghana" className="cefps-partner-img" />
+                <img src={MESTLogo} alt="MEST Ghana" className="cefps-partner-img" />
                 <img src={epaLogo} alt="EPA Ghana" className="cefps-partner-img" />
               </div>
             </div>
@@ -803,7 +803,7 @@ function CefPs() {
               National &amp; International Institutional Coordination
             </h2>
             <p className="cefps-section-sub">
-              MESTI and EPA remain clearly positioned as the national executing institutions, driving Ghana’s sustainable circular transformation.
+              MEST and EPA remain clearly positioned as the national executing institutions, driving Ghana’s sustainable circular transformation.
             </p>
           </div>
 
@@ -845,11 +845,11 @@ function CefPs() {
                 {/* Executing Institutions */}
                 <div className="cefps-institution-card cefps-institution-card--exec">
                   <div className="cefps-inst-logo-row">
-                    <img src={mestiLogo} alt="MESTI" className="cefps-inst-logo" />
+                    <img src={MESTLogo} alt="MEST" className="cefps-inst-logo" />
                     <img src={epaLogo} alt="EPA Ghana" className="cefps-inst-logo" />
                   </div>
                   <div className="cefps-inst-details">
-                    <strong>Ministry of Environment, Science, Technology and Innovation (MESTI) &amp; Environmental Protection Agency Ghana (EPA Ghana)</strong>
+                    <strong>Ministry of Environment, Science, Technology and Innovation (MEST) &amp; Environmental Protection Agency Ghana (EPA Ghana)</strong>
                     <span>National executing authorities responsible for regulatory enforcement, policy alignment, and national coordination.</span>
                   </div>
                 </div>
@@ -984,10 +984,10 @@ function CefPs() {
             </div>
             <div className="cefps-modal__body">
               <div className="cefps-modal__content">
-                <p>For official inquiries regarding GEF Project 10401, stakeholder coordination, or pilot enterprise partnerships, please connect with the Project Management Unit at MESTI and EPA Ghana.</p>
+                <p>For official inquiries regarding GEF Project 10401, stakeholder coordination, or pilot enterprise partnerships, please connect with the Project Management Unit at MEST and EPA Ghana.</p>
                 <div className="cefps-contact-info">
                   <div className="cefps-contact-row">
-                    <strong>Ministry of Environment, Science, Technology and Innovation (MESTI)</strong>
+                    <strong>Ministry of Environment, Science, Technology and Innovation (MEST)</strong>
                     <span>Ministries Post Office, Box M232, Accra, Ghana</span>
                   </div>
                   <div className="cefps-contact-row">
@@ -996,7 +996,7 @@ function CefPs() {
                   </div>
                   <div className="cefps-contact-row">
                     <strong>Email Inquiries:</strong>
-                    <a href="mailto:cefps-pmu@mesti.gov.gh">cefps-pmu@mesti.gov.gh</a>
+                    <a href="mailto:cefps-pmu@MEST.gov.gh">cefps-pmu@MEST.gov.gh</a>
                   </div>
                 </div>
               </div>

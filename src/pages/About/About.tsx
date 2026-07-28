@@ -60,15 +60,15 @@ function About() {
   return (
     <main className="about-page" ref={mainRef}>
       <SEO
-        title="About Us | CPF Ghana — Coordinating the Circular Plastics Transition"
-        description="CPF Ghana is a national platform coordinated under MESTI, bringing stakeholders together to advance sustainable plastic production, consumption, collection, recovery and recycling."
+        title="About Us | CEF-PS Ghana — Coordinating the Circular Plastics Transition"
+        description="CEF-PS Ghana is a national platform coordinated under MEST, bringing stakeholders together to advance sustainable plastic production, consumption, collection, recovery and recycling."
         path="/about"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "AboutPage",
           mainEntity: {
             "@type": "Organization",
-            name: "CPF Ghana",
+            name: "CEF-PS Ghana",
             areaServed: "Ghana",
             knowsAbout: ["Circular Economy", "Plastic Waste Management", "Environmental Policy", "Recycling"],
           },
@@ -81,12 +81,12 @@ function About() {
         <img src={aboutHeroImg} alt="" className="about-hero__bg" />
         <div className="about-hero__overlay" />
         <div className="about-hero__content">
-          <span className="about-hero__eyebrow">About CPF Ghana</span>
+          <span className="about-hero__eyebrow">About CEF-PS Ghana</span>
           <h1 className="about-hero__title">
             Coordinating Ghana's Transition to Circular Plastics
           </h1>
           <p className="about-hero__sub">
-            CPF Ghana is a national platform under the Ministry of Environment, Science, Technology and Innovation
+            CEF-PS Ghana is a national platform under the Ministry of Environment, Science, Technology and Innovation
             that brings stakeholders together to advance sustainable plastic production, consumption, collection,
             recovery and recycling.
           </p>
@@ -103,7 +103,7 @@ function About() {
             <span className="about-story__label">WHO WE ARE</span>
             <h2 className="about-story__heading">A Shared Platform for National Action</h2>
             <p className="about-story__desc">
-              CPF Ghana connects government institutions, businesses, development partners, researchers,
+              CEF-PS Ghana connects government institutions, businesses, development partners, researchers,
               civil society organisations, waste-sector actors and communities around a shared
               circular-plastics agenda.
             </p>
@@ -115,7 +115,7 @@ function About() {
           </div>
           <div className="about-story__images">
             <div className="about-story__image">
-              <img src={whyBdgImg} alt="CPF Ghana coordination" />
+              <img src={whyBdgImg} alt="CEF-PS Ghana coordination" />
             </div>
             <div className="about-story__image">
               <img src={lifeImg1} alt="Stakeholders at work" />
@@ -124,12 +124,12 @@ function About() {
         </div>
       </section>
 
-      {/* 3. Why CPF Ghana Exists */}
+      {/* 3. Why CEF-PS Ghana Exists */}
       <section className="about-why">
         <div className="about-why__inner">
           <div className="about-why__left">
             <div className="about-why__badge">
-              <span>Why CPF Ghana Exists</span>
+              <span>Why CEF-PS Ghana Exists</span>
             </div>
             <h2 className="about-why__heading">
               Ghana Needs a Coordinated Response to Plastic Pollution
@@ -142,7 +142,7 @@ function About() {
               to implement without a shared platform connecting all actors.
             </p>
             <p className="about-why__body">
-              CPF Ghana exists to close that gap — providing a neutral, nationally recognised coordination
+              CEF-PS Ghana exists to close that gap — providing a neutral, nationally recognised coordination
               platform that aligns government, business, civil society and development partners behind
               common objectives and measurable outcomes.
             </p>
@@ -157,7 +157,7 @@ function About() {
               </div>
               <div className="about-why__stat">
                 <span className="about-why__stat-num">1</span>
-                <span className="about-why__stat-label">national coordination platform — CPF Ghana</span>
+                <span className="about-why__stat-label">national coordination platform — CEF-PS Ghana</span>
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@ function About() {
         </div>
         <div className="about-mission__images">
           <div className="about-mission__img-wrap">
-            <img src={missionImg} alt="CPF Ghana Mission" />
+            <img src={missionImg} alt="CEF-PS Ghana Mission" />
           </div>
         </div>
       </section>
@@ -207,14 +207,14 @@ function About() {
       {/* 5. What We Do */}
       <WhatWeDoRole />
 
-      {/* 6. How CPF Works */}
+      {/* 6. How CEF-PS Works */}
       <section className="about-how">
         <div className="about-how__inner">
           <div className="about-how__header">
-            <div className="about-how__badge"><span>How CPF Works</span></div>
+            <div className="about-how__badge"><span>How CEF-PS Works</span></div>
             <h2 className="about-how__heading">A Platform, Not a Programme</h2>
             <p className="about-how__sub">
-              CPF Ghana operates as a coordination layer — facilitating collaboration, not implementing
+              CEF-PS Ghana operates as a coordination layer — facilitating collaboration, not implementing
               projects directly. Here is how the platform functions in practice.
             </p>
           </div>
@@ -224,7 +224,7 @@ function About() {
                 {
                   n: "01",
                   title: "Stakeholder Convening",
-                  desc: "CPF Ghana brings together government ministries, industry associations, development partners, recyclers and civil society through working groups, forums and thematic networks.",
+                  desc: "CEF-PS Ghana brings together government ministries, industry associations, development partners, recyclers and civil society through working groups, forums and thematic networks.",
                 },
                 {
                   n: "02",

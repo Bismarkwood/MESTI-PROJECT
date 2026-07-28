@@ -23,7 +23,7 @@ const cards = [
   {
     tag: 'News',
     heading: 'Programme Updates',
-    desc: 'Latest activities and announcements from CPF Ghana programmes.',
+    desc: 'Latest activities and announcements from CEF-PS Ghana programmes.',
     cta: 'Read',
     image: img3,
   },
@@ -45,7 +45,7 @@ function InsightsSection() {
             Resources, News and Opportunities
           </h2>
           <p className="knowledge-updates__sub">
-            Access policies, research, and the latest from CPF Ghana.
+            Access policies, research, and the latest from CEF-PS Ghana.
           </p>
         </div>
 

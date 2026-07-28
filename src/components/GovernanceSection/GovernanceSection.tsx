@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./GovernanceSection.css"
 
 import govImg     from "../../assets/Mission & Vision/Mission & Vision.webp"
@@ -21,14 +21,14 @@ const partners = [
 function GovernanceSection() {
   return (
     <section className="gov" id="governance">
-      {/* ─── Background image + overlays ─── */}
+      {/* --- Background image + overlays --- */}
       <div className="gov__bg-wrap">
         <img src={govImg} alt="" className="gov__bg-img" />
         <div className="gov__bg-overlay" />
         <div className="gov__bg-tint" />
       </div>
 
-      {/* ─── Main layout ─── */}
+      {/* --- Main layout --- */}
       <div className="gov__inner">
 
         {/* Left: text content */}
@@ -38,13 +38,13 @@ function GovernanceSection() {
           </div>
 
           <h2 className="gov__heading">
-            Led by <em>MESTI</em>,<br />
+            Led by <em>MEST</em>,<br />
             Delivered Through<br />
             Collaboration
           </h2>
 
           <p className="gov__body">
-            CPF Ghana is coordinated under the Ministry of Environment, Science,
+            CEF-PS Ghana is coordinated under the Ministry of Environment, Science,
             Technology and Innovation, working with relevant government institutions
             and stakeholders across Ghana's plastics ecosystem.
           </p>
@@ -56,7 +56,7 @@ function GovernanceSection() {
 
           <Link to="/partners" className="gov__btn">
             Meet Our Partners
-            <span className="gov__btn-arrow" aria-hidden="true">→</span>
+            <span className="gov__btn-arrow" aria-hidden="true">?</span>
           </Link>
         </div>
 
@@ -79,7 +79,7 @@ function GovernanceSection() {
 
       </div>
 
-      {/* ─── Bottom accent bar ─── */}
+      {/* --- Bottom accent bar --- */}
       <div className="gov__accent-bar" />
     </section>
   )

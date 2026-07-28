@@ -91,7 +91,7 @@ function CapabilitiesV2({ hideHeader = false, customCards }: { hideHeader?: bool
             </h2>
           </div>
           <p className="capv2__sub">
-            CPF coordinates and showcases programmes that contribute to Ghana’s circular-plastics objectives.
+            CEF-PS coordinates and showcases programmes that contribute to Ghana’s circular-plastics objectives.
           </p>
         </div>
       )}

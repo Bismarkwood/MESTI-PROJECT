@@ -190,7 +190,7 @@ export default function KnowledgeHub() {
     e.preventDefault();
     if (newsletterEmail) {
       setNewsletterSubmitted(true);
-      showToast('Thank you for subscribing to CPF Ghana updates!');
+      showToast('Thank you for subscribing to CEF-PS Ghana updates!');
     }
   };
 
@@ -289,7 +289,7 @@ export default function KnowledgeHub() {
               <span className="kh-label">RESOURCE LIBRARY</span>
               <h2 className="kh-section-title">Browse All Resources</h2>
               <p className="kh-section-sub">
-                Find approved documents and learning materials published by CPF Ghana, MESTI, participating programmes and partner institutions.
+                Find approved documents and learning materials published by CEF-PS Ghana, MEST, participating programmes and partner institutions.
               </p>
             </div>
 
@@ -435,7 +435,7 @@ export default function KnowledgeHub() {
               <div className="kh-sidebar-group">
                 <h4 className="kh-sidebar-title">Programme</h4>
                 <div className="kh-checkbox-list">
-                  {['CPF Ghana', 'CEF-PS', 'National Plastic Action Partnership', 'MESTI Initiatives', 'Partner Programmes'].map(prog => (
+                  {['CEF-PS Ghana', 'CEF-PS', 'National Plastic Action Partnership', 'MEST Initiatives', 'Partner Programmes'].map(prog => (
                     <label key={prog} className="kh-checkbox-item">
                       <input
                         type="checkbox"
@@ -451,7 +451,7 @@ export default function KnowledgeHub() {
               <div className="kh-sidebar-group">
                 <h4 className="kh-sidebar-title">Publisher</h4>
                 <div className="kh-checkbox-list">
-                  {['MESTI', 'EPA Ghana', 'UNIDO', 'GEF', 'UNDP', 'Research Institutions', 'Partner Organisations'].map(pub => (
+                  {['MEST', 'EPA Ghana', 'UNIDO', 'GEF', 'UNDP', 'Research Institutions', 'Partner Organisations'].map(pub => (
                     <label key={pub} className="kh-checkbox-item">
                       <input
                         type="checkbox"
@@ -637,7 +637,7 @@ export default function KnowledgeHub() {
                   <span className="kh-cover-tag kh-cover-tag--gold">★ FEATURED PUBLICATION</span>
                 </div>
                 <div className="kh-featured-cover__title">{FEATURED_RESOURCE.title}</div>
-                <div className="kh-featured-cover__sub">MESTI · CPF GHANA · 2026 ROADMAP</div>
+                <div className="kh-featured-cover__sub">MEST · CEF-PS Ghana · 2026 ROADMAP</div>
                 <div className="kh-featured-cover__seal">🇬🇭</div>
               </div>
             </div>
@@ -869,7 +869,7 @@ export default function KnowledgeHub() {
               </div>
               <div className="kh-visual-card__body">
                 <h3>Videos and Presentations</h3>
-                <p>Access recorded stakeholder workshops, MESTI policy presentations, and educational community webinars.</p>
+                <p>Access recorded stakeholder workshops, MEST policy presentations, and educational community webinars.</p>
                 <button type="button" className="kh-btn kh-btn--outline-white kh-btn--sm" onClick={() => showToast('Opening Video Library...')}>
                   Watch Media →
                 </button>
@@ -895,14 +895,14 @@ export default function KnowledgeHub() {
               Subscribe for updates when new policies, reports, research, training materials and sector resources are published.
             </p>
             <span className="kh-newsletter__privacy">
-              🔒 By subscribing, you agree to receive CPF Ghana updates. Your information will be handled in accordance with the website’s privacy policy.
+              🔒 By subscribing, you agree to receive CEF-PS Ghana updates. Your information will be handled in accordance with the website’s privacy policy.
             </span>
           </div>
 
           <form className="kh-newsletter__form" onSubmit={handleNewsletterSubmit}>
             {newsletterSubmitted ? (
               <div className="kh-newsletter-success">
-                <span>✅ Thank you! You are now subscribed to CPF Ghana updates.</span>
+                <span>✅ Thank you! You are now subscribed to CEF-PS Ghana updates.</span>
               </div>
             ) : (
               <>
@@ -993,7 +993,7 @@ export default function KnowledgeHub() {
                 <div className="kh-modal__citation">
                   <h5>📑 Recommended Citation</h5>
                   <code>
-                    {activeModalResource.author || activeModalResource.publisher} ({activeModalResource.date}). {activeModalResource.title}. Ministry of Environment, Science, Technology and Innovation (MESTI) / CPF Ghana Knowledge Hub.
+                    {activeModalResource.author || activeModalResource.publisher} ({activeModalResource.date}). {activeModalResource.title}. Ministry of Environment, Science, Technology and Innovation (MEST) / CEF-PS Ghana Knowledge Hub.
                   </code>
                 </div>
 

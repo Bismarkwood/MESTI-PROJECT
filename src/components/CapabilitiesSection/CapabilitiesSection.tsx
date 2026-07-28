@@ -53,7 +53,7 @@ function CapabilitiesSection() {
           </h2>
         </div>
         <p className="capabilities__sub">
-          CPF coordinates and showcases programmes that contribute to Ghana’s circular-plastics objectives.
+          CEF-PS coordinates and showcases programmes that contribute to Ghana’s circular-plastics objectives.
         </p>
       </div>
 

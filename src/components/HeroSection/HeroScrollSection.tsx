@@ -18,8 +18,8 @@ export interface HeroScrollSectionProps {
 function HeroScrollSection({
   badge = 'A National Platform for Circular Plastics',
   title = 'Closing the Loop on Plastics in Ghana',
-  desc = 'CPF Ghana brings together government, businesses, innovators, development partners, researchers and communities to reduce plastic pollution and accelerate Ghana’s transition towards a circular plastics economy.',
-  primaryCta = { text: 'Explore the Framework', href: '#about-cpf' },
+  desc = 'CEF-PS Ghana brings together government, businesses, innovators, development partners, researchers and communities to reduce plastic pollution and accelerate Ghana’s transition towards a circular plastics economy.',
+  primaryCta = { text: 'Explore the Framework', href: '#about-cefps' },
   secondaryCta = { text: 'Discover Programmes', href: '#programmes' },
   hideFloatingBar = false,
 }: HeroScrollSectionProps = {}) {

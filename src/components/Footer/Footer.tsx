@@ -25,11 +25,11 @@ function Footer() {
       <div className="footer__top">
         <div className="footer__brand">
           <div className="footer__brand-logo">
-            <img src={mestLogo} alt="MEST CPF Ghana Logo" className="footer__brand-img" />
-            <h2 className="footer__brand-name">CPF Ghana</h2>
+            <img src={mestLogo} alt="MEST CEF-PS Ghana Logo" className="footer__brand-img" />
+            <h2 className="footer__brand-name">CEF-PS Ghana</h2>
           </div>
           <p className="footer__brand-tagline">
-            CPF Ghana is a national platform under the Ministry of Environment, Science, Technology and Innovation supporting Ghana’s transition towards a circular plastics economy.
+            CEF-PS Ghana is a national platform under the Ministry of Environment, Science, Technology and Innovation supporting Ghana’s transition towards a circular plastics economy.
           </p>
         </div>
         
@@ -72,7 +72,7 @@ function Footer() {
 
         <div className="footer__contact">
           <span>+233 (0) 302 666 049</span>
-          <span>info@cpfghana.org</span>
+          <span>info@cefpsghana.org</span>
         </div>
       </div>
 

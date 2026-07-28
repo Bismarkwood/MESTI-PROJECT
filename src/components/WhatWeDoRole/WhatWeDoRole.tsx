@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import "./WhatWeDoRole.css"
 
 import coordinateImg from "../../assets/What we help/Location decisions.webp"
@@ -62,19 +62,19 @@ function WhatWeDoRole() {
   return (
     <section className="wwd-role" id="what-we-do">
 
-      {/* ── Top header ── */}
+      {/* -- Top header -- */}
       <div className="wwd-role__header">
         <div className="wwd-role__header-left">
           <div className="wwd-role__badge"><span>Our Role</span></div>
           <h2 className="wwd-role__heading">What We Do</h2>
         </div>
         <p className="wwd-role__sub">
-          CPF Ghana acts as a catalyst for national action — connecting
+          CEF-PS Ghana acts as a catalyst for national action - connecting
           stakeholders, surfacing solutions and keeping progress visible.
         </p>
       </div>
 
-      {/* ── Cards row ── */}
+      {/* -- Cards row -- */}
       <div className="wwd-role__row" ref={rowRef}>
         {roles.map((role, i) => (
           <div className="wwd-role__card" key={i}>

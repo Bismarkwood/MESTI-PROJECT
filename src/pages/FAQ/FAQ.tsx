@@ -16,13 +16,13 @@ interface FaqItem {
 const faqData: FaqItem[] = [
   // ─── 3. GENERAL QUESTIONS ───
   {
-    id: 'what-is-cpf-ghana',
+    id: 'what-is-CEF-PS-ghana',
     category: 'General',
-    q: 'What is CPF Ghana?',
+    q: 'What is CEF-PS Ghana?',
     a: (
       <>
         <p>
-          CPF Ghana is a national platform under the Ministry of Environment, Science, Technology and Innovation that supports Ghana’s transition towards a circular plastics economy.
+          CEF-PS Ghana is a national platform under the Ministry of Environment, Science, Technology and Innovation that supports Ghana’s transition towards a circular plastics economy.
         </p>
         <p>
           It brings together government institutions, businesses, development partners, researchers, civil society organisations, waste-sector actors and communities to coordinate action across the plastics value chain.
@@ -32,13 +32,13 @@ const faqData: FaqItem[] = [
     relatedLink: { label: 'Learn More About Us →', href: '/about' },
   },
   {
-    id: 'what-is-the-purpose-of-cpf-ghana',
+    id: 'what-is-the-purpose-of-CEF-PS-ghana',
     category: 'General',
-    q: 'What is the purpose of CPF Ghana?',
+    q: 'What is the purpose of CEF-PS Ghana?',
     a: (
       <>
         <p>
-          CPF Ghana is intended to improve coordination across Ghana’s plastics sector and provide a central platform for:
+          CEF-PS Ghana is intended to improve coordination across Ghana’s plastics sector and provide a central platform for:
         </p>
         <ul>
           <li>Policies and national strategies</li>
@@ -57,33 +57,33 @@ const faqData: FaqItem[] = [
     relatedLink: { label: 'Explore Our Programmes →', href: '/services' },
   },
   {
-    id: 'is-cpf-ghana-a-government-platform',
+    id: 'is-CEF-PS-ghana-a-government-platform',
     category: 'General',
-    q: 'Is CPF Ghana a government platform?',
+    q: 'Is CEF-PS Ghana a government platform?',
     a: (
       <>
         <p>
-          Yes. CPF Ghana is presented as a national circular-plastics platform under MESTI.
+          Yes. CEF-PS Ghana is presented as a national circular-plastics platform under MEST.
         </p>
         <p>The website should clearly distinguish between:</p>
         <ul>
-          <li>CPF Ghana as the broader national platform</li>
+          <li>CEF-PS Ghana as the broader national platform</li>
           <li>Individual programmes implemented under it</li>
           <li>Institutions and development partners supporting specific programmes</li>
         </ul>
       </>
     ),
-    relatedLink: { label: 'View MESTI & Partner Institutions →', href: '/about' },
+    relatedLink: { label: 'View MEST & Partner Institutions →', href: '/about' },
   },
   {
-    id: 'is-cpf-ghana-the-same-as-cef-ps',
+    id: 'is-CEF-PS-ghana-the-same-as-cef-ps',
     category: 'General',
-    q: 'Is CPF Ghana the same as CEF-PS?',
+    q: 'Is CEF-PS Ghana the same as CEF-PS?',
     a: (
       <>
         <p>No.</p>
         <p>
-          CPF Ghana is the broader platform for Ghana’s circular-plastics agenda. CEF-PS is a specific programme that should be featured under the <strong>Programmes and Projects</strong> section of the website.
+          CEF-PS Ghana is the broader platform for Ghana’s circular-plastics agenda. CEF-PS is a specific programme that should be featured under the <strong>Programmes and Projects</strong> section of the website.
         </p>
         <p>
           CEF-PS has its own objectives, implementation period, budget, partners, activities and expected results.
@@ -93,9 +93,9 @@ const faqData: FaqItem[] = [
     relatedLink: { label: 'Explore the CEF-PS Project Page →', href: '/cef-ps' },
   },
   {
-    id: 'who-can-use-the-cpf-ghana-website',
+    id: 'who-can-use-the-CEF-PS-ghana-website',
     category: 'General',
-    q: 'Who can use the CPF Ghana website?',
+    q: 'Who can use the CEF-PS Ghana website?',
     a: (
       <>
         <p>The platform is intended for:</p>
@@ -180,13 +180,13 @@ const faqData: FaqItem[] = [
     relatedLink: { label: 'Explore Our Programmes →', href: '/services' },
   },
   {
-    id: 'does-cpf-ghana-collect-plastic-waste-directly',
+    id: 'does-CEF-PS-ghana-collect-plastic-waste-directly',
     category: 'Circular Plastics',
-    q: 'Does CPF Ghana collect plastic waste directly?',
+    q: 'Does CEF-PS Ghana collect plastic waste directly?',
     a: (
       <>
         <p>
-          CPF Ghana should primarily be presented as a coordination, information and stakeholder-engagement platform.
+          CEF-PS Ghana should primarily be presented as a coordination, information and stakeholder-engagement platform.
         </p>
         <p>
           Plastic collection services may be delivered by registered collectors, aggregators, local authorities, recycling businesses, community organisations or programmes featured on the platform.
@@ -253,7 +253,7 @@ const faqData: FaqItem[] = [
         <ul>
           <li><strong>Funded by:</strong> Global Environment Facility (GEF Project 10401)</li>
           <li><strong>Implemented by:</strong> United Nations Industrial Development Organization (UNIDO)</li>
-          <li><strong>Executed by:</strong> MESTI and the Environmental Protection Agency (EPA) Ghana</li>
+          <li><strong>Executed by:</strong> MEST and the Environmental Protection Agency (EPA) Ghana</li>
         </ul>
         <p>
           The consolidated report identifies the project budget as <strong>USD 7 million</strong>.
@@ -355,9 +355,9 @@ const faqData: FaqItem[] = [
 
   // ─── 6. PARTNERSHIPS AND PARTICIPATION ───
   {
-    id: 'who-can-partner-with-cpf-ghana',
+    id: 'who-can-partner-with-CEF-PS-ghana',
     category: 'Partnerships',
-    q: 'Who can partner with CPF Ghana?',
+    q: 'Who can partner with CEF-PS Ghana?',
     a: (
       <>
         <p>Potential partners may include:</p>
@@ -371,7 +371,7 @@ const faqData: FaqItem[] = [
           <li>Technology providers</li>
         </ul>
         <p>
-          Partnership requests should be reviewed according to MESTI’s approved institutional processes.
+          Partnership requests should be reviewed according to MEST’s approved institutional processes.
         </p>
       </>
     ),
@@ -436,11 +436,11 @@ const faqData: FaqItem[] = [
           <li>Monitoring and evaluation</li>
         </ul>
         <p>
-          Partnership discussions should be directed to the official CPF or MESTI contact channel.
+          Partnership discussions should be directed to the official CEF-PS or MEST contact channel.
         </p>
       </>
     ),
-    relatedLink: { label: 'Contact MESTI / CPF Team →', href: '/contact' },
+    relatedLink: { label: 'Contact MEST / CEF-PS Team →', href: '/contact' },
   },
 
   // ─── 7. RESOURCES AND DATA ───
@@ -501,9 +501,9 @@ const faqData: FaqItem[] = [
     ),
   },
   {
-    id: 'can-researchers-access-cpf-ghana-data',
+    id: 'can-researchers-access-CEF-PS-ghana-data',
     category: 'Resources',
-    q: 'Can researchers access CPF Ghana data?',
+    q: 'Can researchers access CEF-PS Ghana data?',
     a: (
       <>
         <p>
@@ -573,9 +573,9 @@ const faqData: FaqItem[] = [
     ),
   },
   {
-    id: 'how-can-i-receive-cpf-ghana-updates',
+    id: 'how-can-i-receive-CEF-PS-ghana-updates',
     category: 'Opportunities',
-    q: 'How can I receive CPF Ghana updates?',
+    q: 'How can I receive CEF-PS Ghana updates?',
     a: (
       <>
         <p>
@@ -595,9 +595,9 @@ const faqData: FaqItem[] = [
 
   // ─── 9. CONTACT AND REPORTING ───
   {
-    id: 'how-can-i-contact-cpf-ghana',
+    id: 'how-can-i-contact-CEF-PS-ghana',
     category: 'Contact',
-    q: 'How can I contact CPF Ghana?',
+    q: 'How can I contact CEF-PS Ghana?',
     a: (
       <>
         <p>
@@ -637,7 +637,7 @@ const faqData: FaqItem[] = [
     a: (
       <>
         <p>
-          A pollution-reporting function should only be introduced when CPF Ghana has an approved process and responsible institution for receiving, verifying and responding to reports.
+          A pollution-reporting function should only be introduced when CEF-PS Ghana has an approved process and responsible institution for receiving, verifying and responding to reports.
         </p>
         <p>
           Until then, visitors should direct reports to the appropriate official environmental (EPA) or local-government authority rather than creating the expectation of an emergency-response service.
@@ -744,8 +744,8 @@ function FAQ() {
   return (
     <div className="faq-page">
       <SEO
-        title="Frequently Asked Questions | CPF Ghana - MESTI"
-        description="Find answers about CPF Ghana, circular plastics, programmes like CEF-PS, partnerships, resources, and participation opportunities."
+        title="Frequently Asked Questions | CEF-PS Ghana - MEST"
+        description="Find answers about CEF-PS Ghana, circular plastics, programmes like CEF-PS, partnerships, resources, and participation opportunities."
         path="/faq"
       />
       <Navbar light={false} />
@@ -757,7 +757,7 @@ function FAQ() {
           <span className="faq-hero__label">Help and Information</span>
           <h1 className="faq-hero__title">Frequently Asked Questions</h1>
           <p className="faq-hero__sub">
-            Find answers about CPF Ghana, circular plastics, programmes, partnerships, resources and opportunities to participate.
+            Find answers about CEF-PS Ghana, circular plastics, programmes, partnerships, resources and opportunities to participate.
           </p>
 
           <div className="faq-hero__search-wrap">
@@ -787,8 +787,8 @@ function FAQ() {
 
             <div className="faq-hero__popular">
               <span className="faq-popular-label">Popular:</span>
-              <button type="button" className="faq-popular-btn" onClick={() => handlePopularClick('CPF Ghana')}>
-                CPF Ghana
+              <button type="button" className="faq-popular-btn" onClick={() => handlePopularClick('CEF-PS Ghana')}>
+                CEF-PS Ghana
               </button>
               <span className="faq-popular-sep">·</span>
               <button type="button" className="faq-popular-btn" onClick={() => handlePopularClick('CEF-PS')}>
@@ -949,7 +949,7 @@ function FAQ() {
                   Clear Search
                 </button>
                 <Link to="/contact" className="faq-btn faq-btn--outline">
-                  Contact the CPF Team
+                  Contact the CEF-PS Team
                 </Link>
               </div>
             </div>
@@ -963,11 +963,11 @@ function FAQ() {
           <div className="faq-still-help__pattern" />
           <h2 className="faq-still-help__title">Couldn’t Find What You Were Looking For?</h2>
           <p className="faq-still-help__sub">
-            Contact the CPF Ghana team for programme information, partnerships, resources and general enquiries.
+            Contact the CEF-PS Ghana team for programme information, partnerships, resources and general enquiries.
           </p>
           <div className="faq-still-help__actions">
             <Link to="/contact" className="faq-btn faq-btn--gold">
-              Contact the CPF Team
+              Contact the CEF-PS Team
             </Link>
             <Link to="/knowledge-hub" className="faq-btn faq-btn--outline-white">
               Explore the Knowledge Hub

@@ -1,1 +1,1 @@
-﻿export { default } from './WhatWeDoRole'
+export { default } from './WhatWeDoRole'
