@@ -9,7 +9,6 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Pilot Projects', href: '/cef-ps' },
   { label: 'Impact', href: '/impact' },
-  { label: 'Projects', href: '/projects' },
   { label: 'Knowledge Hub', href: '/knowledge-hub' },
   { label: 'Company', href: '#company', hasDropdown: true },
 ]

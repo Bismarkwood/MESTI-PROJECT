@@ -29,7 +29,7 @@ const KnowledgeHub = lazy(() => import('./pages/KnowledgeHub'))
 const ResourceDetail = lazy(() => import('./pages/ResourceDetail'))
 const CefPs = lazy(() => import('./pages/CefPs'))
 const Impact = lazy(() => import('./pages/Impact'))
-const Projects = lazy(() => import('./pages/Projects'))
+
 
 function PageTracker() {
   usePageTracking()
@@ -50,7 +50,7 @@ function App() {
               <Route path="/ai-automation" element={<AIAutomation />} />
               <Route path="/data-analytics" element={<DataAnalytics />} />
               <Route path="/proof" element={<CefPs />} />
-              <Route path="/projects" element={<Projects />} />
+
               <Route path="/solutions" element={<Solutions />} />
               <Route path="/solutions/:slug" element={<ProjectDetail />} />
               <Route path="/insights" element={<Insights />} />
