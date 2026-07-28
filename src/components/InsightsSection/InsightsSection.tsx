@@ -1,38 +1,33 @@
 import { Link } from 'react-router-dom'
-import img1 from '../../assets/Insight/Screenshot_2026-07-02_075619.webp'
-import img2 from '../../assets/Insight/Card 2.webp'
-import img3 from '../../assets/Insight/Card 4.webp'
-import img4 from '../../assets/Insight/Card 5.webp'
 import './InsightsSection.css'
-
 const cards = [
   {
     tag: 'Knowledge Hub',
     heading: 'Policies and Frameworks',
     desc: 'National policies enabling responsible plastic management across Ghana.',
     cta: 'Browse',
-    image: img1,
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
   },
   {
     tag: 'Knowledge Hub',
     heading: 'Technical Guidelines',
     desc: 'Research publications and sector assessments for evidence-based decisions.',
     cta: 'View',
-    image: img2,
+    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800',
   },
   {
     tag: 'News',
     heading: 'Programme Updates',
     desc: 'Latest activities and announcements from CEF-PS Ghana programmes.',
     cta: 'Read',
-    image: img3,
+    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=800',
   },
   {
     tag: 'Opportunities',
     heading: 'Training and Funding',
     desc: 'Open calls, capacity building and upcoming sector events.',
     cta: 'Explore',
-    image: img4,
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800',
   },
 ]
 

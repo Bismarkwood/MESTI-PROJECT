@@ -247,55 +247,17 @@ function Contact() {
       <Navbar />
 
       {/* ── 1. HERO ── */}
-      <section className="ct-hero">
+      <section className="ct-hero" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(${smeFacilityImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="ct-hero__inner">
-          <div className="ct-hero__left">
+          <div className="ct-hero__content">
             <span className="ct-hero__label">Contact CEF-PS Ghana</span>
             <h1 className="ct-hero__title">Let's Connect for a<br />Circular Plastics Future</h1>
             <p className="ct-hero__desc">
               Have a question, partnership idea or resource to share? Contact the CEF-PS Ghana team for
               information about programmes, circular-plastics initiatives, research, events and opportunities.
             </p>
-            <div className="ct-hero__links">
-              <a href="mailto:[GENERAL EMAIL ADDRESS]" className="ct-hero__link">
-                <span className="ct-hero__link-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
-                  </svg>
-                </span>
-                [GENERAL EMAIL ADDRESS]
-              </a>
-              <a href="tel:[OFFICIAL TELEPHONE NUMBER]" className="ct-hero__link">
-                <span className="ct-hero__link-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.7 19.79 19.79 0 0 1 1.07 3.07 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </span>
-                [OFFICIAL TELEPHONE NUMBER]
-              </a>
-              <span className="ct-hero__link">
-                <span className="ct-hero__link-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-                  </svg>
-                </span>
-                [OFFICIAL MEST ADDRESS], Accra, Ghana
-              </span>
-            </div>
+
           </div>
-          <div className="ct-hero__right">
-            <img src={smeFacilityImg} alt="Circular-plastics stakeholders participating in a meeting in Ghana" className="ct-hero__img" />
-            <div className="ct-hero__img-badge">
-              <span>♻️</span> CEF-PS Ghana Stakeholder Engagement
-            </div>
-          </div>
-        </div>
-        <div className="ct-hero__bg-circles" aria-hidden="true">
-          <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="700" cy="80" r="300" stroke="rgba(12,59,46,0.04)" strokeWidth="1.5" strokeDasharray="12 12"/>
-            <circle cx="700" cy="80" r="200" stroke="rgba(12,59,46,0.03)" strokeWidth="1"/>
-            <circle cx="80" cy="500" r="280" stroke="rgba(12,59,46,0.03)" strokeWidth="1.5" strokeDasharray="16 16"/>
-          </svg>
         </div>
       </section>
 
@@ -326,37 +288,6 @@ function Contact() {
       {/* ── 3. MAIN FORM + GUIDANCE ── */}
       <section className="ct-form-section" id="contact-form">
         <div className="ct-form-section__inner">
-
-          {/* Guidance Panel */}
-          <aside className="ct-guidance">
-            <span className="ct-section-label ct-section-label--dark">Send an Enquiry</span>
-            <h2 className="ct-guidance__title">Before You Submit</h2>
-            <p className="ct-guidance__intro">
-              Providing complete and accurate information will help the CEF-PS Ghana team respond appropriately.
-            </p>
-            <p className="ct-guidance__sub">Include the following where relevant:</p>
-            <ul className="ct-guidance__list">
-              {GUIDANCE_CHECKLIST.map(item => (
-                <li key={item} className="ct-guidance__item">
-                  <span className="ct-guidance__check">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1E8A00" strokeWidth="2.5">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="ct-guidance__notice">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
-              </svg>
-              <p>Enquiries are reviewed during official working hours. Requests requiring technical review or engagement with another institution may take longer to process.</p>
-            </div>
-            <div className="ct-guidance__warning">
-              <strong>Important:</strong> Submitting an enquiry, proposal or partnership request does not automatically create an agreement, approve funding or guarantee participation in a programme.
-            </div>
-          </aside>
 
           {/* Form Card */}
           <div className="ct-form-card">

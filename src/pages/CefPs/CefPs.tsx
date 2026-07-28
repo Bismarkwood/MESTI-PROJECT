@@ -58,7 +58,7 @@ const pilotSolutionsData: PilotSolution[] = [
     description: 'Converting plastic waste into durable lumber for furniture and other useful products.',
     detailedDescription: 'Using advanced extrusion and compression molding techniques, participating SMEs transform mixed and low-value plastic waste into high-strength synthetic lumber. This lumber replaces timber in outdoor furniture, school desks, decking, and municipal construction, directly mitigating deforestation while tackling plastic pollution.',
     impactTarget: 'Diverting 18,000 tonnes of hard-to-recycle plastics into long-life infrastructure and school furniture.',
-    image: 'https://images.unsplash.com/photo-1499933374294-4584d31507cb?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 'yarn',
@@ -70,7 +70,7 @@ const pilotSolutionsData: PilotSolution[] = [
     description: 'Processing recovered plastic into material for textile and manufacturing applications.',
     detailedDescription: 'This pilot focuses on high-grade bottle-to-fiber recycling. Cleaned and flaked PET bottles are processed into recycled polyester (rPET) yarn and strapping. The recovered fiber supplies doMESTc textile manufacturers and industrial packaging sectors, fostering a true closed-loop material economy in Ghana.',
     impactTarget: 'Replacing imported virgin polyester with 100% locally recovered post-consumer rPET fiber.',
-    image: 'https://images.unsplash.com/photo-1550005809-91ad75fb315f?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 'pavement',

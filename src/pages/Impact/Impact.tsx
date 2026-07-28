@@ -45,9 +45,9 @@ const solutionBlocks = [
 ]
 
 const impactStories = [
-  { title: 'Strengthening Plastic Collection Networks', desc: 'How collection and buy-back systems can improve plastic recovery while creating opportunities for local communities.', category: 'Collection & Recovery' },
-  { title: 'Creating New Products from Recovered Plastic', desc: 'How circular enterprises are converting discarded materials into furniture, yarn, paving products and other useful goods.', category: 'Recycling & Manufacturing' },
-  { title: 'Building Knowledge Across the Sector', desc: 'How workshops, stakeholder engagement and technical capacity development support stronger coordination and implementation.', category: 'Capacity Building' },
+  { title: 'Strengthening Plastic Collection Networks', desc: 'How collection and buy-back systems can improve plastic recovery while creating opportunities for local communities.', category: 'Collection & Recovery', image: 'https://images.unsplash.com/photo-1604187351574-c75ca79f5807?auto=format&fit=crop&q=80&w=800' },
+  { title: 'Creating New Products from Recovered Plastic', desc: 'How circular enterprises are converting discarded materials into furniture, yarn, paving products and other useful goods.', category: 'Recycling & Manufacturing', image: 'https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?auto=format&fit=crop&q=80&w=800' },
+  { title: 'Building Knowledge Across the Sector', desc: 'How workshops, stakeholder engagement and technical capacity development support stronger coordination and implementation.', category: 'Capacity Building', image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800' },
 ]
 
 const galleryImages = [
@@ -248,7 +248,7 @@ function Impact() {
             {impactStories.map((story, i) => (
               <div key={i} className="impact-story-card impact-animate">
                 <div className="impact-story-card__image">
-                  <img src={cefPsPlaceholder} alt={story.title} />
+                  <img src={story.image || cefPsPlaceholder} alt={story.title} />
                 </div>
                 <div className="impact-story-card__body">
                   <span className="impact-story-card__category">{story.category}</span>

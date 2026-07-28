@@ -2,21 +2,6 @@ import { Link } from "react-router-dom"
 import "./GovernanceSection.css"
 
 import govImg     from "../../assets/Mission & Vision/Mission & Vision.webp"
-import logoGiz    from "../../assets/Client Logos/GIZ.webp"
-import logoUsaid  from "../../assets/Client Logos/USAID Logo.webp"
-import logoParl   from "../../assets/Client Logos/Parliament of ghana.webp"
-import logoNita   from "../../assets/Client Logos/NITA logo.webp"
-import logoUg     from "../../assets/Client Logos/UG Logo.webp"
-import logoEc     from "../../assets/Client Logos/EC.webp"
-
-const partners = [
-  { src: logoGiz,   alt: "GIZ" },
-  { src: logoUsaid, alt: "USAID" },
-  { src: logoParl,  alt: "Parliament of Ghana" },
-  { src: logoNita,  alt: "NITA" },
-  { src: logoUg,    alt: "University of Ghana" },
-  { src: logoEc,    alt: "Electoral Commission" },
-]
 
 function GovernanceSection() {
   return (
@@ -58,23 +43,6 @@ function GovernanceSection() {
             Meet Our Partners
             <span className="gov__btn-arrow" aria-hidden="true">?</span>
           </Link>
-        </div>
-
-        {/* Right: floating partner logos card */}
-        <div className="gov__logos-panel">
-          <div className="gov__logos-header">
-            <span className="gov__logos-label">Key Partners</span>
-          </div>
-          <div className="gov__logos-grid">
-            {partners.map((p) => (
-              <div className="gov__logo-item" key={p.alt}>
-                <img src={p.src} alt={p.alt} />
-              </div>
-            ))}
-          </div>
-          <div className="gov__logos-footer">
-            <span>+ many more across Ghana's plastics value chain</span>
-          </div>
         </div>
 
       </div>
