@@ -514,18 +514,9 @@ function CefPs() {
               >
                 <div className="cefps-pilot-card__img-wrap">
                   <img src={pilot.image} alt={pilot.title} className="cefps-pilot-card__img" loading="lazy" />
-                  <div className="cefps-pilot-card__status">
-                    <span className="cefps-status-dot" />
-                    {pilot.status}
-                  </div>
                 </div>
                 <div className="cefps-pilot-card__body">
-                  <div className="cefps-pilot-card__meta">
-                    <span className="cefps-pilot-cat">{pilot.category}</span>
-                    <span className="cefps-pilot-loc">📍 {pilot.location}</span>
-                  </div>
                   <h3 className="cefps-pilot-card__title">{pilot.title}</h3>
-                  <div className="cefps-pilot-card__enterprise">{pilot.enterprise}</div>
                 </div>
               </div>
             ))}
