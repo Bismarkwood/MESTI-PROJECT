@@ -54,10 +54,12 @@
 }
 
 .footer__brand-img {
-  width: clamp(56px, 8vw, 84px);
+  width: clamp(48px, 7vw, 72px);
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 8px;
 }
 
 .footer__brand-name {
