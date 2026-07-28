@@ -48,8 +48,8 @@ function Navbar({ light = false }: { light?: boolean }) {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${dropdownOpen ? 'navbar--dropdown-open' : ''} ${light ? 'navbar--light' : ''} ${mobileOpen ? 'navbar--mobile-open' : ''}`}>
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo">
-          <img src={mestLogo} alt="MEST Logo" className="navbar__logo-img" />
-          <span className="navbar__logo-label">CEF-PS · MEST</span>
+          <img src={mestLogo} alt="Logo" className="navbar__logo-img" />
+          <span className="navbar__logo-label">CEF-PS</span>
         </Link>
 
         {/* Inline nav links (desktop) */}

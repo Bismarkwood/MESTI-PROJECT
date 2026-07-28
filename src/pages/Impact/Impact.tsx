@@ -95,16 +95,33 @@ function Impact() {
       />
       <Navbar />
 
-      {/* ─── 1. IMPACT HERO ─── */}
-      <section id="overview" className="impact-hero-override">
-        <HeroScrollSection
-          badge="Impact and Progress"
-          title="Turning Circular-Plastics Ambition into Measurable Action"
-          desc="CEF-PS Ghana brings together programmes, partnerships and practical solutions that strengthen plastic recovery, support circular enterprises, build stakeholder capacity and protect Ghana's environment."
-          primaryCta={{ text: 'Explore Our Progress', href: '#progress', onClick: () => scrollToSection('progress') }}
-          secondaryCta={{ text: 'View Programmes', href: '/cef-ps' }}
-          hideFloatingBar
-        />
+      {/* ─── 1. IMPACT HERO (CUSTOM PREMIUM) ─── */}
+      <section id="overview" className="impact-hero-custom">
+        <div className="impact-hero-custom__bg">
+          <img src={smeFacilityImg} alt="SME Facility Background" />
+          <div className="impact-hero-custom__overlay"></div>
+        </div>
+        <div className="impact-hero-custom__content">
+          <div className="impact-badge-premium">
+            <span className="impact-badge-dot"></span>
+            Impact and Progress
+          </div>
+          <h1 className="impact-hero-custom__title">
+            Turning Circular-Plastics Ambition into <span className="impact-hero-custom__highlight">Measurable Action</span>
+          </h1>
+          <p className="impact-hero-custom__desc">
+            CEF-PS Ghana brings together programmes, partnerships and practical solutions that strengthen plastic recovery, support circular enterprises, build stakeholder capacity and protect Ghana's environment.
+          </p>
+          <div className="impact-hero-custom__actions">
+            <button className="impact-btn-primary" onClick={() => scrollToSection('progress')}>
+              Explore Our Progress
+              <ArrowRight size={18} strokeWidth={2} />
+            </button>
+            <Link to="/cef-ps" className="impact-btn-secondary">
+              View Programmes
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* ─── 2. CURRENT PROGRESS SNAPSHOT ─── */}
