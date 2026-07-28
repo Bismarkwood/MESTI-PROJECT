@@ -225,16 +225,10 @@ function CefPs() {
 
       {/* ─── 1. PROJECT HERO ─── */}
       <section className="cefps-hero" id="hero">
-        <div className="cefps-hero__bg-pattern" />
-        <div className="cefps-hero__glow" />
+
 
         <div className="cefps-hero__container">
           <div className="cefps-hero__left">
-            <div className="cefps-hero__breadcrumb">
-              <Link to="/#programmes" className="cefps-hero__breadcrumb-link">Programmes &amp; Projects</Link>
-              <span className="cefps-hero__breadcrumb-sep">→</span>
-              <span className="cefps-hero__breadcrumb-curr">CEF-PS Dedicated Page</span>
-            </div>
 
             <div className="cefps-hero__label">
               <span className="cefps-hero__label-dot" />
@@ -282,24 +276,12 @@ function CefPs() {
                   <strong className="cefps-detail-val">MEST and EPA Ghana</strong>
                 </div>
               </div>
-              <div className="cefps-hero__details-footer">
-                <svg className="cefps-info-icon" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" /></svg>
-                <span>These project details are taken from the consolidated CEF-PS progress report.</span>
-              </div>
+
             </div>
 
           </div>
 
-          <div className="cefps-hero__right">
-            <div className="cefps-hero__visual-frame">
-              <img src="https://images.unsplash.com/photo-1621451537084-482c73073e0f?auto=format&fit=crop&q=80&w=800" alt="Ghana Circular Plastics Pilot Operations" className="cefps-hero__visual-img" />
-              <div className="cefps-hero__visual-badge">
-                <span className="cefps-visual-tag">Circularity in Action</span>
-                <strong className="cefps-visual-desc">11 SME Pilot Operations Across Ghana</strong>
-              </div>
-              <div className="cefps-hero__visual-border" />
-            </div>
-          </div>
+
         </div>
       </section>
 
