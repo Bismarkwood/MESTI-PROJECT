@@ -1,8 +1,8 @@
-/* ─── Focus Areas Section ─── */
+/* ─── Focus Areas Section — Full Width ─── */
 .focus-areas {
   width: 100%;
-  padding: 100px 48px;
-  background: #f8faf9;
+  padding: 100px 0 0;
+  background: #ffffff;
 }
 
 .focus-areas__inner {
@@ -12,8 +12,8 @@
 /* Header */
 .focus-areas__header {
   max-width: 1200px;
-  margin: 0 auto 56px;
-  padding: 0;
+  margin: 0 auto 48px;
+  padding: 0 48px;
 }
 
 .focus-areas__badge {
@@ -49,79 +49,82 @@
   margin: 0;
 }
 
-/* Grid: 2x2 on desktop */
+/* Grid: 4 columns, full width, no gaps */
 .focus-areas__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  width: 100%;
 }
 
 /* Card */
 .focus-areas__card {
-  background: #ffffff;
-  border: 1px solid #e4ece7;
-  border-radius: 20px;
+  background: #f6f8f7;
+  border: none;
+  border-right: 1px solid #e4ece7;
+  border-radius: 0;
   overflow: hidden;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease;
+}
+
+.focus-areas__card:last-child {
+  border-right: none;
 }
 
 .focus-areas__card:hover {
-  border-color: #1c7a4d;
-  transform: translateY(-4px);
+  background: #eef3f0;
 }
 
 /* Card Image */
 .focus-areas__card-image {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
-  background: #eef3f0;
+  background: #e4ece7;
 }
 
 .focus-areas__card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .focus-areas__card:hover .focus-areas__card-image img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .focus-areas__card-num {
   position: absolute;
   top: 14px;
-  right: 14px;
+  left: 14px;
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 800;
   color: #ffffff;
-  background: rgba(15, 43, 31, 0.7);
+  background: rgba(15, 43, 31, 0.75);
   padding: 4px 10px;
   border-radius: 100px;
 }
 
 /* Card Body */
 .focus-areas__card-body {
-  padding: 28px 28px 32px;
+  padding: 24px 24px 32px;
 }
 
 .focus-areas__card-title {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #0f2b1f;
   line-height: 1.3;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
 
 .focus-areas__card-desc {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 400;
   color: #5a6b63;
   line-height: 1.6;
@@ -131,30 +134,41 @@
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {
   .focus-areas {
-    padding: 80px 32px;
+    padding: 80px 0 0;
+  }
+
+  .focus-areas__header {
+    padding: 0 32px;
   }
 
   .focus-areas__grid {
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  }
+
+  .focus-areas__card {
+    border-right: none;
+    border-bottom: 1px solid #e4ece7;
   }
 }
 
 @media (max-width: 640px) {
   .focus-areas {
-    padding: 64px 20px;
+    padding: 64px 0 0;
+  }
+
+  .focus-areas__header {
+    padding: 0 20px;
   }
 
   .focus-areas__grid {
     grid-template-columns: 1fr;
-    gap: 16px;
   }
 
   .focus-areas__card-image {
-    height: 170px;
+    height: 180px;
   }
 
   .focus-areas__card-body {
-    padding: 22px 22px 26px;
+    padding: 20px 20px 28px;
   }
 }

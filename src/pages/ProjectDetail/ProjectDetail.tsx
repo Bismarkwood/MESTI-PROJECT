@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import JoinCta from '../../components/JoinCta'
 import forestTraceImg from '../../assets/cef-ps-placeholder.svg'
 import './ProjectDetail.css'
 import './ProjectCards.css'
@@ -333,6 +334,11 @@ function ProjectDetail() {
             ))}
         </div>
       </section>
+
+      <JoinCta
+        heading="Interested in Our Projects?"
+        description="Get in touch with our team to learn how BDG's data and technology solutions can support your organisation."
+      />
 
       <Footer />
     </main>

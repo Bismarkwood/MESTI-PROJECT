@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import SEO from '../../components/SEO'
+import JoinCta from '../../components/JoinCta'
 import './CefPs.css'
 
-// Verified Placeholder Images (will be replaced with actual CEF-PS images later as per prompt)
-import cefPsPlaceholder from '../../assets/cef-ps-placeholder.svg'
+// Removed placeholder import
 
 // Partner Logos
 import unidoLogo from '../../assets/UNIDO.webp'
@@ -46,7 +46,7 @@ const pilotSolutionsData: PilotSolution[] = [
     description: 'Creating accessible collection points where communities can return plastic materials for recovery.',
     detailedDescription: 'This initiative establishes decentralized buy-back centers within high-density communities and coastal zones. By offering immediate financial incentives for sorted PET, HDPE, and LDPE plastics, the centers intercept waste before it reaches informal dumpsites or water bodies. Each center serves as a community education hub on segregation at source.',
     impactTarget: 'Targeting over 25,000 tonnes of recovered plastic per year and creating sustainable livelihoods for informal waste pickers.',
-    image: cefPsPlaceholder,
+    image: 'https://images.unsplash.com/photo-1604187351574-c75ca79f5807?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 'lumber',
@@ -58,7 +58,7 @@ const pilotSolutionsData: PilotSolution[] = [
     description: 'Converting plastic waste into durable lumber for furniture and other useful products.',
     detailedDescription: 'Using advanced extrusion and compression molding techniques, participating SMEs transform mixed and low-value plastic waste into high-strength synthetic lumber. This lumber replaces timber in outdoor furniture, school desks, decking, and municipal construction, directly mitigating deforestation while tackling plastic pollution.',
     impactTarget: 'Diverting 18,000 tonnes of hard-to-recycle plastics into long-life infrastructure and school furniture.',
-    image: cefPsPlaceholder,
+    image: 'https://images.unsplash.com/photo-1499933374294-4584d31507cb?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 'yarn',
@@ -70,7 +70,7 @@ const pilotSolutionsData: PilotSolution[] = [
     description: 'Processing recovered plastic into material for textile and manufacturing applications.',
     detailedDescription: 'This pilot focuses on high-grade bottle-to-fiber recycling. Cleaned and flaked PET bottles are processed into recycled polyester (rPET) yarn and strapping. The recovered fiber supplies doMESTc textile manufacturers and industrial packaging sectors, fostering a true closed-loop material economy in Ghana.',
     impactTarget: 'Replacing imported virgin polyester with 100% locally recovered post-consumer rPET fiber.',
-    image: cefPsPlaceholder,
+    image: 'https://images.unsplash.com/photo-1550005809-91ad75fb315f?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 'pavement',
@@ -82,7 +82,7 @@ const pilotSolutionsData: PilotSolution[] = [
     description: 'Transforming plastic waste into paving blocks and related construction materials.',
     detailedDescription: 'By binding shredded non-recyclable plastic waste with sand and aggregate, pilot SMEs produce heavy-duty pavement blocks and road construction tiles. These polymer-modified tiles exhibit superior compressive strength and water resistance compared to standard concrete blocks, ideal for municipal walkways and drainage.',
     impactTarget: 'Targeting 20,000 tonnes of flexible and single-use plastic waste utilized in municipal road paving projects.',
-    image: cefPsPlaceholder,
+    image: 'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 'alternatives',
@@ -94,7 +94,7 @@ const pilotSolutionsData: PilotSolution[] = [
     description: 'Supporting the development and adoption of products that reduce dependence on conventional plastics.',
     detailedDescription: 'To address plastics that cannot be economically recovered, this component supports SMEs pioneering biodegradable packaging, agricultural mulch films from cassava starch, and reusable packaging models. The initiative includes technical incubation, lifecycle assessment, and market readiness testing.',
     impactTarget: 'Eliminating 15,000 tonnes of conventional single-use plastics through viable bio-based and reusable substitutes.',
-    image: cefPsPlaceholder,
+    image: 'https://images.unsplash.com/photo-1605600659901-523190fcb691?auto=format&fit=crop&q=80&w=800',
   },
 ]
 
@@ -150,15 +150,15 @@ const componentsData: ComponentInfo[] = [
 ]
 
 const galleryImages = [
-  { src: cefPsPlaceholder, title: 'Project Steering Committee Session', category: 'Governance · 2024', desc: 'Strategic oversight meeting with representatives from MEST, EPA, UNIDO, and GEF discussing pilot disbursement milestones.' },
-  { src: cefPsPlaceholder, title: 'Ministerial Monitoring & Evaluation Tour', category: 'Field Visit · 2024', desc: 'High-level delegation inspecting newly installed plastic extrusion and lumber processing machinery at participating SME facilities in Tema.' },
-  { src: cefPsPlaceholder, title: 'Stakeholder Circularity Workshop', category: 'Capacity Building · 2025', desc: 'Technical training session for municipal waste coordinators and private recycler aggregators on standard operating procedures.' },
-  { src: cefPsPlaceholder, title: 'SME Fund Disbursement Ceremony', category: 'Enterprise Support · 2025', desc: 'Official handover of catalytic grant funding and technical transfer packages to the 11 selected circular economy enterprises.' },
-  { src: cefPsPlaceholder, title: 'Community Buy-Back Center Activation', category: 'Recovery Network · 2025', desc: 'Community members participating in a segregated plastic collection drive at an active coastal interception center in Greater Accra.' },
+  { src: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800', title: 'Project Steering Committee Session', category: 'Governance · 2024', desc: 'Strategic oversight meeting with representatives from MEST, EPA, UNIDO, and GEF discussing pilot disbursement milestones.' },
+  { src: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800', title: 'Ministerial Monitoring & Evaluation Tour', category: 'Field Visit · 2024', desc: 'High-level delegation inspecting newly installed plastic extrusion and lumber processing machinery at participating SME facilities in Tema.' },
+  { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800', title: 'Stakeholder Circularity Workshop', category: 'Capacity Building · 2025', desc: 'Technical training session for municipal waste coordinators and private recycler aggregators on standard operating procedures.' },
+  { src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?auto=format&fit=crop&q=80&w=800', title: 'SME Fund Disbursement Ceremony', category: 'Enterprise Support · 2025', desc: 'Official handover of catalytic grant funding and technical transfer packages to the 11 selected circular economy enterprises.' },
+  { src: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800', title: 'Community Buy-Back Center Activation', category: 'Recovery Network · 2025', desc: 'Community members participating in a segregated plastic collection drive at an active coastal interception center in Greater Accra.' },
 ]
 
 function CefPs() {
-  const [activeNav, setActiveNav] = useState('hero')
+  const [, setActiveNav] = useState('hero')
   const [selectedPilot, setSelectedPilot] = useState<PilotSolution | null>(null)
   const [selectedComponent, setSelectedComponent] = useState<ComponentInfo | null>(null)
   const [activeStep, setActiveStep] = useState<number>(0)
@@ -307,7 +307,7 @@ function CefPs() {
 
           <div className="cefps-hero__right">
             <div className="cefps-hero__visual-frame">
-              <img src={cefPsPlaceholder} alt="Ghana Circular Plastics Pilot Operations" className="cefps-hero__visual-img" />
+              <img src="https://images.unsplash.com/photo-1621451537084-482c73073e0f?auto=format&fit=crop&q=80&w=800" alt="Ghana Circular Plastics Pilot Operations" className="cefps-hero__visual-img" />
               <div className="cefps-hero__visual-badge">
                 <span className="cefps-visual-tag">Circularity in Action</span>
                 <strong className="cefps-visual-desc">11 SME Pilot Operations Across Ghana</strong>
@@ -355,7 +355,7 @@ function CefPs() {
         <div className="cefps-overview__container">
           <div className="cefps-overview__left">
             <div className="cefps-overview__img-wrap">
-              <img src={cefPsPlaceholder} alt="Ghana Plastic Waste Interception" className="cefps-overview__img" />
+              <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800" alt="Ghana Plastic Waste Interception" className="cefps-overview__img" />
               <div className="cefps-overview__img-caption">
                 <strong>National Capacity Building</strong>
                 <span>Supporting public-private coordination across municipal assemblies.</span>
@@ -626,29 +626,29 @@ function CefPs() {
             <div className="cefps-timeline-item">
               <div className="cefps-timeline-marker" />
               <div className="cefps-timeline-year">2021</div>
-              <h3 className="cefps-timeline-title">Project Commencement</h3>
-              <p className="cefps-timeline-desc">CEF-PS commenced in November 2021.</p>
+              <h3 className="cefps-timeline-title">Inception</h3>
+              <p className="cefps-timeline-desc">Project launched.</p>
             </div>
 
             <div className="cefps-timeline-item">
               <div className="cefps-timeline-marker" />
               <div className="cefps-timeline-year">2022</div>
-              <h3 className="cefps-timeline-title">Execution and Inception</h3>
-              <p className="cefps-timeline-desc">The project execution agreement was signed, followed by the inception workshop in December 2022.</p>
+              <h3 className="cefps-timeline-title">Execution</h3>
+              <p className="cefps-timeline-desc">Agreements signed.</p>
             </div>
 
             <div className="cefps-timeline-item">
               <div className="cefps-timeline-marker" />
               <div className="cefps-timeline-year">2023</div>
-              <h3 className="cefps-timeline-title">Governance Structures Established</h3>
-              <p className="cefps-timeline-desc">The Project Steering Committee was formed to provide strategic oversight and stakeholder coordination.</p>
+              <h3 className="cefps-timeline-title">Governance</h3>
+              <p className="cefps-timeline-desc">Committees formed.</p>
             </div>
 
             <div className="cefps-timeline-item">
               <div className="cefps-timeline-marker" />
               <div className="cefps-timeline-year">2024</div>
-              <h3 className="cefps-timeline-title">Project Management and Partnerships</h3>
-              <p className="cefps-timeline-desc">The Project Management Unit was strengthened, the Mid-Term Review was completed and engagement with project partners and pilot SMEs advanced.</p>
+              <h3 className="cefps-timeline-title">Partnerships</h3>
+              <p className="cefps-timeline-desc">Mid-term review completed.</p>
             </div>
 
             <div className="cefps-timeline-item cefps-timeline-item--current">
@@ -656,10 +656,10 @@ function CefPs() {
                 <span className="cefps-marker-pulse" />
               </div>
               <div className="cefps-timeline-year cefps-timeline-year--gold">
-                2025 <span className="cefps-current-tag">Current Reporting Year</span>
+                2025 <span className="cefps-current-tag">Current</span>
               </div>
-              <h3 className="cefps-timeline-title">Pilot Implementation and Technical Activities</h3>
-              <p className="cefps-timeline-desc">Funding was disbursed to selected SMEs, while work progressed on technical guidelines, standard operating procedures, plastic-data methodology, communications and the project website.</p>
+              <h3 className="cefps-timeline-title">Implementation</h3>
+              <p className="cefps-timeline-desc">Pilot funding disbursed.</p>
             </div>
           </div>
         </div>
@@ -724,7 +724,7 @@ function CefPs() {
               </div>
               <div className="cefps-res-card__visual">
                 <div className="cefps-update-photo-wrap">
-                  <img src={cefPsPlaceholder} alt="CEF-PS Field Monitoring Visit" className="cefps-update-photo" />
+                  <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" alt="CEF-PS Field Monitoring Visit" className="cefps-update-photo" />
                   <div className="cefps-update-badge">
                     <strong>Latest Activity</strong>
                     <span>Ministerial &amp; Steering Committee Site Tour</span>
@@ -854,24 +854,7 @@ function CefPs() {
                   </div>
                 </div>
 
-                {/* Key Partnerships */}
-                <div className="cefps-key-partners">
-                  <span className="cefps-kp-title">Key Strategic Partnerships:</span>
-                  <div className="cefps-kp-grid">
-                    <div className="cefps-kp-chip">
-                      <strong>National Plastic Action Partnership (NPAP)</strong>
-                      <span>Multi-stakeholder collaboration platform</span>
-                    </div>
-                    <div className="cefps-kp-chip">
-                      <strong>United Nations Development Programme (UNDP)</strong>
-                      <span>Complementary development integration</span>
-                    </div>
-                    <div className="cefps-kp-chip cefps-kp-chip--full">
-                      <strong>Participating Government, Private-Sector &amp; Civil-Society Stakeholders</strong>
-                      <span>Active municipal assemblies, recycler associations, academic institutions, and informal waste networks.</span>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -879,27 +862,10 @@ function CefPs() {
       </section>
 
       {/* ─── 11. FINAL CALL TO ACTION ─── */}
-      <section className="cefps-cta" id="cta">
-        <div className="cefps-cta__banner">
-          <div className="cefps-cta__pattern" />
-          <div className="cefps-cta__content">
-            <h2 className="cefps-cta__title">
-              Building a Circular Plastics Economy Through Action
-            </h2>
-            <p className="cefps-cta__sub">
-              Discover the enterprises, activities and resources contributing to the implementation of CEF-PS across Ghana.
-            </p>
-            <div className="cefps-cta__actions">
-              <button type="button" className="cefps-btn cefps-btn--gold" onClick={() => scrollToSection('pilots')}>
-                Explore Pilot Projects
-              </button>
-              <button type="button" className="cefps-btn cefps-btn--outline-white" onClick={() => setContactModalOpen(true)}>
-                Contact the Project Team
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <JoinCta
+        heading="Be Part of Ghana's Circular-Plastics Transition"
+        description="Businesses, researchers, development partners, public institutions and communities all have a role to play."
+      />
 
       <Footer />
 

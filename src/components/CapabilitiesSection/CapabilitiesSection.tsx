@@ -1,7 +1,4 @@
-import GeoVisual from './GeoVisual'
-import CloudVisual from './CloudVisual'
-import AnalyticsVisual from './AnalyticsVisual'
-import BIVisual from './BIVisual'
+import { Layers, Globe, ClipboardCheck, Rocket } from 'lucide-react'
 import './CapabilitiesSection.css'
 
 interface CardData {
@@ -62,13 +59,13 @@ function CapabilitiesSection() {
           <div className="capabilities__card" key={i}>
             <div className="capabilities__card-visual">
               {card.visual === 'geo' ? (
-                <GeoVisual />
+                <Globe size={48} strokeWidth={1.5} color="var(--cefps-green-mid)" />
               ) : card.visual === 'cloud' ? (
-                <CloudVisual />
+                <Layers size={48} strokeWidth={1.5} color="var(--cefps-green-mid)" />
               ) : card.visual === 'analytics' ? (
-                <AnalyticsVisual />
+                <ClipboardCheck size={48} strokeWidth={1.5} color="var(--cefps-green-mid)" />
               ) : card.visual === 'bi' ? (
-                <BIVisual />
+                <Rocket size={48} strokeWidth={1.5} color="var(--cefps-green-mid)" />
               ) : (
                 <div className="capabilities__card-placeholder">
                   <div className="capabilities__card-placeholder-inner" />
