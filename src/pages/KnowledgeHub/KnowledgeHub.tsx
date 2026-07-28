@@ -404,7 +404,7 @@ export default function KnowledgeHub() {
               <div className="kh-sidebar-group">
                 <h4 className="kh-sidebar-title">Resource Type</h4>
                 <div className="kh-checkbox-list">
-                  {['Policy', 'Strategy', 'Report', 'Guideline', 'Manual', 'Toolkit', 'Case Study', 'Dataset', 'Infographic', 'Video', 'Presentation'].map(type => (
+                  {['Policy', 'Report', 'Guideline', 'Case Study', 'Toolkit'].map(type => (
                     <label key={type} className="kh-checkbox-item">
                       <input
                         type="checkbox"

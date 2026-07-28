@@ -524,7 +524,7 @@
 /* ─── 5. IMPACT IN ACTION ─── */
 .impact-action {
   padding: 100px 0;
-  background: var(--impact-white);
+  background: var(--impact-offwhite);
 }
 
 .impact-action__container {
@@ -533,100 +533,72 @@
   padding: 0 32px;
 }
 
-.impact-action__layout {
+.impact-action__header {
+  margin-bottom: 48px;
+}
+
+.impact-action__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 40px;
-  align-items: start;
-}
-
-.impact-action__main-img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--impact-radius);
-  background: var(--impact-green-light);
-}
-
-.impact-action__solutions {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.impact-solution-block {
-  display: flex;
-  gap: 16px;
-  padding: 20px;
+.impact-action-card {
+  background: var(--impact-white);
   border: 1px solid var(--impact-border);
   border-radius: 16px;
-  transition: border-color 0.2s;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.25s;
 }
 
-.impact-solution-block:hover {
+.impact-action-card:hover {
   border-color: var(--impact-green-mid);
+  transform: translateY(-3px);
 }
 
-.impact-solution-block__num {
-  font-size: 0.8rem;
+.impact-action-card__img {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: var(--impact-green-light);
+}
+
+.impact-action-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.impact-action-card:hover .impact-action-card__img img {
+  transform: scale(1.04);
+}
+
+.impact-action-card__body {
+  padding: 22px 22px 26px;
+}
+
+.impact-action-card__num {
+  font-size: 0.7rem;
   font-weight: 800;
   color: var(--impact-gold);
-  min-width: 28px;
+  display: block;
+  margin-bottom: 8px;
 }
 
-.impact-solution-block__title {
-  font-size: 0.95rem;
+.impact-action-card__title {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--impact-green-dark);
-  margin: 0 0 6px;
+  margin: 0 0 8px;
+  line-height: 1.3;
 }
 
-.impact-solution-block__desc {
+.impact-action-card__desc {
   font-size: 0.82rem;
   color: var(--impact-text-muted);
   line-height: 1.5;
   margin: 0;
-}
-
-.impact-action__gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.impact-action__gallery-card {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.impact-action__gallery-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: var(--impact-green-light);
-}
-
-.impact-action__gallery-tag {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--impact-white);
-  background: var(--impact-green-dark);
-  padding: 4px 10px;
-  border-radius: 100px;
-}
-
-.impact-action__note {
-  margin-top: 24px;
-  font-size: 0.8rem;
-  color: var(--impact-text-muted);
-  font-style: italic;
 }
 
 /* ─── 6. IMPACT STORIES ─── */
@@ -1048,8 +1020,8 @@
     grid-template-columns: 1fr;
   }
 
-  .impact-action__layout {
-    grid-template-columns: 1fr;
+  .impact-action__grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .impact-stories__grid {
@@ -1079,7 +1051,7 @@
     grid-template-columns: 1fr;
   }
 
-  .impact-action__gallery {
+  .impact-action__grid {
     grid-template-columns: 1fr;
   }
 

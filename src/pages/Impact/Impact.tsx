@@ -196,47 +196,28 @@ function Impact() {
       {/* ─── 5. IMPACT IN ACTION ─── */}
       <section className="impact-action" id="action">
         <div className="impact-action__container">
-          <span className="impact-label impact-label--green">Circular Solutions</span>
-          <h2 className="impact-section-title">From Plastic Waste to Productive Value</h2>
-          <p className="impact-section-desc">
-            Participating enterprises are implementing solutions across plastic collection, processing, recycling, manufacturing and alternative-material development.
-          </p>
+          <div className="impact-action__header">
+            <span className="impact-label impact-label--green">Circular Solutions</span>
+            <h2 className="impact-section-title">From Plastic Waste to Productive Value</h2>
+            <p className="impact-section-desc">
+              Participating enterprises are implementing solutions across plastic collection, processing, recycling, manufacturing and alternative-material development.
+            </p>
+          </div>
 
-          <div className="impact-action__layout">
-            <div className="impact-action__image">
-              <img src={cefPsPlaceholder} alt="Community plastic buy-back or collection centre" className="impact-action__main-img" />
-            </div>
-            <div className="impact-action__solutions">
-              {solutionBlocks.map((s, i) => (
-                <div key={i} className="impact-solution-block impact-animate">
-                  <span className="impact-solution-block__num">0{i + 1}</span>
-                  <div className="impact-solution-block__content">
-                    <h4 className="impact-solution-block__title">{s.title}</h4>
-                    <p className="impact-solution-block__desc">{s.desc}</p>
-                  </div>
+          <div className="impact-action__grid">
+            {solutionBlocks.map((s, i) => (
+              <div key={i} className="impact-action-card impact-animate">
+                <div className="impact-action-card__img">
+                  <img src={cefPsPlaceholder} alt={s.title} />
                 </div>
-              ))}
-            </div>
+                <div className="impact-action-card__body">
+                  <span className="impact-action-card__num">0{i + 1}</span>
+                  <h4 className="impact-action-card__title">{s.title}</h4>
+                  <p className="impact-action-card__desc">{s.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className="impact-action__gallery">
-            <div className="impact-action__gallery-card">
-              <img src={cefPsPlaceholder} alt="Plastic lumber, recycled furniture or finished product" />
-              <span className="impact-action__gallery-tag">Recycling</span>
-            </div>
-            <div className="impact-action__gallery-card">
-              <img src={cefPsPlaceholder} alt="Plastic sorting, shredding or processing facility" />
-              <span className="impact-action__gallery-tag">Processing</span>
-            </div>
-            <div className="impact-action__gallery-card">
-              <img src={cefPsPlaceholder} alt="Recycled plastic products" />
-              <span className="impact-action__gallery-tag">Products</span>
-            </div>
-          </div>
-
-          <p className="impact-action__note">
-            These solution areas are identified in the consolidated CEF-PS report as activities supported through participating SMEs.
-          </p>
         </div>
       </section>
 

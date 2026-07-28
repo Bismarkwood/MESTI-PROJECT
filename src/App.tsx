@@ -26,6 +26,7 @@ const FAQ = lazy(() => import('./pages/FAQ'))
 const Terms = lazy(() => import('./pages/Terms'))
 const Cookies = lazy(() => import('./pages/Cookies'))
 const KnowledgeHub = lazy(() => import('./pages/KnowledgeHub'))
+const ResourceDetail = lazy(() => import('./pages/ResourceDetail'))
 const CefPs = lazy(() => import('./pages/CefPs'))
 const Impact = lazy(() => import('./pages/Impact'))
 
@@ -63,7 +64,7 @@ function App() {
               <Route path="/terms" element={<Terms />} />
               <Route path="/cookies" element={<Cookies />} />
               <Route path="/knowledge-hub" element={<KnowledgeHub />} />
-              <Route path="/knowledge-hub/*" element={<KnowledgeHub />} />
+              <Route path="/knowledge-hub/:slug" element={<ResourceDetail />} />
               <Route path="/csr" element={<KnowledgeHub />} />
               <Route path="/impact" element={<Impact />} />
               <Route path="/cef-ps" element={<CefPs />} />

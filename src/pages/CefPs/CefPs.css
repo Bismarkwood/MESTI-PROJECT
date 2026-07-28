@@ -1160,7 +1160,7 @@
 }
 
 .cefps-pilot-card__body {
-  padding: 28px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1187,36 +1187,17 @@
 }
 
 .cefps-pilot-card__title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--cefps-text-dark);
-  margin: 0 0 8px 0;
+  margin: 0 0 4px 0;
 }
 
 .cefps-pilot-card__enterprise {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--cefps-text-muted);
-  margin-bottom: 16px;
-}
-
-.cefps-pilot-card__desc {
-  font-size: 0.95rem;
-  color: var(--cefps-text);
-  line-height: 1.6;
-  margin: 0 0 24px 0;
-  flex: 1;
-}
-
-.cefps-pilot-card__footer {
-  padding-top: 16px;
-  border-top: 1px solid rgba(11, 105, 130, 0.1);
-}
-
-.cefps-pilot-link {
-  font-weight: 700;
-  color: var(--cefps-ocean-blue);
-  font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 .cefps-pilots__bottom-cta {

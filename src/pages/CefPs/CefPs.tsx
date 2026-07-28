@@ -526,10 +526,6 @@ function CefPs() {
                   </div>
                   <h3 className="cefps-pilot-card__title">{pilot.title}</h3>
                   <div className="cefps-pilot-card__enterprise">{pilot.enterprise}</div>
-                  <p className="cefps-pilot-card__desc">{pilot.description}</p>
-                  <div className="cefps-pilot-card__footer">
-                    <span className="cefps-pilot-link">View project details →</span>
-                  </div>
                 </div>
               </div>
             ))}
