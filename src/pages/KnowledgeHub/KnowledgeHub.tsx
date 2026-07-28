@@ -623,14 +623,14 @@ export default function KnowledgeHub() {
                 <button
                   type="button"
                   className="kh-btn kh-btn--gold"
-                  onClick={() => setActiveModalResource(FEATURED_RESOURCE)}
+                  onClick={() => navigate(`/knowledge-hub/${FEATURED_RESOURCE.slug}`)}
                 >
                   Read Publication
                 </button>
                 <button
                   type="button"
                   className="kh-btn kh-btn--outline-white"
-                  onClick={() => handleDownload(FEATURED_RESOURCE)}
+                  onClick={() => navigate(`/knowledge-hub/${FEATURED_RESOURCE.slug}`)}
                 >
                   Download PDF
                 </button>
